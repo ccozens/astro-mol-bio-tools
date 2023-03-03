@@ -1,0 +1,17 @@
+{
+  "name": "astro-mol-bio-tools",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "astro": "^2.0.17",
+    "vitest": "^0.20.3"
+  }
+}
