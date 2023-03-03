@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+
+const { pageTitle } = Astro.props;
+---
+
+<style>
+body {
+    display: grid;
+    grid-template-rows: 1fr 8fr;
+}
+
+
+ h1 {
+    color: var(--accent);
+    grid-row: 1 /1;
+    font-size: 4em;
+    text-align: center;
+    margin: auto 0em;
+    background-color: var(--heading);
+    box-shadow: 0em 0em 0.3em white;
+    border-radius: 0.2em;
+    
+ }
+
+ main {
+    grid-row: 2 /2;
+        display: flex;
+    }
+
+
+
+</style>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>MolBioTools</title>
+  </head>
+  <body>
+      <h1>{pageTitle}</h1>
+      <main>
+          <Navigation />
+        <slot />
+    </main>
+    
+  </body>
+</html>

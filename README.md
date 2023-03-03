@@ -1,11 +1,25 @@
-# Astro + [Vitest](https://vitest.dev/) Example
+# Rebuild!
+
+This is a planned rebuild of [mol-bio-tools](https://github.com/ccozens/mol-bio-tools), seeing as the list of things to change got so long a fresh start seemed easier.
+
+Changes:
+
+1. CRA -> astro
+2. JavaScript -> TypeScript
+3. Jest -> Vitest
+4. Tailwind -> native CSS
+5. Confused mess -> modular (I hope!)
+
+### Initilization
 
 ```
 npm create astro@latest -- --template with-vitest
+npx astro add react
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-vitest)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-vitest)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-vitest/devcontainer.json)
+...and here we are...
 
-This example showcases Astro working with [Vitest](https://vitest.dev/).
+
+
+
+
