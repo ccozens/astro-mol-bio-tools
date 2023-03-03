@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@astrojs/react": "^2.0.2",
@@ -18,5 +19,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "vitest": "^0.20.3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "c8": "^7.13.0",
+    "jsdom": "^21.1.0"
   }
 }
