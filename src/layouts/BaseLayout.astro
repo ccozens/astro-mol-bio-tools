@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import Footer from "../components/Footer.astro";
 
 const { pageTitle } = Astro.props;
 ---
@@ -8,11 +9,11 @@ const { pageTitle } = Astro.props;
 <style>
 body {
     display: grid;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 1fr 8fr 1fr;
 }
 
 
- h1 {
+ .titlebar {
     color: var(--accent);
     grid-row: 1 /1;
     font-size: 4em;
@@ -20,16 +21,18 @@ body {
     margin: auto 0em;
     background-color: var(--heading);
     box-shadow: 0em 0em 0.3em white;
-    border-radius: 0.2em;
-    
+    border-radius: 0.2em; 
  }
 
  main {
-    grid-row: 2 /2;
+    grid-row: 2 / 9;
         display: flex;
     }
 
-
+    
+footer {
+    grid-row: 10/10;
+}
 
 </style>
 
@@ -42,11 +45,12 @@ body {
     <title>MolBioTools</title>
   </head>
   <body>
-      <h1>{pageTitle}</h1>
+      <h1 class="titlebar">{pageTitle}</h1>
       <main>
           <Navigation />
         <slot />
+
     </main>
-    
-  </body>
+    <Footer />
+</body>
 </html>

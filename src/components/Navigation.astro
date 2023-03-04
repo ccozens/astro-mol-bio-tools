@@ -6,18 +6,21 @@ const pageList: string[] = ['Home', 'About'];
   /* container styles */
   .nav-links {
     margin-top: 3em;
-    width: 15vw;
+    width: 20vw;
     box-shadow: 0.2em 0em 0.3em white;
     border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* item styles */
   .navItem {
     color: var(--accent);
-    display: block;
     text-decoration: none;
     font-size: 3em;
     text-align: center;
+    width: 90%;
     margin: 10px 0px;
     border-radius: 0.2em;
   }

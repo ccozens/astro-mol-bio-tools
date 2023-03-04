@@ -8,10 +8,19 @@
 }
 
 /* styles */
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
 html {
     background: linear-gradient(var(--bg-blue), black);
-    height: 100vh;
     display: grid;
+    min-height: 100vh;
 }
 
 p {
@@ -21,6 +30,3 @@ p {
     box-shadow: 0em 0em 0.3em white;
 }
 
-.nav-links {
-    color: var(--accent);
-}
