@@ -1,4 +1,4 @@
-import { assert, expect, test } from 'vitest';
+import { assert, expect, test, describe, it } from 'vitest';
 
 // Edit an assertion and save to see HMR in action
 
@@ -19,3 +19,17 @@ test('JSON', () => {
 	expect(output).eq('{"foo":"hello","bar":"world"}');
 	assert.deepEqual(JSON.parse(output), input, 'matches original');
 });
+
+describe('suite name', () => {
+	it('foo', () => {
+	  assert.equal(Math.sqrt(4), 2)
+	})
+  
+	it('bar', () => {
+	  expect(1 + 1).eq(2)
+	})
+  
+	it('snapshot', () => {
+	  expect({ foo: 'bar' }).toMatchSnapshot()
+	})
+  })

@@ -1,11 +1,14 @@
-import { checkDnaInput } from "./checkDnaInput";
+import { Molecule } from './utilFunctions';
+import { checkInput } from './checkInput';
 
-export function complementDNA(dna) {
-  const checkedDna = checkDnaInput(dna);
-  if (checkedDna.includes('Non-DNA')) { return checkedDna}
-  
+export function complementDNA(dna: string) {
+  const checkedDna = checkInput(dna, Molecule.Dna);
+  if (checkedDna.includes('Non-DNA')) {
+    return checkedDna;
+  }
+
   const dnaArray = Array.from(checkedDna);
-  let dnaComplementary = [];
+  let dnaComplementary: string[] = [];
   dnaArray.forEach((x) => {
     if (x === 'A') {
       dnaComplementary.push('T');

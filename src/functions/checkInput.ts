@@ -1,14 +1,6 @@
-// find locations of non-DNA characters
-const findMatches = (dna) => {
-  const matches = dna.matchAll(/[^ACGT]/gi);
-  const indexes = [];
-  for (const match of matches) {
-    indexes.push(match.index + 1);
-  }
-  return indexes.join(', ');
-};
+import { findMatches, Molecule } from "./utilFunctions";
 
-export const checkDnaInput = (dna) => {
+export const checkInput = (dna: string, molecule: Molecule) => {
   if (dna === '') {
     return '';
   } else {
@@ -21,8 +13,8 @@ export const checkDnaInput = (dna) => {
     // check array is entirely composed of ACTG
     for (let nt of dnaUpperArray) {
       if (nt.match(/[^ACGT]/))
-        return `Non-DNA character entered, please enter ATCG only.  Non-DNA characters at positions: ${findMatches(
-          dna
+        return `Non-DNA character entered, please enter ATCG only.  Non-DNA characters at positions: ${ findMatches(
+          dna, molecule
         )}`;
     }
     // return dnaUpper if for loop exits successfully

@@ -1,16 +1,6 @@
-const naturalAminoAcidsRegex = new RegExp(/[^ARNDCEQGHILKMFPSTWYV]/gi);
+import { Molecule, findMatches } from "./utilFunctions";
 
-// find locations of non-protein input characters
-const findMatches = (proteinInput) => {
-  const matches = proteinInput.matchAll(naturalAminoAcidsRegex);
-  const indexes = [];
-  for (const match of matches) {
-    indexes.push(match.index + 1);
-  }
-  return indexes.join(', ');
-};
-
-export const checkProteinOneLetterInput = (proteinInput) => {
+export const checkProteinOneLetterInput = (proteinInput: string) => {
   // ensure uppercase
   const proteinUpper = proteinInput.toUpperCase();
   //remove any line breaks
@@ -25,9 +15,9 @@ export const checkProteinOneLetterInput = (proteinInput) => {
     proteinArray = Array.from(protein);
     // check array is entirely composed of natural AAs (ARNDCEQGHILKMFPSTWYV)
     for (let resi of proteinArray) {
-      if (resi.match(naturalAminoAcidsRegex))
+      if (findMatches(protein, Molecule.Protein))
         return (
-          `Non-amino acid character entered, please enter only 20 natural residues.  Non-protein characters at positions: ${findMatches(proteinInput)}`) 
+          `Non-amino acid character entered, please enter only 20 natural residues.  Non-protein characters at positions: ${findMatches(protein, Molecule.Protein)}`) 
     }
 
     // return uppercase proteinInput if for loop exits successfully

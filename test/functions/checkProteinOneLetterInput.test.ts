@@ -1,6 +1,6 @@
-import '@testing-library/jest-dom/extend-expect';
+import { describe, test, expect } from 'vitest';
 // import modules to test
-import { checkProteinOneLetterInput } from '../../functions/checkProteinOneLetterInput';
+import { checkProteinOneLetterInput } from '../../src/functions/checkProteinOneLetterInput';
 
 // tbj-tab for test block
 

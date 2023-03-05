@@ -3,8 +3,10 @@ import {
   codonToAATableThreeLetter,
 } from './lookupTables';
 
+
+
 // splits input string to uppercase triplets
-const dnaToArray = (dna) => {
+const dnaToArray = (dna: string) => {
   let tempArray = [];
   const dnaUpper = dna.toUpperCase();
   for (let i = 0; i < dnaUpper.length; i += 3) {
@@ -13,11 +15,11 @@ const dnaToArray = (dna) => {
   return tempArray;
 };
 
-const checkForTriplets = (dna) => {
+const checkForTriplets = (dna: string) => {
   return dna.length % 3 === 0 ? true : false;
 };
 
-const translateDna = (dna, outFormat, proteinJoin) => {
+const translateDna = (dna: string, outFormat: string, proteinJoin: string) => {
   let protein = [];
   if (
     dna.includes('Non-DNA character entered, please enter ATCG only')

@@ -1,6 +1,6 @@
-import '@testing-library/jest-dom/extend-expect';
+import { describe, test, expect } from 'vitest';
 // import modules to test
-import { reverseComplementDNA } from '../../functions/reverse-complement-function';
+import { reverseComplementDNA } from '../../src/functions/reverse-complement-function';
 
 // tbj-tab for test block
 

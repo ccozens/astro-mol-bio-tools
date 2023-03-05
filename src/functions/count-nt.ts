@@ -1,4 +1,4 @@
-export const countNucleotides = (dna) => {
+export const countNucleotides = (dna: string) => {
   // create empty object
   let ntCounts = { A: 0, C: 0, G: 0, T: 0 };
   // ensure input uppercase
