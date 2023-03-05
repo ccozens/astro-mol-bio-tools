@@ -1,6 +1,6 @@
 import { findMatches, Molecule } from "./utilFunctions";
 
-export const checkInput = (dna: string, molecule: Molecule) => {
+export const checkDnaInput = (dna: string, molecule: Molecule) => {
   if (dna === '') {
     return '';
   } else {

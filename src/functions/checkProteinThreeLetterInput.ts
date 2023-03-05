@@ -1,6 +1,6 @@
 import { aaThreeOneLetterNames } from './lookupTables'
 
-export const checkProteinThreeLetterInput = (input) => {
+export const checkProteinThreeLetterInput = (input: string) => {
 
   if (input === '') {
     return '';

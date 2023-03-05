@@ -1,8 +1,8 @@
 import { Molecule } from './utilFunctions';
-import { checkInput } from './checkInput';
+import { checkDnaInput } from './checkDnaInput';
 
 export const reverseComplementDNA = (dna: string) => {
-  const checkedDna = checkInput(dna, Molecule.Dna);
+  const checkedDna = checkDnaInput(dna, Molecule.Dna);
   if (checkedDna.includes('Non-DNA')) {
     return checkedDna;
   }

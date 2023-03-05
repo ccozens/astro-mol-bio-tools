@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1678022413395" clover="3.2.0">
-  <project timestamp="1678022413395" name="All files">
-    <metrics statements="760" coveredstatements="437" conditionals="65" coveredconditionals="50" methods="33" coveredmethods="18" elements="858" coveredelements="505" complexity="0" loc="760" ncloc="760" packages="2" files="17" classes="17"/>
+<coverage generated="1678026182754" clover="3.2.0">
+  <project timestamp="1678026182754" name="All files">
+    <metrics statements="762" coveredstatements="438" conditionals="65" coveredconditionals="50" methods="33" coveredmethods="18" elements="860" coveredelements="506" complexity="0" loc="762" ncloc="762" packages="2" files="17" classes="17"/>
     <package name="components">
       <metrics statements="18" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="Greeting.tsx" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/components/Greeting.tsx">
@@ -27,8 +27,8 @@
       </file>
     </package>
     <package name="functions">
-      <metrics statements="742" coveredstatements="437" conditionals="64" coveredconditionals="50" methods="32" coveredmethods="18"/>
-      <file name="checkInput.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/checkInput.ts">
+      <metrics statements="744" coveredstatements="438" conditionals="64" coveredconditionals="50" methods="32" coveredmethods="18"/>
+      <file name="checkDnaInput.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/checkDnaInput.ts">
         <metrics statements="23" coveredstatements="22" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -250,7 +250,7 @@
         <line num="105" count="0" type="stmt"/>
       </file>
       <file name="computeProteinMW.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/computeProteinMW.ts">
-        <metrics statements="15" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="16" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -266,6 +266,7 @@
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
       </file>
       <file name="convertThreeToOneLetter.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/convertThreeToOneLetter.ts">
         <metrics statements="24" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -372,7 +373,7 @@
         <line num="49" count="0" type="stmt"/>
       </file>
       <file name="lookupTables.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/lookupTables.ts">
-        <metrics statements="231" coveredstatements="225" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="1"/>
+        <metrics statements="232" coveredstatements="226" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -529,8 +530,8 @@
         <line num="154" count="1" type="stmt"/>
         <line num="155" count="1" type="stmt"/>
         <line num="156" count="1" type="stmt"/>
-        <line num="157" count="0" type="stmt"/>
-        <line num="158" count="1" type="stmt"/>
+        <line num="157" count="1" type="stmt"/>
+        <line num="158" count="0" type="stmt"/>
         <line num="159" count="1" type="stmt"/>
         <line num="160" count="1" type="stmt"/>
         <line num="161" count="1" type="stmt"/>
@@ -553,8 +554,8 @@
         <line num="178" count="1" type="stmt"/>
         <line num="179" count="1" type="stmt"/>
         <line num="180" count="1" type="stmt"/>
-        <line num="181" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="182" count="1" type="stmt"/>
+        <line num="181" count="1" type="stmt"/>
+        <line num="182" count="7" type="cond" truecount="1" falsecount="0"/>
         <line num="183" count="1" type="stmt"/>
         <line num="184" count="1" type="stmt"/>
         <line num="185" count="1" type="stmt"/>
@@ -589,21 +590,22 @@
         <line num="214" count="1" type="stmt"/>
         <line num="215" count="1" type="stmt"/>
         <line num="216" count="1" type="stmt"/>
-        <line num="217" count="0" type="stmt"/>
-        <line num="218" count="1" type="stmt"/>
+        <line num="217" count="1" type="stmt"/>
+        <line num="218" count="0" type="stmt"/>
         <line num="219" count="1" type="stmt"/>
         <line num="220" count="1" type="stmt"/>
         <line num="221" count="1" type="stmt"/>
         <line num="222" count="1" type="stmt"/>
         <line num="223" count="1" type="stmt"/>
         <line num="224" count="1" type="stmt"/>
-        <line num="225" count="0" type="stmt"/>
-        <line num="226" count="1" type="stmt"/>
+        <line num="225" count="1" type="stmt"/>
+        <line num="226" count="0" type="stmt"/>
         <line num="227" count="1" type="stmt"/>
         <line num="228" count="1" type="stmt"/>
         <line num="229" count="1" type="stmt"/>
         <line num="230" count="1" type="stmt"/>
-        <line num="231" count="0" type="stmt"/>
+        <line num="231" count="1" type="stmt"/>
+        <line num="232" count="0" type="stmt"/>
       </file>
       <file name="proteinBarChartCounts.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/proteinBarChartCounts.ts">
         <metrics statements="88" coveredstatements="85" conditionals="13" coveredconditionals="12" methods="4" coveredmethods="4"/>

@@ -1,4 +1,4 @@
-export const codonToAATableThreeLetter = {
+export const codonToAATableThreeLetter: Record<string, string> = {
   GCT: 'Ala',
   GCC: 'Ala',
   GCA: 'Ala',
@@ -65,7 +65,7 @@ export const codonToAATableThreeLetter = {
   TAA: '*',
 };
 
-export const codonToAATableOneLetter = {
+export const codonToAATableOneLetter: Record<string, string> = {
   GCT: 'A',
   GCC: 'A',
   GCA: 'A',
@@ -132,8 +132,9 @@ export const codonToAATableOneLetter = {
   TAA: '*',
 };
 
+
 // AA molecular weight table
-export const aaMW = {
+export const aaMW: Record<string, number> = {
   A: 71.037113805,
   R: 156.10111105,
   N: 114.04292747,
@@ -157,7 +158,7 @@ export const aaMW = {
 };
 
 // three to one letter conversion table
-export const aaThreeOneLetterNames = {
+export const aaThreeOneLetterNames: Record<string, string> = {
   Ala: 'A',
   Arg: 'R',
   Asn: 'N',
@@ -181,7 +182,7 @@ export const aaThreeOneLetterNames = {
 };
 
 // nucleotide MWs (from Ambion)
-export const ntMW = {
+export const ntMW: Record<string, number> = {
   ATP: 507.2,
   CTP: 483.2,
   GTP: 523.2,
@@ -217,7 +218,7 @@ export const ntMW = {
 };
 
 // coefficients for proteins in water measured at 280 nm
-export const absCoefficients = {
+export const absCoefficients: Record<string, number> = {
   extTyr: 1490,
   extTrp: 5500,
   extCys_paired: 125,
