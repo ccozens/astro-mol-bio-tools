@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/ccozens/astro-mol-bio-tools/branch/main/graph/badge.svg?token=MOQG6B9UNU)](https://codecov.io/gh/ccozens/astro-mol-bio-tools)
+
 # Rebuild!
 
 This is a planned rebuild of [mol-bio-tools](https://github.com/ccozens/mol-bio-tools), seeing as the list of things to change got so long a fresh start seemed easier.
