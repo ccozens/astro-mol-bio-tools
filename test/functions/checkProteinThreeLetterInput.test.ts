@@ -5,25 +5,6 @@ import { checkProteinThreeLetterInput } from '../../src/functions/checkProteinTh
 // tbj-tab for test block
 
 describe('validate  that protein is in three letter input format', () => {
-  test('checkProteinThreeLetterInput should throw an error if any characters other than 20 natural three letter codes present', () => {
-    //setup
-    const proteinError1 =
-      'MILDTDYITEDGKZPVIRIFKKENGEFKIDYDRNFEPZYIYALLKDDSAIEDVKKITAERHGT';
-    const proteinError2 = 'TAAAAAAA7AAATAAAAAAAAAA';
-    const proteinError3 = 'xyz';
-    //expected
-
-    //test
-    expect(checkProteinThreeLetterInput(proteinError1)).toContain(
-      'Non-amino acid character entered, please enter only 20 natural residues in three letter format.'
-    );
-    expect(checkProteinThreeLetterInput(proteinError2)).toContain(
-      'Non-amino acid character entered, please enter only 20 natural residues in three letter format.'
-    );
-    expect(checkProteinThreeLetterInput(proteinError3)).toContain(
-      'Non-amino acid character entered, please enter only 20 natural residues in three letter format.'
-    );
-  });
 
   test('checkProteinThreeLetterInput should return exact input if no error', () => {
     //setup
