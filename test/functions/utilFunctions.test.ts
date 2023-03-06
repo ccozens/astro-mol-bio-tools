@@ -1,6 +1,7 @@
 import {
   Molecule,
   findMatches,
+  sanitiseInput
 } from '../../src/functions/utilFunctions';
 import { describe, test, expect } from 'vitest';
 
@@ -90,3 +91,40 @@ describe('test findMatches function', () => {
     expect(findMatches(protein4, Molecule.Protein)).toBe(match4);
   });
 });
+
+
+describe('test sanitiseInput function', () => {
+  test('sanitiseInput should strip line breaks, carriage returns, spacers and final * from protein', () => {
+    const protein1 = 'A-A-t.t.G.g c C';
+    const protein2 = 'ca\rcg\rtacgt*';
+    const protein3 = 'ca\rcg\rtacgt';
+    const protein4 =
+      'AGCAATCTATCAGGGAA..CGGCGG\nTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGT--GA\n\nGCGC\nACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAG\nCTTTGGCGGCAGCTAGGGGAGG\nAT';
+
+    const exp_protein1 = 'AATTGGCC';
+    const exp_protein2 = 'CACGTACGT';
+    const exp_protein3 =
+      'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGTGAGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAGCTTTGGCGGCAGCTAGGGGAGGAT';
+
+    //test
+    expect(sanitiseInput(protein1)).toBe(exp_protein1);
+    expect(sanitiseInput(protein2)).toBe(exp_protein2);
+    expect(sanitiseInput(protein3)).toBe(exp_protein2); // not a mistake - protein2 and protein3 are the same apart from final *
+    expect(sanitiseInput(protein4)).toBe(exp_protein3);
+    });
+
+    test('sanitiseInput should strip line breaks, carriage returns, spacers from DNA', () => {
+      const dna1 = 'A-A-t.t.G g c-C';
+      const dna2 = 'cacgtacgt';
+      const dna3 = 'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTC\r\rAGGC\nGC--CTG.C.G,GCTGGGTGAGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAGCTTTGGCGGCAGCTAGGGGAGGAT';
+      
+      const exp_dna1 = 'AATTGGCC';
+      const exp_dna2 = 'CACGTACGT';
+      const exp_dna3 = 'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGTGAGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAGCTTTGGCGGCAGCTAGGGGAGGAT';
+      
+      //test
+      expect(sanitiseInput(dna1)).toBe(exp_dna1);
+      expect(sanitiseInput(dna2)).toBe(exp_dna2);
+      expect(sanitiseInput(dna3)).toBe(exp_dna3);
+      });
+})

@@ -1,6 +1,6 @@
 // import modules to test
 import { Molecule } from '../../src/functions/utilFunctions';
-import { checkDnaInput } from '../../src/functions/checkDnaInput';
+import { checkDnaInput } from '../../src/functions/checkCheckDnaInput';
 import { describe, test, expect } from 'vitest';
 
 // tbj-tab for test block
@@ -38,23 +38,5 @@ describe('test DNA reformatting', () => {
     expect(checkDnaInput(dna2, Molecule.Dna)).toBe(dna2);
     expect(checkDnaInput(dna3, Molecule.Dna)).toBe(dna3);
     expect(checkDnaInput(dna4, Molecule.Dna)).toBe(dna4);
-  });
-
-  test('checkDnaInput should format to non-gapped uppercase', () => {
-    // setup
-    const dna1 = 'AAttGgcC';
-    const dna2 = 'cacgtacgt';
-    const dna3 =
-      'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGTGA\nGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAG\nCTTTGGCGGCAGCTAGGGGAGGAT';
-
-    const exp_dna1 = 'AATTGGCC';
-    const exp_dna2 = 'CACGTACGT';
-    const exp_dna3 =
-      'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGTGAGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAGCTTTGGCGGCAGCTAGGGGAGGAT';
-
-    //test
-    expect(checkDnaInput(dna1, Molecule.Dna)).toBe(exp_dna1);
-    expect(checkDnaInput(dna2, Molecule.Dna)).toBe(exp_dna2);
-    expect(checkDnaInput(dna3, Molecule.Dna)).toBe(exp_dna3);
   });
 });

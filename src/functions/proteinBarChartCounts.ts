@@ -1,4 +1,4 @@
-export const countAAsOneLetter = (protein) => {
+export const countAAsOneLetter = (protein: string) => {
     // empty data
     let aaCountsSingleLetter = [
         { resi: 'A', count: 0 },

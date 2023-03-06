@@ -1,18 +1,12 @@
-import { Molecule, findMatches } from "./utilFunctions";
+import { Molecule, findMatches, sanitiseInput } from "./utilFunctions";
 
 export const checkProteinOneLetterInput = (proteinInput: string) => {
-  // ensure uppercase
-  const proteinUpper = proteinInput.toUpperCase();
-  //remove any line breaks
-  const protein = proteinUpper.replace(/[\r\n]/gm, '');
-  
+  const protein = sanitiseInput(proteinInput);
   if (protein === '') {
     return '';
   } else {
-    // if protein is in single letter format, create array and check for non-natural AA input
-    let proteinArray = [];
-    // convert to array
-    proteinArray = Array.from(protein);
+    // if protein is in single letter format, convert to array and check for non-natural AA input
+    const proteinArray = Array.from(protein);
     // check array is entirely composed of natural AAs (ARNDCEQGHILKMFPSTWYV)
     for (let resi of proteinArray) {
       if (findMatches(protein, Molecule.Protein))

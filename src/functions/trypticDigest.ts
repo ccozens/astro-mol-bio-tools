@@ -1,4 +1,4 @@
-export const TrypticDigest = (protein: string) => {
+export const Digest = (protein: string) => {
 
     const proteinArray = Array.from(protein);
     // cleave where K or R are present, except where either is adjacent to P

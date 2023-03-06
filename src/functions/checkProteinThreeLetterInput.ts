@@ -1,14 +1,15 @@
 import { aaThreeOneLetterNames } from './lookupTables'
+import { sanitiseInput } from './utilFunctions';
 
-export const checkProteinThreeLetterInput = (input: string) => {
+export const checkProteinThreeLetterInput = (proteinInput: string) => {
 
-  if (input === '') {
+  if (proteinInput === '') {
     return '';
   } else {
-    //remove any line breaks
-    const protein = input.replace(/[\r\n]/gm, '');
+    const protein = sanitiseInput(proteinInput);
+
     // convert to three letter array and check for non-AA content
-  let proteinArray = [];
+  const proteinArray = [];
   for (let i = 0; i < protein.length; i += 3) {
     proteinArray.push(protein.substring(i, i + 3));
   }

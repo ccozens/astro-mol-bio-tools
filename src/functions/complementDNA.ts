@@ -1,5 +1,5 @@
 import { Molecule } from './utilFunctions';
-import { checkDnaInput } from './checkDnaInput';
+import { checkDnaInput } from './checkCheckDnaInput';
 
 export function complementDNA(dna: string) {
   const checkedDna = checkDnaInput(dna, Molecule.Dna);

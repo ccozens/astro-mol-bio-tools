@@ -181,6 +181,29 @@ export const aaThreeOneLetterNames: Record<string, string> = {
   Val: 'V',
 };
 
+export const aaOneThreeLetterNames: Record<string, string> = {
+  A: 'Ala',
+  R: 'Arg',
+  N: 'Asn',
+  D: 'Asp',
+  C: 'Cys',
+  E: 'Glu',
+  Q: 'Gln',
+  G: 'Gly',
+  H: 'His',
+  I: 'Ile',
+  L: 'Leu',
+  K: 'Lys',
+  M: 'Met',
+  F: 'Phe',
+  P: 'Pro',
+  S: 'Ser',
+  T: 'Thr',
+  W: 'Trp',
+  Y: 'Tyr',
+  V: 'Val'
+};
+
 // nucleotide MWs (from Ambion)
 export const ntMW: Record<string, number> = {
   ATP: 507.2,
