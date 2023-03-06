@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1678104987356" clover="3.2.0">
-  <project timestamp="1678104987356" name="All files">
-    <metrics statements="839" coveredstatements="581" conditionals="109" coveredconditionals="96" methods="43" coveredmethods="33" elements="991" coveredelements="710" complexity="0" loc="839" ncloc="839" packages="2" files="17" classes="17"/>
+<coverage generated="1678106981339" clover="3.2.0">
+  <project timestamp="1678106981339" name="All files">
+    <metrics statements="825" coveredstatements="625" conditionals="121" coveredconditionals="107" methods="46" coveredmethods="40" elements="992" coveredelements="772" complexity="0" loc="825" ncloc="825" packages="2" files="17" classes="17"/>
     <package name="components">
       <metrics statements="18" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="Greeting.tsx" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/components/Greeting.tsx">
@@ -27,7 +27,7 @@
       </file>
     </package>
     <package name="functions">
-      <metrics statements="821" coveredstatements="581" conditionals="108" coveredconditionals="96" methods="42" coveredmethods="33"/>
+      <metrics statements="807" coveredstatements="625" conditionals="120" coveredconditionals="107" methods="45" coveredmethods="40"/>
       <file name="checkCheckDnaInput.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/checkCheckDnaInput.ts">
         <metrics statements="20" coveredstatements="19" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -352,7 +352,7 @@
         <line num="49" count="0" type="stmt"/>
       </file>
       <file name="lookupTables.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/lookupTables.ts">
-        <metrics statements="255" coveredstatements="251" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="4"/>
+        <metrics statements="255" coveredstatements="253" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -418,7 +418,7 @@
         <line num="63" count="1" type="stmt"/>
         <line num="64" count="1" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
+        <line num="66" count="177" type="cond" truecount="1" falsecount="0"/>
         <line num="67" count="1" type="stmt"/>
         <line num="68" count="1" type="stmt"/>
         <line num="69" count="1" type="stmt"/>
@@ -485,7 +485,7 @@
         <line num="130" count="1" type="stmt"/>
         <line num="131" count="1" type="stmt"/>
         <line num="132" count="1" type="stmt"/>
-        <line num="133" count="0" type="stmt"/>
+        <line num="133" count="177" type="cond" truecount="1" falsecount="0"/>
         <line num="134" count="1" type="stmt"/>
         <line num="135" count="1" type="stmt"/>
         <line num="136" count="1" type="stmt"/>
@@ -700,7 +700,7 @@
         <line num="87" count="2" type="stmt"/>
         <line num="88" count="2" type="cond" truecount="1" falsecount="0"/>
       </file>
-      <file name="reverse-complement-function.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/reverse-complement-function.ts">
+      <file name="reverseComplementFunction.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/reverseComplementFunction.ts">
         <metrics statements="17" coveredstatements="14" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -720,69 +720,55 @@
         <line num="16" count="3" type="stmt"/>
         <line num="17" count="3" type="cond" truecount="1" falsecount="0"/>
       </file>
-      <file name="transcribe-function.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/transcribe-function.ts">
-        <metrics statements="5" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="2" count="0" type="stmt"/>
+      <file name="transcribeFunction.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/transcribeFunction.ts">
+        <metrics statements="5" coveredstatements="4" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="3" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="cond" truecount="1" falsecount="0"/>
       </file>
-      <file name="translate-function.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/translate-function.ts">
-        <metrics statements="53" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
+      <file name="translateFunction.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/translateFunction.ts">
+        <metrics statements="39" coveredstatements="38" conditionals="9" coveredconditionals="7" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="12" type="cond" truecount="0" falsecount="1"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="12" type="cond" truecount="0" falsecount="1"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="23" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="354" type="stmt"/>
+        <line num="25" count="354" type="stmt"/>
+        <line num="26" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="177" type="stmt"/>
+        <line num="30" count="177" type="stmt"/>
+        <line num="31" count="6" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="33" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="177" type="stmt"/>
+        <line num="35" count="177" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="37" count="12" type="stmt"/>
+        <line num="38" count="12" type="stmt"/>
+        <line num="39" count="12" type="cond" truecount="1" falsecount="0"/>
       </file>
       <file name="trypticDigest.ts" path="/Users/learning/Documents/projects/astro-mol-bio-tools/src/functions/trypticDigest.ts">
         <metrics statements="14" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
