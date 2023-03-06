@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 // import modules to test
-import { reverseComplementDNA } from '../../src/functions/reverse-complement-function';
+import { reverseComplementDNA } from '../../src/functions/reverseComplementFunction';
 
 // tbj-tab for test block
 
