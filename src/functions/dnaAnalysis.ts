@@ -1,9 +1,11 @@
-import { countNucleotides } from './count-nt';
+import { countNucleotides } from './utilFunctions';
+import { transcribe } from './transcribeFunction';
 import { ntMW } from './lookupTables';
 
 // approx MW
 export const approxRnaMw = (dna: string) => {
-  return dna.length * ntMW.N + 159;
+  const rna = transcribe(dna);
+  return rna.length * ntMW.N + 159;
 };
 
 export const approxSsDnaMw = (dna: string) => {
@@ -15,6 +17,22 @@ export const approxDsDnaMw = (dna: string) => {
 };
 
 // exact MW
+
+export const exactRnaMw = (dna: string) => {
+  const rna = transcribe(dna);
+  let rnaArray = Array.from(rna);
+  // calc MW
+  let rnaMW = 0;
+  rnaArray.forEach((pos) => {
+    rnaMW += ntMW[pos];
+  });
+  const phosphate = ntMW.monophosphate;
+  let finalRnaMW = rnaMW + phosphate;
+
+  return finalRnaMW;
+};
+
+
 export const exactSsDnaMw = (dna: string) => {
   let dnaArray = Array.from(dna).map((char) => 'd' + char); // map appends d to each nt so DNA nts lookedup
   // calc MW
