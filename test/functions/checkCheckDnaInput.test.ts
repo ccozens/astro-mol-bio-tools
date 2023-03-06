@@ -1,6 +1,6 @@
 // import modules to test
 import { Molecule } from '../../src/functions/utilFunctions';
-import { checkDnaInput } from '../../src/functions/checkCheckDnaInput';
+import { checkDnaInput } from '../../src/functions/checkDnaInput';
 import { describe, test, expect } from 'vitest';
 
 // tbj-tab for test block

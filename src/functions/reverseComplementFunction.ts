@@ -1,5 +1,5 @@
 import { Molecule } from './utilFunctions';
-import { checkDnaInput } from './checkCheckDnaInput';
+import { checkDnaInput } from './checkDnaInput';
 
 export const reverseComplementDNA = (dna: string) => {
   const checkedDna = checkDnaInput(dna, Molecule.Dna);
