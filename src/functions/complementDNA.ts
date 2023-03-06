@@ -3,9 +3,7 @@ import { checkDnaInput } from './checkCheckDnaInput';
 
 export function complementDNA(dna: string) {
   const checkedDna = checkDnaInput(dna, Molecule.Dna);
-  if (checkedDna.includes('Non-DNA')) {
-    return checkedDna;
-  }
+  if (checkedDna.includes('Non-DNA')) return checkedDna;
 
   const dnaArray = Array.from(checkedDna);
   let dnaComplementary: string[] = [];
