@@ -45,4 +45,19 @@ describe('translate should return correct amino acid string', () => {
     expect(translateDna(dna2, 'threeLetter', '.')).toBe(protein2_three_dot);
     expect(translateDna(dna2, 'threeLetter', '-')).toBe(protein2_three_dash);
   });
+
+  
+    test('translateDna should complain if DNA is not in triplets', () => {
+      //setup
+      const dna1 = 'TTAACCGG';
+      const dna2 =
+        'TCGTTAGATAGTCCCTTGCCGCCACCGGCCACGCCGCACAAGCCACCGCCGAGACCGGCGAGTCCGCGGACGCCGACCCACTCGCGTGCGCTCCGGCTCCGCCGTCGCACAAAGATCCAGCACCGCAGCCCGAAGGCCTCGAAACCGCCGTCGATCCCCTCCTAAA';
+      //expected
+      const error = 'DNA is not in triplets - please input sequence with complete triplets.'
+      //test
+      expect(translateDna(dna1, 'oneLetter', '')).toContain(error);
+      expect(translateDna(dna2, 'oneLetter', '')).toContain(error);
+      expect(translateDna(dna1, 'threeLetter', '')).toContain(error);
+      expect(translateDna(dna2, 'threeLetter', '')).toContain(error);
+      });
 });

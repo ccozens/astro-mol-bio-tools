@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for functions/checkProteinOneLetterInput.ts</title>
+    <title>Code coverage report for functions/checkDnaInput.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">functions</a> checkProteinOneLetterInput.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">functions</a> checkDnaInput.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.23% </span>
+                <span class="strong">95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>20/21</span>
+                <span class='fraction'>19/20</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.23% </span>
+                <span class="strong">95% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/21</span>
+                <span class='fraction'>19/20</span>
             </div>
         
             
@@ -83,48 +83,45 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">790x</span>
-<span class="cline-any cline-yes">790x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">582x</span>
+<span class="cline-any cline-yes">582x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">790x</span>
-<span class="cline-any cline-yes">790x</span>
-<span class="cline-any cline-yes">790x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Molecule, findMatches, sanitiseInput } from "./utilFunctions";
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">582x</span>
+<span class="cline-any cline-yes">582x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { findMatches, Molecule, sanitiseInput } from "./utilFunctions";
 &nbsp;
-export const checkProteinOneLetterInput = (proteinInput: string) =&gt; {
-  const protein = sanitiseInput(proteinInput);
-  if (protein === '') <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+export const checkDnaInput = (dnaInput: string, molecule: Molecule) =&gt; {
+  if (dnaInput === '') <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return '';</span>
   } else {
-    // if protein is in single letter format, convert to array and check for non-natural AA input
-    const proteinArray = Array.from(protein);
-    // check array is entirely composed of natural AAs (ARNDCEQGHILKMFPSTWYV)
-    for (let resi of proteinArray) {
-      if (findMatches(protein, Molecule.Protein))
-        return (
-          `Non-amino acid character entered, please enter only 20 natural residues.  Non-protein characters at positions: ${findMatches(protein, Molecule.Protein)}`) 
+    const dna = sanitiseInput(dnaInput);
+    // convert to array
+    const dnaArray = Array.from(dna);
+    // check array is entirely composed of ACTG
+    for (let nt of dnaArray) {
+      if (nt.match(/[^ACGT]/))
+        return `Non-DNA character entered, please enter ATCG only.  Non-DNA characters at positions: ${ findMatches(
+          dna, molecule
+        )}`;
     }
-&nbsp;
-    // return uppercase proteinInput if for loop exits successfully
-    return protein;
+    // return dnaUpper if for loop exits successfully
+    return dna;
   }
-  
 };
 &nbsp;</pre></td></tr></table></pre>
 
