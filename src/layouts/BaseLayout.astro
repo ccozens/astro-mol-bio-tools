@@ -7,30 +7,7 @@ const { pageTitle } = Astro.props;
 ---
 
 <style>
-  body {
-    display: grid;
-    grid-template-rows: 1fr 8fr 1fr;
-    grid-template: repeat(5, 1fr);
-  }
 
-  .titlebar {
-    
-    grid-row: 1 /1;
-    font-size: 4em;
-    text-align: center;
-    margin: auto 0.5em;
-    background-color: var(--heading);
-    box-shadow: 0em 0em 0.3em white;
-    border-radius: 0.2em;
-  }
-
-  main {
-    grid-row: 2 / 9;
-  }
-
-  footer {
-    grid-row: 10/10;
-  }
 </style>
 
 <html lang="en">
@@ -54,7 +31,9 @@ const { pageTitle } = Astro.props;
     <title>MolBioTools</title>
   </head>
   <body>
-    <h1 class="titlebar">{pageTitle}</h1>
+    <header>
+      <h1>{pageTitle}</h1>
+    </header>
     <main>
       <!-- <Navigation /> -->
       <slot />
