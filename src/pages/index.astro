@@ -3,11 +3,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
 
 const pageTitle = "MolBioTools";
+const proteinTools = [["One -> three / three -> one letter amino acid codes", "protParams"], ["Calculate MW", "protParams"], ["Calculate Extinction coefficients", "protParams"], ["Count amino acids", "protParams"], ["Trypsin digest", "trypsin"]];
+const dnaTools = [["Translate DNA to protein", "translate"], ["Transcribe DNA to RNA", "transcribe"], ["Reverse complement DNA", "reverseComplement"], ["DNA/RNA MW", "dnaParams"], ["Count Nucleotides", "dnaParams"], ["Calculate GC ratio", "dnaParams"],];
+const resources = [["Amino acid weights", "resources"], ["Nucleotide weights", "resources"], ["Codon tables", "resources"]];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
-	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+	<!-- <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]}  -->
+		<div>
+			<h2>What would you like to do?</h2>
+			<div>
+				<h3> Protein tools </h3>
+				<ul>
+					{proteinTools.map((tool) => <li> <a href={tool[1]}>{tool[0]}</a></li>)}
+				</ul>
+				<h3> DNA tools </h3>
+				<ul>
+					{dnaTools.map((tool) => <li> <a href={tool[1]}>{tool[0]}</a></li>)}
+				</ul>
+				<h3> Resources </h3>
+				<ul>
+					{resources.map((tool) => <li> <a href={tool[1]}>{tool[0]}</a></li>)}
+				</ul>
+			</div>
+		</div>
 
 </BaseLayout>
 
