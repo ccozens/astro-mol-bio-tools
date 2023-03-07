@@ -1,47 +1,116 @@
 ---
-const pageList: string[] = ['Home', 'About'];
+import '../styles/global.css';
+
+const proteinTools = [
+  [
+    'One -> three / three -> one letter amino acid codes',
+    'protParams',
+  ],
+  ['Calculate MW', 'protParams'],
+  ['Calculate Extinction coefficients', 'protParams'],
+  ['Count amino acids', 'protParams'],
+  ['Trypsin digest', 'trypsin'],
+];
+const dnaTools = [
+  ['Translate DNA to protein', 'translate'],
+  ['Transcribe DNA to RNA', 'transcribe'],
+  ['Reverse complement DNA', 'reverseComplement'],
+  ['DNA/RNA MW', 'dnaParams'],
+  ['Count Nucleotides', 'dnaParams'],
+  ['Calculate GC ratio', 'dnaParams'],
+];
+const resources = [
+  ['Amino acid weights', 'resources'],
+  ['Nucleotide weights', 'resources'],
+  ['Codon tables', 'resources'],
+];
 ---
 
 <style>
   /* container styles */
   .nav-links {
-    margin-top: 3em;
-    width: 20vw;
-    box-shadow: 0.2em 0em 0.3em white;
+    margin: 0 auto;
+    width: 80vw;
+    box-shadow: 0em 0em 0.3em white;
     border-radius: 0.5em;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-content: center;
+    background-color: var(--box-fill);
   }
 
   /* item styles */
-  .navItem {
-    color: var(--accent);
+  .toolSection {
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
-    font-size: 3em;
     text-align: center;
     width: 90%;
     margin: 10px 0px;
-    border-radius: 0.2em;
   }
 
+  /*-buttons styling */
+  .navItem {
+    width: 80%;
+    margin: 0.5em auto;
+    padding: 0.5em 0.1em;
+    background-color: var(--box-fill);  
+    border-radius: 0.5em;
+  }
+  
+  .navItem > a {
+    text-decoration: none;
+    color: var(--main);
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+  
   .navItem:hover {
-    box-shadow: 0em 0em 0.1em white;
-    background-color: var(--heading);
+    box-shadow: 0em 0em 0.3em white;
+    background-color: var(--main);
   }
+
+
 </style>
+
+
 <div class="nav-links">
-  {
-    pageList.map((page) =>
-      page === 'Home' ? (
-        <a class="navItem" href="/">
-          {page}
-        </a>
-      ) : (
-        <a class="navItem" href={page.toLowerCase()}>
-          {page}
-        </a>
-      )
-    )
-  }
+  <section class="toolSection">
+    <h2 class="section-h2">Protein tools</h2>
+    <div class="section-buttons">
+      {
+        proteinTools.map((tool) => (
+          <button class="navItem">
+            {' '}
+            <a href={tool[1]}>{tool[0]}</a>
+          </button>
+        ))
+      }
+    </div>
+  </section>
+  <section class="toolSection">
+    <h2 class="section-h2"> DNA tools</h2>
+    <div class="section-buttons">
+      {
+        dnaTools.map((tool) => (
+          <button class="navItem">
+            {' '}
+            <a href={tool[1]}>{tool[0]}</a>
+          </button>
+        ))
+      }
+    </div>
+  </section>
+  <section class="toolSection">
+    <h2 class="section-h2"> Resources</h2>
+    <div class="section-buttons">
+      {
+        resources.map((tool) => (
+          <button class="navItem">
+            {' '}
+            <a href={tool[1]}>{tool[0]}</a>
+          </button>
+        ))
+      }
+    </div>
+  </section>
 </div>

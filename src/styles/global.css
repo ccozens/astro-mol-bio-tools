@@ -1,15 +1,18 @@
+
 /* variables */
 :root {
     --bg-blue: hsl(270, 50%, 25%);
-    --box-fill: hsla(0, 0%, 50%, 0.1);
+    --box-fill: hsla(0, 0%, 100%, 0.1);
     --box-border: hsla(0, 0%, 50%, 0.2);
     --heading: hsla(0, 50%, 0%, 0.1);
-    --accent: hsl(42, 100%, 80%);
+    --accent: hsl(42, 100%, 50%);
+    --main: hsl(42, 100%, 75%);
 }
 
 /* styles */
 
 body,html {
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -21,6 +24,10 @@ html {
     background: linear-gradient(var(--bg-blue), black);
     display: grid;
     min-height: 100vh;
+}
+
+h1, h2 {
+    color: var(--accent);
 }
 
 p {
