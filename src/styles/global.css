@@ -3,7 +3,8 @@
 :root {
     --bg-blue: hsl(270, 50%, 25%);
     --box-fill: hsla(0, 0%, 100%, 0.1);
-    --box-border: hsla(0, 0%, 50%, 0.2);
+    --box-border: hsla(0, 0%, 70%, 0.5);
+    --box-highlight: hsla(42, 100%, 75%, 0.8);
     --heading: hsla(0, 50%, 0%, 0.1);
     --accent: hsl(42, 100%, 50%);
     --main: hsl(42, 100%, 75%);

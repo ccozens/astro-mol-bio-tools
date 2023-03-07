@@ -50,24 +50,27 @@ const resources = [
 
   /*-buttons styling */
   .navItem {
+    display: block;
     width: 80%;
     margin: 0.5em auto;
     padding: 0.5em 0.1em;
-    background-color: var(--box-fill);  
+    background-color: var(--box-fill);
+    border: solid 1px var(--box-border);
+    box-shadow: 0em 0em 0.3em var(--box-border);  
     border-radius: 0.5em;
-  }
-  
-  .navItem > a {
     text-decoration: none;
     color: var(--main);
-    font-size: 1.5em;
-    font-weight: 500;
+    font-size: 1.2em;
+    font-weight: 500
   }
   
   .navItem:hover {
     box-shadow: 0em 0em 0.3em white;
-    background-color: var(--main);
+    background-color: var(--box-highlight);
+    color: var(--bg-blue);
   }
+
+  
 
 
 </style>
@@ -79,10 +82,9 @@ const resources = [
     <div class="section-buttons">
       {
         proteinTools.map((tool) => (
-          <button class="navItem">
-            {' '}
-            <a href={tool[1]}>{tool[0]}</a>
-          </button>
+          
+            <a class="navItem" href={tool[1]}>{tool[0]}</a>
+          
         ))
       }
     </div>
@@ -92,10 +94,9 @@ const resources = [
     <div class="section-buttons">
       {
         dnaTools.map((tool) => (
-          <button class="navItem">
-            {' '}
-            <a href={tool[1]}>{tool[0]}</a>
-          </button>
+          
+            <a class="navItem" href={tool[1]}>{tool[0]}</a>
+          
         ))
       }
     </div>
@@ -105,10 +106,7 @@ const resources = [
     <div class="section-buttons">
       {
         resources.map((tool) => (
-          <button class="navItem">
-            {' '}
-            <a href={tool[1]}>{tool[0]}</a>
-          </button>
+            <a class="navItem" href={tool[1]}>{tool[0]}</a>
         ))
       }
     </div>
