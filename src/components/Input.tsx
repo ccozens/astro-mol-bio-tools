@@ -1,45 +1,38 @@
-import { useStore } from '@nanostores/react';
-import { atom } from 'nanostores';
 import { useState } from 'react';
+import { checkDnaInput } from '../functions/checkDnaInput';
+import { reverseComplementDNA } from '../functions/reverseComplementFunction';
+import { Molecule } from '../functions/utilFunctions';
+import CopyButton from '../components/CopyButton';
 
-export default function Input() {
+interface LabelProps {
+  ariaLabelContent: string;
+}
+export default function Input({ ariaLabelContent }: LabelProps) {
+  // store input, linked to textArea {value}
   const [input, setInput] = useState('');
+  // check input
+  const checkedInput = checkDnaInput(input, Molecule.Dna);
+  // reverse complement checked input
+  const reverseComplement = reverseComplementDNA(checkedInput);
 
-  const handleTextChange: React.ChangeEventHandler<
-    HTMLTextAreaElement
-  > = (event) => {
-    // set input to entered text
-    setInput(event.target.value);
-    console.log(input);
-  };
-
-  //   prevents text being reset when click out of textarea
-
-  // T-385 pass label and placeholderthrough props when instantiate
-  // const {label} = Astro.props;
-  const label = 'DNA input form for reverse complement';
+  // placeholder for form
   const placeholderText = 'Enter DNA here...';
   return (
     <div>
-
       <textarea
         id="textArea"
         className="textArea"
         value={input}
-        onChange={handleTextChange}
-        // onClick={handleClick}
-        // type="text"
-        aria-label={label}
+        onChange={(e) => setInput(e.target.value)}
+        aria-label={ariaLabelContent}
         autoFocus
         autoCorrect="off"
         placeholder={placeholderText}
         maxLength={10000}
       />
 
-        <div className="outputBox">
-
-        </div>
-
+      <div className="outputBox">{reverseComplement}</div>
+      <CopyButton copyButtonContent={reverseComplement} />
     </div>
   );
 }
