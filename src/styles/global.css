@@ -8,7 +8,6 @@
   --accent: hsl(42, 100%, 50%);
   --main: hsl(42, 100%, 75%);
   --scrollbarTrack: hsla(42, 100%, 75%, 0.5);
-  --scrollbarThumb: hsla(42, 100%, 75%, 0.5);
 }
 
 /* styles */
@@ -57,6 +56,12 @@ footer {
 h1,
 p {
   color: var(--accent);
+}
+
+.nav-links > hr {
+  width: 80%;
+  border: none;
+  border-top: 1px solid var(--scrollbarTrack);
 }
 
 /* styles for react components */
@@ -160,6 +165,12 @@ p {
   box-shadow: 0em 0em 0.3em white;
   background-color: var(--box-highlight);
   color: var(--bg-blue);
+}
+
+.homeLink {
+  text-align: center;
+  color: var(--accent);
+  font-size: 1em;
 }
 
 /* scrollbars */
