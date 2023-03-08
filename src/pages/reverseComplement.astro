@@ -2,10 +2,17 @@
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeButton from '../components/HomeButton.astro';
+import CopyButton from '../components/CopyButton.astro';
+import Input from '../components/Input';
 
 const pageTitle = 'Reverse complement DNA';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <section class="reactArea">
+
+    <Input client:load/>
+    <CopyButton />
+  </section>
   <HomeButton />
 </BaseLayout>
