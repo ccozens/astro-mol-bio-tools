@@ -114,6 +114,28 @@ p {
   overflow-y: auto;
 }
 
+.formatChooser {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 60vw;
+}
+
+.formatChooser__outFormat, .formatChooser__spacer {
+  color: var(--accent);
+  background: var(--box-fill);
+  border-radius: 0.5em;
+  padding: 0.5em 2em;
+  margin: 0 2em;
+}
+
+.formatChooser__outFormat > select, .formatChooser__spacer > select {
+  color: var(--accent);
+  background: var(--box-fill);
+  border-radius: 0.5em;
+  margin: 0 1em;
+}
+
+
 /* navbar styling, all pages except index.astro */
 
 /* nav styles */

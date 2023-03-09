@@ -1,4 +1,4 @@
-import { Molecule } from './utilFunctions';
+import { Molecule } from '../types';
 import { checkDnaInput } from './checkDnaInput';
 
 export function complementDNA(dna: string) {

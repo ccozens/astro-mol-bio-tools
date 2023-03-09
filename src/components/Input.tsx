@@ -23,7 +23,7 @@ export default function Input({
           onChange={(e) => setInput(e.target.value)}
           aria-label={ariaLabelContent}
           autoFocus
-          autoCorrect="off"
+          autoCorrect="new-password"
           placeholder={placeholderText}
           maxLength={10000}
         />

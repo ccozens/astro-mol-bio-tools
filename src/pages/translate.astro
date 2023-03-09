@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
 import PageLayout from '../layouts/PageLayout.astro';
-
+import FormatChooser from '../components/FormatChooser';
+import TranslateDna from '../components/TranslateDna';
 import Input from '../components/Input';
 
 const pageTitle = 'Translate DNA';
@@ -14,5 +15,7 @@ const pageTitle = 'Translate DNA';
       ariaLabelContent={'DNA input form for translate DNA'}
       placeholderText={'Enter DNA sequence here...'}
     />
+    <FormatChooser client:load/>
+    <TranslateDna client:load/>
   </section>
 </PageLayout>

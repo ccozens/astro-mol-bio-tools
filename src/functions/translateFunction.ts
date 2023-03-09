@@ -1,27 +1,36 @@
+import { checkDnaInput } from './checkDnaInput';
+import { Molecule } from '../types';
+import { formatChooserStore } from '../stores/formatChooserStore';
+
 import {
   codonToAATableOneLetter,
   codonToAATableThreeLetter,
 } from './lookupTables';
 
-export const translateDna = (
-  dna: string,
-  outFormat: string,
-  proteinJoin: string
-) => {
-  
+export const translateDna = (sanitisedInputFromStore: string) => {
+  // check input
+  const checkedInput = checkDnaInput(
+    sanitisedInputFromStore,
+    Molecule.Dna
+  );
+  if (checkedInput.includes('Non-DNA')) {
+    return checkedInput;
+  }
   const checkForTriplets = (dna: string) => {
     return dna.length % 3 === 0 ? true : false;
   };
 
+  // get format and joiner
+  const { outFormat, spacer } = formatChooserStore.get();
   let protein = [];
 
-  if (checkForTriplets(dna) === false) {
+  if (checkForTriplets(sanitisedInputFromStore) === false) {
     return 'DNA is not in triplets - please input sequence with complete triplets.';
   } else {
     // split into triplets
     const tripletArray: string[] = [];
-    for (let i = 0; i < dna.length; i += 3) {
-      tripletArray.push(dna.substring(i, i + 3));
+    for (let i = 0; i < sanitisedInputFromStore.length; i += 3) {
+      tripletArray.push(sanitisedInputFromStore.substring(i, i + 3));
     }
     if (outFormat === 'threeLetter') {
       // look up codons
@@ -35,5 +44,5 @@ export const translateDna = (
         }
     }
   }
-  return protein.join(proteinJoin);
+  return protein.join(spacer);
 };
