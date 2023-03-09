@@ -10,3 +10,5 @@ export default function TranscribeDna() {
 
   return <div className="outputBox">{transcribedDna}</div>;
 }
+
+
