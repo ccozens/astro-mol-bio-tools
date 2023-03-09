@@ -1,9 +1,9 @@
 ---
 import '../styles/global.css';
 import PageLayout from '../layouts/PageLayout.astro';
-import HomeButton from '../components/HomeButton.astro';
 
 import Input from '../components/Input';
+import ReverseComplement from '../components/reverseComplement';
 
 const pageTitle = 'Reverse complement DNA';
 ---
@@ -13,7 +13,8 @@ const pageTitle = 'Reverse complement DNA';
     <Input
       client:load
       ariaLabelContent={'DNA input form for reverse complement'}
+      placeholderText={'Enter DNA sequence here...'}
     />
+    <ReverseComplement client:load />
   </section>
-  <!-- <HomeButton /> -->
 </PageLayout>

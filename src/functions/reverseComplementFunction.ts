@@ -1,13 +1,13 @@
-import { Molecule } from './utilFunctions';
 import { checkDnaInput } from './checkDnaInput';
+import { Molecule } from '../types';
 
-export const reverseComplementDNA = (dna: string) => {
-  const checkedDna = checkDnaInput(dna, Molecule.Dna);
-  if (checkedDna.includes('Non-DNA')) {
-    return checkedDna;
-  }
+export const reverseComplementDNA = (sanitisedInputFromStore: string) => {
+    // check input
+    const checkedInput = checkDnaInput(sanitisedInputFromStore, Molecule.Dna);
+    if (checkedInput.includes('Non-DNA')) {
+       return checkedInput; }
 
-  const splitDna = checkedDna.split('');
+  const splitDna = checkedInput.split('');
   const compDnaArray = splitDna.map((nt) => {
     return { A: 'T', T: 'A', C: 'G', G: 'C' }[nt];
   });

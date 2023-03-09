@@ -1,7 +1,4 @@
-export enum Molecule {
-  Protein,
-  Dna,
-}
+import { Molecule } from '../types';
 
 export const findMatches = (input: string, molecule: Molecule) => {
   let searchRegex: RegExp =

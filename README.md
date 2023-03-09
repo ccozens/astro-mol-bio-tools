@@ -1,4 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bb012ed8-f9cd-4886-ab02-db3e5ddb470b/deploy-status)](https://app.netlify.com/sites/courageous-beignet-84c536/deploys)<br/>
 [![codecov](https://codecov.io/gh/ccozens/astro-mol-bio-tools/branch/main/graph/badge.svg?token=MOQG6B9UNU)](https://codecov.io/gh/ccozens/astro-mol-bio-tools)
+
 
 # Rebuild!
 
