@@ -1,10 +1,10 @@
 import {
-  Molecule,
   findMatches,
   sanitiseInput,
   countNucleotides,
   countAminoAcids,
 } from '../../src/functions/utilFunctions';
+import { Molecule } from '../../src/types';
 import { tgo } from '../../src/functions/lookupTables';
 import { describe, test, expect } from 'vitest';
 

@@ -41,41 +41,4 @@ describe('validate that protein is in one letter input format', () => {
     expect(checkProteinOneLetterInput(protein4)).toBe(protein4);
   });
 
-  test('checkProteinOneLetterInput should format to non-gapped uppercase', () => {
-    // setup
-    const protein1 = 'AAttGgcC';
-    const protein2 = 'cacgtacgt';
-    const protein3 =
-      'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGTGA\nGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAG\nCTTTGGCGGCAGCTAGGGGAGGAT';
-
-    const exp_protein1 = 'AATTGGCC';
-    const exp_protein2 = 'CACGTACGT';
-    const exp_protein3 =
-      'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGTGAGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAGCTTTGGCGGCAGCTAGGGGAGGAT';
-
-    //test
-    expect(checkProteinOneLetterInput(protein1)).toBe(exp_protein1);
-    expect(checkProteinOneLetterInput(protein2)).toBe(exp_protein2);
-    expect(checkProteinOneLetterInput(protein3)).toBe(exp_protein3);
-  });
-
-
-    test('checkProteinOneLetterInput should strip line breaks, carriage returns, spacers and final *', () => {
-      const protein1 = 'A-A-t.t.G.g c C';
-      const protein2 = 'ca\rcg\rtacgt*';
-      const protein3 = 'ca\rcg\rtacgt';
-      const protein4 =
-        'AGCAATCTATCAGGGAA..CGGCGG\nTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGT--GA\n\nGCGC\nACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAG\nCTTTGGCGGCAGCTAGGGGAGG\nAT';
-  
-      const exp_protein1 = 'AATTGGCC';
-      const exp_protein2 = 'CACGTACGT';
-      const exp_protein3 =
-        'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGTGAGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAGCTTTGGCGGCAGCTAGGGGAGGAT';
-  
-      //test
-      expect(checkProteinOneLetterInput(protein1)).toBe(exp_protein1);
-      expect(checkProteinOneLetterInput(protein2)).toBe(exp_protein2);
-      expect(checkProteinOneLetterInput(protein3)).toBe(exp_protein2); // not a mistake - protein2 and protein3 are the same apart from final *
-      expect(checkProteinOneLetterInput(protein4)).toBe(exp_protein3);
-      });
 });

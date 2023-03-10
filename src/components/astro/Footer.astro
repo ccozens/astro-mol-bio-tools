@@ -1,0 +1,101 @@
+---
+import astro from '../../icons/astro.svg';
+import typescript from '../../icons/typescript.svg';
+import react from '../../icons/react.svg';
+import netlify from '../../icons/netlify.svg';
+import github from '../../icons/github.svg';
+import profile from '../../icons/profile.svg';
+import email from '../../icons/email.svg';
+---
+
+<style>
+  footer {
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(white, 10%, black);
+    posiiton: fixed;
+    bottom: 0px;
+  }
+
+  img {
+    height: 0.8em;
+    vertical-align: middle;
+  }
+
+
+  .invert {
+    -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+    filter: invert(100%);
+  }
+
+  .footerItem {
+    background: ;
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 0.5em;
+    padding: 0 2em;
+  }
+
+  .footerItem:hover {
+    box-shadow: 0em 0em 0.1em white;
+    background-color: hsla(42, 100%, 80%, 0.5);
+    color: black;
+  }
+</style>
+
+<footer>
+    
+    <a
+    class="footerItem"
+    href="https://astro.build/"
+    aria-label="Link to astro.build"
+    >
+    <img src={astro} alt="astro logo" /> astro</a
+    >
+    <a
+    class="footerItem"
+    href="https://typescriptlang.org/"
+    aria-label="link to typescriptlang.org"
+    ><img
+    src={typescript}
+    alt="typescript logo"
+    /> TypeScript</a
+    >
+    <a
+    class="footerItem"
+    href="https://reactjs.org/"
+    aria-label="link to reactjs.org"
+    ><img
+    src={react}
+    alt="react logo"
+    /> React</a
+    >
+    <a
+    class="footerItem"
+    href="https://netlify.com/"
+    aria-label="link to netlify.com"
+    ><img src={netlify} alt="netlify logo" /> Netlify</a
+    >
+    <a
+    class="footerItem"
+    href="https://github.com/ccozens/astro-mol-bio-tools"
+    aria-label="link to github.com/ccozens/astro-mol-bio-tools"
+    ><img class="invert" src={github} alt="github logo" /> Code</a
+  >
+  <a
+    class="footerItem"
+    href="www.chriscozens.uk"
+    aria-label="link to my personal page: www.chriscozens.uk"
+    ><img
+      class="invert"
+      src={profile}
+      alt="profile logo"
+    /> About me</a
+  >
+  <a
+    class="footerItem"
+    href="mailto: officechrisgarden@gmail.com"
+    aria-label="email link to officechrisgarden@gmail.com"
+    ><img class="invert" src={email} alt="email logo" /> Email</a
+  >
+</footer>

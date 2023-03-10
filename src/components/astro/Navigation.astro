@@ -1,0 +1,70 @@
+---
+import '../../styles/global.css';
+
+const proteinTools = [
+  [
+    'One -> three / three -> one letter amino acid codes',
+    'protParams',
+  ],
+  ['Calculate MW', 'protParams'],
+  ['Calculate Extinction coefficients', 'protParams'],
+  ['Count amino acids', 'protParams'],
+  ['Trypsin digest', 'trypsin'],
+];
+const dnaTools = [
+  ['Translate DNA to protein', 'translate'],
+  ['Transcribe DNA to RNA', 'transcribe'],
+  ['Reverse complement DNA', 'reverseComplement'],
+  ['DNA/RNA MW', 'dnaParams'],
+  ['Count Nucleotides', 'dnaParams'],
+  ['Calculate GC ratio', 'dnaParams'],
+];
+const resources = [
+  ['Amino acid weights', 'resources'],
+  ['Nucleotide weights', 'resources'],
+  ['Codon tables', 'resources'],
+];
+---
+
+<div class="nav-links">
+  <a class="navItem homeLink" href="/"> Home</a>
+  <hr />
+  <section class="toolSection">
+    <p class="section-p">Protein tools</p>
+    <div class="section-buttons">
+      {
+        proteinTools.map((tool) => (
+          <a class="navItem" href={tool[1]}>
+            {tool[0]}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+  <hr />
+  <section class="toolSection">
+    <p class="section-p">DNA tools</p>
+    <div class="section-buttons">
+      {
+        dnaTools.map((tool) => (
+          <a class="navItem" href={tool[1]}>
+            {tool[0]}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+  <hr />
+  <section class="toolSection">
+    <p class="section-p">Resources</p>
+    <div class="section-buttons">
+      {
+        resources.map((tool) => (
+          <a class="navItem" href={tool[1]}>
+            {tool[0]}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</div>

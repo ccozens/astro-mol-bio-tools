@@ -1,5 +1,5 @@
 // import modules to test
-import { Molecule } from '../../src/functions/utilFunctions';
+import { Molecule } from '../../src/types';
 import { checkDnaInput } from '../../src/functions/checkDnaInput';
 import { describe, test, expect } from 'vitest';
 
