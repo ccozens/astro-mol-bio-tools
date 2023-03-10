@@ -114,6 +114,32 @@ p {
   overflow-y: auto;
 }
 
+.outputBox {
+  display: flex;
+}
+
+.innerOutputBox {
+  color: var(--accent);
+  background: var(--box-fill);
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+}
+
+.countHeading {
+  margin: 0.2em 0;
+}
+
+.countItem {
+  margin: 0;
+}
+
+
+
 .formatChooser {
   display: flex;
   justify-content: space-evenly;

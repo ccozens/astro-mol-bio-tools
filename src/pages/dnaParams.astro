@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 import PageLayout from '../layouts/PageLayout.astro';
-
 import Input from '../components/react/Input';
+import CountNucleotides from '../components/react/CountNucletides';
 
 const pageTitle = 'DNA parameters';
 ---
@@ -14,5 +14,12 @@ const pageTitle = 'DNA parameters';
       ariaLabelContent={'DNA input form for DNA parameters'}
       placeholderText={'Enter DNA sequence here...'}
     />
+    <div class="outputBox">
+      <CountNucleotides
+        client:load
+        ariaLabelContent={'Nucleotide counts'} />
+  
+    </div>
+    
   </section>
 </PageLayout>

@@ -1,5 +1,5 @@
 import { aaOneThreeLetterNames } from './lookupTables';
-import { sanitiseInput } from './utilFunctions';
+import { sanitiseInput } from './utilFunctions/sanitiseInput';
 
 export const convertOneToThreeLetter = (proteinInput: string) => {
   const protein = sanitiseInput(proteinInput);

@@ -1,4 +1,4 @@
-import { countNucleotides } from './utilFunctions';
+import { countAminoAcids } from './utilFunctions/countNucleotides';
 import { transcribe } from './transcribeFunction';
 import { ntMW } from './lookupTables';
 
@@ -31,7 +31,6 @@ export const exactRnaMw = (dna: string) => {
 
   return finalRnaMW;
 };
-
 
 export const exactSsDnaMw = (dna: string) => {
   let dnaArray = Array.from(dna).map((char) => 'd' + char); // map appends d to each nt so DNA nts lookedup

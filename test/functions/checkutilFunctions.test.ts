@@ -3,15 +3,15 @@ import {
   sanitiseInput,
   countNucleotides,
   countAminoAcids,
-} from '../../src/functions/utilFunctions';
+} from '../../src/functions/utilFunctions/findMatches';
 import { Molecule } from '../../src/types';
 import { tgo } from '../../src/functions/lookupTables';
 import { describe, test, expect } from 'vitest';
 
 const totalAAcount = (count: Record<string, number>) =>
-Object.values(count).reduce((accumulator, value) => {
-  return accumulator + value;
-}, 0);
+  Object.values(count).reduce((accumulator, value) => {
+    return accumulator + value;
+  }, 0);
 
 describe('test findMatches function', () => {
   test('returns nothing if all nts are valid DNA, case insensitive', () => {
@@ -144,14 +144,14 @@ describe('test sanitiseInput function', () => {
     const dna2 = 'CACGTACGT';
     const dna3 = tgo.dna;
     const dna4 =
-    'AAAAAAAAAAAAAAATAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA';
-    
+      'AAAAAAAAAAAAAAATAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA';
+
     //expect
     const ntCount1 = { A: 2, C: 2, G: 2, T: 2 };
     const ntCount2 = { A: 2, C: 3, G: 2, T: 2 };
     const ntCount3 = { A: 659, C: 562, G: 673, T: 428 };
     const ntCount4 = { A: 64, C: 1, G: 1, T: 1 };
-    
+
     test('countNucleotides should return correct nucleotide counts', () => {
       //test
       expect(countNucleotides(dna1)).toEqual(ntCount1);
@@ -161,8 +161,6 @@ describe('test sanitiseInput function', () => {
     });
 
     test('total amino acids counted by countAminoAcids should equal original protein length', () => {
-
-
       const total1 = totalAAcount(ntCount1);
       const total2 = totalAAcount(ntCount2);
       const total3 = totalAAcount(ntCount3);
@@ -174,7 +172,6 @@ describe('test sanitiseInput function', () => {
       expect(total3 === dna3.length).toBeTruthy;
       expect(total4 === dna4.length).toBeTruthy;
     });
-
   });
 
   describe('test countAminoAcids function', () => {
@@ -281,7 +278,5 @@ describe('test sanitiseInput function', () => {
       expect(countAminoAcids(protein3)).toEqual(aminoAcidCount3);
       expect(countAminoAcids(protein4)).toEqual(aminoAcidCount4);
     });
-
-
   });
 });

@@ -1,7 +1,7 @@
 import { convertThreeToOneLetter } from './convertThreeToOneLetter';
 import { computeProteinMW } from './computeProteinMW';
 import { absCoefficients } from './lookupTables';
-import { countAminoAcids } from './utilFunctions';
+import { countAminoAcids } from './utilFunctions/countAminoAcids';
 
 // destructure import
 const [extTyr, extTrp, extCys_paired, extCys_reduced] = [
@@ -15,9 +15,8 @@ const [extTyr, extTrp, extCys_paired, extCys_reduced] = [
 
 export const computeExtinctionCoefficients = (
   protein: string,
-  outFormat: string,
+  outFormat: string
 ) => {
-
   if (outFormat === 'threeLetter') {
     protein = convertThreeToOneLetter(protein);
   }
@@ -28,21 +27,18 @@ export const computeExtinctionCoefficients = (
   // count amino acids
   const aminoAcidCounts = countAminoAcids(protein);
 
-
   const extinctionCoefficientCysPaired =
     aminoAcidCounts.W * extTrp + // number tryptophans
     aminoAcidCounts.Y * extTyr + // number tyrosines
     (aminoAcidCounts.C + extCys_paired); // number cysteines
 
   const extinctionCoefficientCysReduced =
-  aminoAcidCounts.W * extTrp +
-  aminoAcidCounts.Y * extTyr +
+    aminoAcidCounts.W * extTrp +
+    aminoAcidCounts.Y * extTyr +
     (aminoAcidCounts.C + extCys_reduced);
 
   const absCysPaired = extinctionCoefficientCysPaired / proteinMW;
   const absCysReduced = extinctionCoefficientCysReduced / proteinMW;
 
-  return (
-   { absCysPaired, absCysReduced}
-  );
+  return { absCysPaired, absCysReduced };
 };

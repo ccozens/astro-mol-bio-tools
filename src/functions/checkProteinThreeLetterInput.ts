@@ -1,5 +1,5 @@
 import { aaThreeOneLetterNames } from './lookupTables';
-import { sanitiseInput } from './utilFunctions';
+import { sanitiseInput } from './utilFunctions/sanitiseInput';
 
 export const checkProteinThreeLetterInput = (
   proteinInput: string

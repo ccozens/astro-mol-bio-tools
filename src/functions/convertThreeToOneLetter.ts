@@ -1,5 +1,5 @@
 import { aaThreeOneLetterNames } from './lookupTables';
-import { sanitiseInput } from './utilFunctions';
+import { sanitiseInput } from './utilFunctions/sanitiseInput';
 
 export const convertThreeToOneLetter = (proteinInput: string) => {
   const protein = sanitiseInput(proteinInput);
@@ -8,9 +8,11 @@ export const convertThreeToOneLetter = (proteinInput: string) => {
   for (let i = 0; i < protein.length; i += 3) {
     proteinArray.push(protein.substring(i, i + 3));
   }
-  
+
   // sanitiseInput capitalises whole string, so return chars 1+2 of each triplet to lower case
-  const titleCaseArray = proteinArray.map(aa => aa[0]+aa[1].toLowerCase()+aa[2].toLowerCase());
+  const titleCaseArray = proteinArray.map(
+    (aa) => aa[0] + aa[1].toLowerCase() + aa[2].toLowerCase()
+  );
 
   const oneLetterArr: string[] = [];
   titleCaseArray.map((aminoAcid) => {
@@ -19,4 +21,3 @@ export const convertThreeToOneLetter = (proteinInput: string) => {
   const oneLetterStr = oneLetterArr.join('');
   return oneLetterStr;
 };
-

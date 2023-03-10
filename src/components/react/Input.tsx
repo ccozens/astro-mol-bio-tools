@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { inputStore } from '../../stores/input';
-import { sanitiseInput } from '../../functions/utilFunctions';
+import { sanitiseInput } from '../../functions/utilFunctions/sanitiseInput';
 interface LabelProps {
   ariaLabelContent: string;
   placeholderText: string;
@@ -15,18 +15,18 @@ export default function Input({
   inputStore.set(sanitisedInput);
 
   return (
-      <div>
-        <textarea
-          id="textArea"
-          className="textArea"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          aria-label={ariaLabelContent}
-          autoFocus
-          autoCorrect="new-password"
-          placeholder={placeholderText}
-          maxLength={10000}
-        />
-      </div>
+    <div>
+      <textarea
+        id="textArea"
+        className="textArea"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        aria-label={ariaLabelContent}
+        autoFocus
+        autoCorrect="new-password"
+        placeholder={placeholderText}
+        maxLength={10000}
+      />
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import { findMatches } from './utilFunctions';
+import { findMatches } from './utilFunctions/findMatches';
 import type { Molecule } from '../types';
 
 export const checkDnaInput = (
