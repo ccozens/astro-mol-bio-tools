@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>28/28</span>
+                <span class='fraction'>0/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/28</span>
+                <span class='fraction'>0/28</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -91,62 +91,62 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">412x</span>
-<span class="cline-any cline-yes">412x</span>
-<span class="cline-any cline-yes">360x</span>
-<span class="cline-any cline-yes">412x</span>
-<span class="cline-any cline-yes">79x</span>
-<span class="cline-any cline-yes">79x</span>
-<span class="cline-any cline-yes">412x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">83x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">83x</span>
-<span class="cline-any cline-yes">83x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const trypticDigest = (protein: string) =&gt; {
-  const proteinArray = Array.from(protein);
-  // cleave where K or R are present, except where either is adjacent to P
-  let trypsinSites: number[] = [0];
-  let trypsinFragments: string[] = [];
-&nbsp;
-  // list out K + R sites, adding 1 to index as trypsin cuts after K/R
-  proteinArray.forEach((pos, idx) =&gt; {
-    if (
-      (proteinArray[idx + 1] !== 'P' &amp;&amp; pos === 'K') ||
-      (proteinArray[idx + 1] !== 'P' &amp;&amp; pos === 'R')
-    ) {
-      trypsinSites.push(idx + 1);
-    }
-  });
-  // make cuts and store fragments
-  trypsinSites.forEach((pos, idx) =&gt;
-    trypsinFragments.push(protein.slice(pos, trypsinSites[idx + 1]))
-  );
-&nbsp;
-  const trypsinSummary = trypsinSites.map(
-    (pos, idx) =&gt;
-      trypsinFragments[idx].charAt(trypsinFragments[idx].length - 1) +
-      trypsinSites[idx + 1]
-  ).slice(0, -1); // last item is undefined and unrequired so this trims off
-&nbsp;
-  return { trypsinSummary, trypsinSites, trypsinFragments };
-};
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >export const trypticDigest = (protein: string) =&gt; {</span></span></span>
+<span class="cstat-no" title="statement not covered" >  const proteinArray = Array.from(protein);</span>
+<span class="cstat-no" title="statement not covered" >  // cleave where K or R are present, except where either is adjacent to P</span>
+<span class="cstat-no" title="statement not covered" >  let trypsinSites: number[] = [0];</span>
+<span class="cstat-no" title="statement not covered" >  let trypsinFragments: string[] = [];</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // list out K + R sites, adding 1 to index as trypsin cuts after K/R</span>
+<span class="cstat-no" title="statement not covered" >  proteinArray.forEach((pos, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (</span>
+<span class="cstat-no" title="statement not covered" >      (proteinArray[idx + 1] !== 'P' &amp;&amp; pos === 'K') ||</span>
+<span class="cstat-no" title="statement not covered" >      (proteinArray[idx + 1] !== 'P' &amp;&amp; pos === 'R')</span>
+<span class="cstat-no" title="statement not covered" >    ) {</span>
+<span class="cstat-no" title="statement not covered" >      trypsinSites.push(idx + 1);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cstat-no" title="statement not covered" >  // make cuts and store fragments</span>
+<span class="cstat-no" title="statement not covered" >  trypsinSites.forEach((pos, idx) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    trypsinFragments.push(protein.slice(pos, trypsinSites[idx + 1]))</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  const trypsinSummary = trypsinSites.map(</span>
+<span class="cstat-no" title="statement not covered" >    (pos, idx) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >      trypsinFragments[idx].charAt(trypsinFragments[idx].length - 1) +</span>
+<span class="cstat-no" title="statement not covered" >      trypsinSites[idx + 1]</span>
+<span class="cstat-no" title="statement not covered" >  ).slice(0, -1); // last item is undefined and unrequired so this trims off</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  return { trypsinSummary, trypsinSites, trypsinFragments };</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -154,7 +154,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-09T14:32:00.493Z
+                at 2023-03-10T11:37:26.564Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

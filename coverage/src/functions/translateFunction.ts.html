@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>40/48</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.72% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/11</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>40/48</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,102 +111,102 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { checkDnaInput } from './checkDnaInput';
-import { Molecule } from '../types';
-import { formatChooserStore } from '../stores/formatChooserStore';
-&nbsp;
-import {
-  codonToAATableOneLetter,
-  codonToAATableThreeLetter,
-} from './lookupTables';
-&nbsp;
-export const translateDna = (sanitisedInputFromStore: string) =&gt; {
-  // check input
-  const checkedInput = checkDnaInput(
-    sanitisedInputFromStore,
-    Molecule.Dna
-  );
-  if (checkedInput.includes('Non-DNA')) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { checkDnaInput } from './checkDnaInput';</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { Molecule } from '../types';</span>
+<span class="cstat-no" title="statement not covered" >import { formatChooserStore } from '../stores/formatChooserStore';</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cstat-no" title="statement not covered" >  codonToAATableOneLetter,</span>
+<span class="cstat-no" title="statement not covered" >  codonToAATableThreeLetter,</span>
+<span class="cstat-no" title="statement not covered" >} from './lookupTables';</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const translateDna = (sanitisedInputFromStore: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  // check input</span>
+<span class="cstat-no" title="statement not covered" >  const checkedInput = checkDnaInput(</span>
+<span class="cstat-no" title="statement not covered" >    sanitisedInputFromStore,</span>
+<span class="cstat-no" title="statement not covered" >    Molecule.Dna</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >  if (checkedInput.includes('Non-DNA')) {</span>
 <span class="cstat-no" title="statement not covered" >    return checkedInput;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  const checkForTriplets = (dna: string) =&gt; {
-    return dna.length % 3 === 0 ? true : false;
-  };
-&nbsp;
-  // get format and joiner
-  const { outFormat, spacer } = formatChooserStore.get();
-  let protein = [];
-&nbsp;
-  if (checkForTriplets(sanitisedInputFromStore) === false) {
-    return 'DNA is not in triplets - please input sequence with complete triplets.';
-  } else {
-    // split into triplets
-    const tripletArray: string[] = [];
-    for (let i = 0; i &lt; sanitisedInputFromStore.length; i += 3) {
-      tripletArray.push(sanitisedInputFromStore.substring(i, i + 3));
-    }
-    if (outFormat === 'threeLetter') <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  const checkForTriplets = (dna: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return dna.length % 3 === 0 ? true : false;</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // get format and joiner</span>
+<span class="cstat-no" title="statement not covered" >  const { outFormat, spacer } = formatChooserStore.get();</span>
+<span class="cstat-no" title="statement not covered" >  let protein = [];</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  if (checkForTriplets(sanitisedInputFromStore) === false) {</span>
+<span class="cstat-no" title="statement not covered" >    return 'DNA is not in triplets - please input sequence with complete triplets.';</span>
+<span class="cstat-no" title="statement not covered" >  } else {</span>
+<span class="cstat-no" title="statement not covered" >    // split into triplets</span>
+<span class="cstat-no" title="statement not covered" >    const tripletArray: string[] = [];</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; sanitisedInputFromStore.length; i += 3) {</span>
+<span class="cstat-no" title="statement not covered" >      tripletArray.push(sanitisedInputFromStore.substring(i, i + 3));</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (outFormat === 'threeLetter') {</span>
 <span class="cstat-no" title="statement not covered" >      // look up codons</span>
 <span class="cstat-no" title="statement not covered" >      for (let triplet of tripletArray) {</span>
 <span class="cstat-no" title="statement not covered" >        protein.push(codonToAATableThreeLetter[triplet]);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-    } else {
-      if (outFormat === 'oneLetter')
-<span class="branch-0 cbranch-no" title="branch not covered" >        for (let triplet of tripletArray) {</span>
+<span class="cstat-no" title="statement not covered" >    } else {</span>
+<span class="cstat-no" title="statement not covered" >      if (outFormat === 'oneLetter')</span>
+<span class="cstat-no" title="statement not covered" >        for (let triplet of tripletArray) {</span>
 <span class="cstat-no" title="statement not covered" >          protein.push(codonToAATableOneLetter[triplet]);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-    }
-  }
-  return protein.join(spacer);
-};
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return protein.join(spacer);</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -214,7 +214,7 @@ export const translateDna = (sanitisedInputFromStore: string) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-09T14:32:00.493Z
+                at 2023-03-10T11:37:26.564Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

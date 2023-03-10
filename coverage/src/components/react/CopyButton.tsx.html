@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/TranslateDna.tsx</title>
+    <title>Code coverage report for src/components/react/CopyButton.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> TranslateDna.tsx</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/components/react</a> CopyButton.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/30</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
@@ -87,12 +87,7 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -116,57 +111,47 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useStore } from '@nanostores/react';</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { translateDna } from '../functions/translateFunction';</span>
-<span class="cstat-no" title="statement not covered" >import { inputStore } from '../stores/input';</span>
-<span class="cstat-no" title="statement not covered" >import { formatChooserStore } from '../stores/formatChooserStore';</span>
-<span class="cstat-no" title="statement not covered" >import { useState, useEffect } from 'react';</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useState, MouseEvent } from 'react';</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default function TranslateDna() {</span>
-<span class="cstat-no" title="statement not covered" >  const sanitisedInputFromStore = useStore(inputStore);</span>
-<span class="cstat-no" title="statement not covered" >  const formatChoice = useStore(formatChooserStore);</span>
-<span class="cstat-no" title="statement not covered" >  const [translatedDna, setTranslatedDna] = useState('');</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setTranslatedDna(translateDna(sanitisedInputFromStore))},  [sanitisedInputFromStore, formatChoice]);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // reverse complement checked input</span>
-<span class="cstat-no" title="statement not covered" >  // const translatedDna = translateDna(sanitisedInputFromStore);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return &lt;div className="outputBox"&gt;{translatedDna}&lt;/div&gt;;</span>
+<span class="cstat-no" title="statement not covered" >interface CopyButtonContentProps {</span>
+<span class="cstat-no" title="statement not covered" >  copyButtonContent: string;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >export default function CopyText({</span>
+<span class="cstat-no" title="statement not covered" >  copyButtonContent,</span>
+<span class="cstat-no" title="statement not covered" >}: CopyButtonContentProps) {</span>
+<span class="cstat-no" title="statement not covered" >  const [copyButtonText, setCopyButtonText] = useState(</span>
+<span class="cstat-no" title="statement not covered" >    'Copy to Clipboard'</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  const handleClick = (e: MouseEvent) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >    navigator.clipboard.writeText(copyButtonContent);</span>
+<span class="cstat-no" title="statement not covered" >    setCopyButtonText('Copied!');</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >/*   // check input and format protein</span>
-<span class="cstat-no" title="statement not covered" >  const checkedProtein = checkProteinOneLetterInput(input);</span>
-<span class="cstat-no" title="statement not covered" >  const [protein, setProtein] = useState(checkedProtein);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // call setProtein to update protein when checked input, outFormat or spacer changes</span>
-<span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setProtein(checkedProtein);</span>
-<span class="cstat-no" title="statement not covered" >  }, [checkedProtein]); */</span></pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >  return (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;div className="copyButton componentButton" onClick={handleClick}&gt;</span>
+<span class="cstat-no" title="statement not covered" >      {copyButtonText}</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-09T14:32:00.493Z
+                at 2023-03-10T11:37:26.564Z
             </div>
-        <script src="../../prettify.js"></script>
+        <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
     </body>
 </html>
     

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>48/48</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>48/48</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,102 +111,102 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { convertThreeToOneLetter } from './convertThreeToOneLetter';
-import { computeProteinMW } from './computeProteinMW';
-import { absCoefficients } from './lookupTables';
-import { countAminoAcids } from './utilFunctions';
-&nbsp;
-// destructure import
-const [extTyr, extTrp, extCys_paired, extCys_reduced] = [
-  absCoefficients.extTyr,
-  absCoefficients.extTrp,
-  absCoefficients.extCys_paired,
-  absCoefficients.extCys_reduced,
-];
-&nbsp;
-// coefficients for proteins in water measured at 280 nm
-&nbsp;
-export const computeExtinctionCoefficients = (
-  protein: string,
-  outFormat: string,
-) =&gt; {
-&nbsp;
-  if (outFormat === 'threeLetter') {
-    protein = convertThreeToOneLetter(protein);
-  }
-&nbsp;
-  // call proteinMW
-  const proteinMW = computeProteinMW(Array.from(protein));
-&nbsp;
-  // count amino acids
-  const aminoAcidCounts = countAminoAcids(protein);
-&nbsp;
-&nbsp;
-  const extinctionCoefficientCysPaired =
-    aminoAcidCounts.W * extTrp + // number tryptophans
-    aminoAcidCounts.Y * extTyr + // number tyrosines
-    (aminoAcidCounts.C + extCys_paired); // number cysteines
-&nbsp;
-  const extinctionCoefficientCysReduced =
-  aminoAcidCounts.W * extTrp +
-  aminoAcidCounts.Y * extTyr +
-    (aminoAcidCounts.C + extCys_reduced);
-&nbsp;
-  const absCysPaired = extinctionCoefficientCysPaired / proteinMW;
-  const absCysReduced = extinctionCoefficientCysReduced / proteinMW;
-&nbsp;
-  return (
-   { absCysPaired, absCysReduced}
-  );
-};
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { convertThreeToOneLetter } from './convertThreeToOneLetter';</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { computeProteinMW } from './computeProteinMW';</span>
+<span class="cstat-no" title="statement not covered" >import { absCoefficients } from './lookupTables';</span>
+<span class="cstat-no" title="statement not covered" >import { countAminoAcids } from './utilFunctions';</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// destructure import</span>
+<span class="cstat-no" title="statement not covered" >const [extTyr, extTrp, extCys_paired, extCys_reduced] = [</span>
+<span class="cstat-no" title="statement not covered" >  absCoefficients.extTyr,</span>
+<span class="cstat-no" title="statement not covered" >  absCoefficients.extTrp,</span>
+<span class="cstat-no" title="statement not covered" >  absCoefficients.extCys_paired,</span>
+<span class="cstat-no" title="statement not covered" >  absCoefficients.extCys_reduced,</span>
+<span class="cstat-no" title="statement not covered" >];</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// coefficients for proteins in water measured at 280 nm</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const computeExtinctionCoefficients = (</span>
+<span class="cstat-no" title="statement not covered" >  protein: string,</span>
+<span class="cstat-no" title="statement not covered" >  outFormat: string,</span>
+<span class="cstat-no" title="statement not covered" >) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  if (outFormat === 'threeLetter') {</span>
+<span class="cstat-no" title="statement not covered" >    protein = convertThreeToOneLetter(protein);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // call proteinMW</span>
+<span class="cstat-no" title="statement not covered" >  const proteinMW = computeProteinMW(Array.from(protein));</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // count amino acids</span>
+<span class="cstat-no" title="statement not covered" >  const aminoAcidCounts = countAminoAcids(protein);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  const extinctionCoefficientCysPaired =</span>
+<span class="cstat-no" title="statement not covered" >    aminoAcidCounts.W * extTrp + // number tryptophans</span>
+<span class="cstat-no" title="statement not covered" >    aminoAcidCounts.Y * extTyr + // number tyrosines</span>
+<span class="cstat-no" title="statement not covered" >    (aminoAcidCounts.C + extCys_paired); // number cysteines</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  const extinctionCoefficientCysReduced =</span>
+<span class="cstat-no" title="statement not covered" >  aminoAcidCounts.W * extTrp +</span>
+<span class="cstat-no" title="statement not covered" >  aminoAcidCounts.Y * extTyr +</span>
+<span class="cstat-no" title="statement not covered" >    (aminoAcidCounts.C + extCys_reduced);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  const absCysPaired = extinctionCoefficientCysPaired / proteinMW;</span>
+<span class="cstat-no" title="statement not covered" >  const absCysReduced = extinctionCoefficientCysReduced / proteinMW;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  return (</span>
+<span class="cstat-no" title="statement not covered" >   { absCysPaired, absCysReduced}</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -214,7 +214,7 @@ export const computeExtinctionCoefficients = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-09T14:32:00.493Z
+                at 2023-03-10T11:37:26.564Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
