@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 // import modules to test
 import Input from '../../src/components/react/Input';
-import ReverseComplement from '../../src/components/react/ReverseComplement';
+import TranscribeDna from '../../src/components/react/TranscribeDna';
 
 // tbj-tab for test block
 
@@ -25,57 +25,58 @@ describe('test DNA reverse complement', () => {
   
 
     //define input
-    const dna = 'AATTGGCC';
+    const dna = 'TTAACCGG';
     // define expected output
-    const reverseComplementOfDna = 'GGCCAATT';
+    const rna = 'UUAACCGG';
     
     // enter DNA into input box
     await user.type(inputBox, dna);
     expect(inputBox).toHaveValue(dna);
     // render output
-    render(<ReverseComplement />);
+    render(<TranscribeDna />);
     
+
     //test
-    expect(screen.getByText(reverseComplementOfDna));
+    expect(screen.getByText(rna));
    
-  
+    
   });
 
   test('second test sequence', async() => {
     expect(inputBox).toHaveValue('');
     //define input
-    const dna = 'GTGCATGCA';
+    const dna = 'CACGTACGT';
     // define expected output
-    const reverseComplementOfDna = 'TGCATGCAC';
+    const rna = 'CACGUACGU';
 
     // enter DNA into input box
     await user.type(inputBox, dna);
     expect(inputBox).toHaveValue(dna);
     // render output
-    await render(<ReverseComplement />);
+    await render(<TranscribeDna />);
     
 
     //test
-    expect(screen.getByText(reverseComplementOfDna));
+    expect(screen.getByText(rna));
 
   });
 
   test('third test sequence', async() => {
 
     //define input
-    const dna = 'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGTGAGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAGCTTTGGCGGCAGCTAGGGGAGGAT';
+    const dna = 'TCGTTAGATAGTCCCTTGCCGCCACCGGCCACGCCGCACAAGCCACCGCCGAGACCGGCGAGTCCGCGGACGCCGACCCACTCGCGTGCGCTCCGCCGCTCCGCCGTCGCACAAAGATCCAGCACCGCAGCCCGAAGGCCTCGAAACCGCCGTCGATCCCCTCCTA';
     // define expected output
-    const reverseComplementOfDna = 'ATCCTCCCCTAGCTGCCGCCAAAGCTCCGGAAGCCCGACGCCACGACCTAGAAACACGCTGCCGCCTCGCCGCCTCGCGTGCGCTCACCCAGCCGCAGGCGCCTGAGCGGCCAGAGCCGCCACCGAACACGCCGCACCGGCCACCGCCGTTCCCTGATAGATTGCT';
+    const rna = 'UCGUUAGAUAGUCCCUUGCCGCCACCGGCCACGCCGCACAAGCCACCGCCGAGACCGGCGAGUCCGCGGACGCCGACCCACUCGCGUGCGCUCCGCCGCUCCGCCGUCGCACAAAGAUCCAGCACCGCAGCCCGAAGGCCUCGAAACCGCCGUCGAUCCCCUCCUA';
  
     
     // enter DNA into input box
     await user.type(inputBox, dna);
     expect(inputBox).toHaveValue(dna);
     // render output
-    await render(<ReverseComplement />);
+    await render(<TranscribeDna />);
  
 
     //test
-    expect(screen.getByText(reverseComplementOfDna));
+    expect(screen.getByText(rna));
   });
 });

@@ -42,7 +42,7 @@ export default function FormatChooser() {
             None (MILD...)
           </option>
           <option value=".">Period (M.I.L.D)</option>
-          <option value="-">Comma (M-I-L-D)</option>
+          <option value="-">Hyphen (M-I-L-D)</option>
           <option value=" ">Space (M I L D)</option>
         </select>
       </div>
