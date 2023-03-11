@@ -7,7 +7,7 @@ import {
   exactSsDnaMw,
   exactRnaMw,
   gcRatio,
-} from '../../src/functions/dnaAnalysis';
+} from '../../src/functions/dnaWeight';
 import { describe, test, expect } from 'vitest';
 
 // tbv-tab for test block

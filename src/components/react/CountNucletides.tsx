@@ -12,7 +12,6 @@ export default function CountNucleotides({
 }: LabelProps) {
   const sanitisedInputFromStore = useStore(inputStore);
   const ntCounts = countNucleotides(sanitisedInputFromStore);
-  const total = sanitisedInputFromStore.length;
 
   return (
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
@@ -20,7 +19,7 @@ export default function CountNucleotides({
       {Object.entries(ntCounts).map(([key, value]) => {
         return (
           <p className="countItem" key={key}>
-            {key}: {value}
+            {key}: {value.isInteger ? value : Number(value.toFixed(3))}
           </p>
         );
       })}

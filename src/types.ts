@@ -3,7 +3,7 @@ export enum Molecule {
     Dna,
   };
 
-  export interface NtCounts { A: number, C: number, G: number, T: number, Total: number };
+  export interface NtCounts { A: number, C: number, G: number, T: number, Total: number, GC: number };
 
   export interface AminoAcidCounts {
     A: number,

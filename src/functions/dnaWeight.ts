@@ -1,4 +1,3 @@
-import { countAminoAcids } from './utilFunctions/countNucleotides';
 import { transcribe } from './transcribeFunction';
 import { ntMW } from './lookupTables';
 
@@ -56,11 +55,4 @@ export const exactDsDnaMw = (dna: string) => {
   let finalDnaMW = (dnaMW + phosphate) * 2;
 
   return finalDnaMW;
-};
-
-export const gcRatio = (dna: string) => {
-  let ntCounts = countNucleotides(dna);
-  let gc = ntCounts.C + ntCounts.G;
-  let at = ntCounts.A + ntCounts.T;
-  return (gc / (gc + at)).toFixed(3);
 };
