@@ -1,18 +1,22 @@
 import { useStore } from '@nanostores/react';
 import { countNucleotides } from '../../functions/utilFunctions/countNucleotides';
 import { inputStore } from '../../stores/input';
+import { dnaRnaStore } from '../../stores/dnaRnaStore';
+import type { AriaLabelProps } from '../../types';
 
-
-interface LabelProps {
-  ariaLabelContent: string;
-}
 
 export default function CountNucleotides({
   ariaLabelContent,
-}: LabelProps) {
+}: AriaLabelProps) {
+  
+  const isDna = useStore(dnaRnaStore);
+  
   const sanitisedInputFromStore = useStore(inputStore);
   const ntCounts = countNucleotides(sanitisedInputFromStore);
+  
+  if (!isDna) {({})}
 
+  
   return (
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">Nucleotide Counts</p>

@@ -5,6 +5,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import Input from '../components/react/Input';
 import CountNucleotides from '../components/react/CountNucletides';
 import DnaWeight from '../components/react/DnaWeight';
+import { Molecule } from '../types';
 
 const pageTitle = 'DNA parameters';
 ---
@@ -15,6 +16,7 @@ const pageTitle = 'DNA parameters';
       client:load
       ariaLabelContent={'DNA input form for DNA parameters'}
       placeholderText={'Enter DNA sequence here...'}
+      inputType={Molecule.Dna}
     />
     <div class="outputBox">
       <CountNucleotides
@@ -24,6 +26,7 @@ const pageTitle = 'DNA parameters';
       client:load
         ariaLabelContent={'DNA weight'} />
     </div>
+    
 
     
   </section>

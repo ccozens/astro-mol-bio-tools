@@ -1,7 +1,11 @@
-export interface LabelProps {
+export interface InputLabelProps {
   ariaLabelContent: string;
   placeholderText: string;
   inputType: Molecule;
+}
+
+export interface AriaLabelProps {
+  ariaLabelContent: string;
 }
 
 export interface ErrorMessageProps {
@@ -15,6 +19,7 @@ export interface CopyButtonContentProps {
 export enum Molecule {
   Protein,
   Dna,
+  Rna,
 }
 
 export interface NtCounts {

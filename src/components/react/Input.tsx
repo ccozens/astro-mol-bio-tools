@@ -2,14 +2,13 @@ import { useState, ChangeEvent, useEffect } from 'react';
 import { inputStore } from '../../stores/input';
 import { sanitiseInput } from '../../functions/utilFunctions/sanitiseInput';
 import { checkDnaInput } from '../../functions/checkDnaInput';
-import type { Molecule } from '../../types';
-import type { LabelProps, ErrorMessageProps } from '../../types';
+import type { InputLabelProps, ErrorMessageProps } from '../../types';
 
 export default function Input({
   ariaLabelContent,
   placeholderText,
   inputType,
-}: LabelProps) {
+}: InputLabelProps) {
   const [input, setInput] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [isError, setIsError] = useState(false);

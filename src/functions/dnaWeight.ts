@@ -1,18 +1,31 @@
 import { transcribe } from './transcribeFunction';
 import { ntMW } from './lookupTables';
 
+// approx MW from length
+export const approxRnaFromLength = (len: number) => {
+  return len * ntMW.N + ntMW.triphosphate;
+}
+
+export const approxSsDnaFromLength = (len: number) => {
+  return len * ntMW.dN + ntMW.monophosphate;
+}
+
+export const approxDsDnaFromLength = (len: number) => {
+  return len * (ntMW.dN * 2) + (ntMW.monophosphate*2);
+}
+
 // approx MW
 export const approxRnaMw = (dna: string) => {
   const rna = transcribe(dna);
-  return rna.length * ntMW.N + 159;
+  return rna.length * ntMW.N + ntMW.triphosphate;
 };
 
 export const approxSsDnaMw = (dna: string) => {
-  return dna.length * ntMW.dN + 79;
+  return dna.length * ntMW.dN + ntMW.monophosphate;
 };
 
 export const approxDsDnaMw = (dna: string) => {
-  return dna.length * (ntMW.dN * 2) + 157.9;
+  return dna.length * (ntMW.dN * 2) + (ntMW.monophosphate*2);
 };
 
 // exact MW
