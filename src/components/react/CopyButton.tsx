@@ -3,7 +3,7 @@ import { useState, MouseEvent } from 'react';
 interface CopyButtonContentProps {
   copyButtonContent: string;
 }
-export default function CopyText({
+export default function CopyButton({
   copyButtonContent,
 }: CopyButtonContentProps) {
   const [copyButtonText, setCopyButtonText] = useState(

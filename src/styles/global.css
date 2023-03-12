@@ -114,6 +114,17 @@ p {
   overflow-y: auto;
 }
 
+.textArea_message {
+  color: var(--accent);
+  background: var(--box-fill);
+  border: solid 1px var(--accent);
+  padding: 0.5em;
+  margin: auto;
+  border-radius: 0.5em;
+  font-size: 1em;
+  width: 60vw;
+}
+
 .outputBox {
   display: flex;
 }

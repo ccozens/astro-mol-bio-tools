@@ -4,6 +4,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 import Input from '../components/react/Input';
 import ReverseComplement from '../components/react/ReverseComplement';
+import { Molecule } from '../types';
 
 const pageTitle = 'Reverse complement DNA';
 ---
@@ -14,7 +15,9 @@ const pageTitle = 'Reverse complement DNA';
       client:load
       ariaLabelContent={'DNA input form for reverse complement'}
       placeholderText={'Enter DNA sequence here...'}
+      inputType={Molecule.Dna}
     />
     <ReverseComplement client:load />
+    
   </section>
 </PageLayout>
