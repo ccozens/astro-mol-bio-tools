@@ -51,6 +51,7 @@ export default function ExactDnaWeightFromSequence({
           onClick={copyExactDsDnaOnClick}
         >
           content_copy
+          <span className="copyTip">Copy data</span>
         </span>
       </p>
       <p className="countItem">
@@ -60,6 +61,7 @@ export default function ExactDnaWeightFromSequence({
           onClick={copyExactSsDnaOnClick}
         >
           content_copy
+          <span className="copyTip">Copy data</span>
         </span>
       </p>
     </div>

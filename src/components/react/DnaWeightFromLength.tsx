@@ -58,6 +58,7 @@ export default function DnaWeight({
           onClick={copyDsDnaOnClick}
         >
           content_copy
+          <span className="copyTip">Copy data</span>
         </span>
       </p>
       <p className="countItem">
@@ -68,6 +69,7 @@ export default function DnaWeight({
           onClick={copySsDnaOnClick}
         >
           content_copy
+          <span className="copyTip">Copy data</span>
         </span>
       </p>
     </div>

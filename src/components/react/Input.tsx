@@ -47,7 +47,6 @@ export default function Input({
     return <p className="textArea_message">{errorMessage}</p>;
   }
 
-  console.log(errorMessage);
   return (
     <div>
       <textarea

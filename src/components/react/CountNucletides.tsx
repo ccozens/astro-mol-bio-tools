@@ -3,31 +3,71 @@ import { countNucleotides } from '../../functions/utilFunctions/countNucleotides
 import { inputStore } from '../../stores/input';
 import { dnaRnaStore } from '../../stores/dnaRnaStore';
 import type { AriaLabelProps } from '../../types';
-
+import type { MouseEvent } from 'react';
 
 export default function CountNucleotides({
   ariaLabelContent,
 }: AriaLabelProps) {
-  
   const isDna = useStore(dnaRnaStore);
-  
+
   const sanitisedInputFromStore = useStore(inputStore);
   const ntCounts = countNucleotides(sanitisedInputFromStore);
-  
-  if (!isDna) {({})}
 
-  
+  if (!isDna) {
+    ({});
+  }
+
+  const gridRows = Object.keys(ntCounts);
+  const counts = Object.values(ntCounts);
+
+  function copyNtCounts(e: MouseEvent) {
+    e.preventDefault();
+    navigator.clipboard.writeText(JSON.stringify(ntCounts));
+  }
+
   return (
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">Nucleotide Counts</p>
       <hr />
-      {Object.entries(ntCounts).map(([key, value]) => {
-        return (
-          <p className="countItem" key={key}>
-            {key}: {value.isInteger ? value : Number(value.toFixed(3))}
-          </p>
-        );
-      })}
+      <div className="outputGrid">
+        <div className="gridItem"></div>
+        <div className="gridItem">Counts</div>
+        <div className="gridItem">Ratios</div>
+        <div className="gridItem">{gridRows[0]}</div>
+        <div className="gridItem">{counts[0].count}</div>
+        <div className="gridItem">
+          {Number(counts[0].ratio).toFixed(2)}
+        </div>
+        <div className="gridItem">{gridRows[1]}</div>
+        <div className="gridItem">{counts[1].count}</div>
+        <div className="gridItem">
+          {Number(counts[1].ratio).toFixed(2)}
+        </div>
+        <div className="gridItem">{gridRows[2]}</div>
+        <div className="gridItem">{counts[2].count}</div>
+        <div className="gridItem">
+          {Number(counts[2].ratio).toFixed(2)}
+        </div>
+        <div className="gridItem">{gridRows[3]}</div>
+        <div className="gridItem">{counts[3].count}</div>
+        <div className="gridItem">
+          {Number(counts[3].ratio).toFixed(2)}
+        </div>
+        <div className="gridItem">{gridRows[4]}</div>
+        <div className="gridItem">{counts[4]}</div>
+        <div className="gridCopyButton">
+          <span
+            className="material-symbols-outlined"
+            onClick={copyNtCounts}
+          >
+            content_copy
+          <span className="copyTip">Copy data</span>
+          </span>
+        </div>
+        <div className="gridItem">{gridRows[5]}</div>
+        <div className="gridItem">{Number(counts[5]).toFixed(2)}</div>
+        <div className="gridItem"></div>
+      </div>
     </div>
   );
 }

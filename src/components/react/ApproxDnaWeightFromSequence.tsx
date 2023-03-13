@@ -49,6 +49,7 @@ export default function ApproxDnaWeightFromSequence({
           onClick={copyApproxSsDnaOnClick}
         >
           content_copy
+          <span className="copyTip">Copy data</span>
         </span>
       </p>
       <p className="countItem">
@@ -58,6 +59,7 @@ export default function ApproxDnaWeightFromSequence({
           onClick={copyApproxDsDnaOnClick}
         >
           content_copy
+          <span className="copyTip">Copy data</span>
         </span>
       </p>
     </div>

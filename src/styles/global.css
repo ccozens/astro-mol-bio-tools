@@ -3,6 +3,7 @@
   --bg-blue: hsl(270, 50%, 25%);
   --box-fill: hsla(0, 0%, 100%, 0.1);
   --box-border: hsla(0, 0%, 70%, 0.5);
+  --box-opaque: hsla(0, 0%, 20%, 1);
   --box-highlight: hsla(42, 100%, 75%, 0.8);
   --heading: hsla(0, 50%, 0%, 0.1);
   --accent: hsl(42, 100%, 50%);
@@ -26,6 +27,7 @@ html {
 html {
   background: linear-gradient(var(--bg-blue), black);
 }
+
 body {
   min-height: 100vh;
   display: flex;
@@ -54,7 +56,8 @@ footer {
 }
 
 h1,
-p {
+p,
+span {
   color: var(--accent);
 }
 
@@ -156,7 +159,39 @@ p {
   padding: 0em 0.5em;
   width: 30%; 
   margin-left: 0.3em;
-  
+}
+
+.outputGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  place-items: center;
+}
+
+.gridCopyButton {
+  grid-column: 3;
+  grid-row: 6 / 8;
+}
+
+.copyTip {
+  position: absolute;
+  z-index: 1;
+  padding: 0.25rem;
+  font-family: 'Open Sans', sans-serif;
+  background: var(--box-opaque);
+  color: var(--accent);
+  border: solid 0.2px var(--box-highlight);
+  border-radius: 0.5em;
+  opacity: 0;
+  font-size: 0.875rem;
+
+}
+
+
+.material-symbols-outlined:hover .copyTip,
+.material-symbols-outlined:focus .copyTip {
+  opacity: 1;
+  transform: translateX(5px);
 }
 
 .countHeading {
