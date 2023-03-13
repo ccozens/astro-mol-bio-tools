@@ -141,7 +141,11 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start; 
-  max-width: 200px;
+  max-width: 14vw;
+}
+.innerInputLabel {
+  margin: 0.2em;
+  text-align: center;
 }
 
 .innerInputBox {
@@ -150,12 +154,9 @@ p {
   border-radius: 0.5em;
   font-size: 1em;
   padding: 0em 0.5em;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; 
-  margin: 0.2em;
+  width: 30%; 
+  margin-left: 0.3em;
+  
 }
 
 .countHeading {

@@ -21,28 +21,34 @@ export default function DnaWeight({
   let calcApproxDsDnaFromLength: number = 0;
 
   //DNA
-  calcApproxSsDnaFromLength = lengthInput === 0 ? 0 : approxSsDnaFromLength(lengthInput);
-  calcApproxDsDnaFromLength = lengthInput === 0 ? 0 : approxDsDnaFromLength(lengthInput);
+  calcApproxSsDnaFromLength =
+    lengthInput === 0 ? 0 : approxSsDnaFromLength(lengthInput);
+  calcApproxDsDnaFromLength =
+    lengthInput === 0 ? 0 : approxDsDnaFromLength(lengthInput);
 
   function copyDsDnaOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcApproxDsDnaFromLength))
+    navigator.clipboard.writeText(String(calcApproxDsDnaFromLength));
   }
   function copySsDnaOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcApproxSsDnaFromLength))
+    navigator.clipboard.writeText(String(calcApproxSsDnaFromLength));
   }
 
   return (
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">Approx MW from DNA length</p>
-      <input
-        id="dnaLengthInput"
-        className="innerInputBox"
-        value={lengthInput}
-        onChange={handleInput}
-        type="text"
-      />
+      <hr />
+      <label className="innerInputLabel">
+        DNA length:
+        <input
+          id="dnaLengthInput"
+          className="innerInputBox"
+          value={lengthInput}
+          onChange={handleInput}
+          type="text"
+        />
+      </label>
       <p className="countItem">
         dsDNA:{' '}
         {Number(calcApproxSsDnaFromLength / 1000).toFixed(2) +
@@ -60,10 +66,10 @@ export default function DnaWeight({
         <span
           className="material-symbols-outlined"
           onClick={copySsDnaOnClick}
-          >
+        >
           content_copy
         </span>
-            </p>
+      </p>
     </div>
   );
 }

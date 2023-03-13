@@ -2,7 +2,7 @@ import { useStore } from '@nanostores/react';
 import { inputStore } from '../../stores/input';
 import {
   approxSsDnaMw,
-  approxDsDnaMw
+  approxDsDnaMw,
 } from '../../functions/dnaWeight';
 import type { AriaLabelProps } from '../../types';
 import type { MouseEvent } from 'react';
@@ -20,41 +20,46 @@ export default function ApproxDnaWeightFromSequence({
   let calcApproxSsDnaMw: number = 0;
   let calcApproxDsDnaMw: number = 0;
 
-  calcApproxSsDnaMw = sanitisedInputFromStore === '' ? 0 : approxSsDnaMw(sanitisedInputFromStore);
-  calcApproxDsDnaMw = sanitisedInputFromStore === '' ? 0 : approxDsDnaMw(sanitisedInputFromStore);
+  calcApproxSsDnaMw =
+    sanitisedInputFromStore === ''
+      ? 0
+      : approxSsDnaMw(sanitisedInputFromStore);
+  calcApproxDsDnaMw =
+    sanitisedInputFromStore === ''
+      ? 0
+      : approxDsDnaMw(sanitisedInputFromStore);
 
   function copyApproxDsDnaOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcApproxDsDnaMw))
+    navigator.clipboard.writeText(String(calcApproxDsDnaMw));
   }
   function copyApproxSsDnaOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcApproxSsDnaMw))
+    navigator.clipboard.writeText(String(calcApproxSsDnaMw));
   }
-
 
   return (
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">Approx MW from DNA sequence</p>
+      <hr />
       <p className="countItem">
-        dsDNA:  {Number(calcApproxSsDnaMw / 1000).toFixed(2)}  kD
+        dsDNA: {Number(calcApproxSsDnaMw / 1000).toFixed(2)} kD
         <span
-  className="material-symbols-outlined"
-  onClick={copyApproxSsDnaOnClick}
-  >
-  content_copy
-</span>
+          className="material-symbols-outlined"
+          onClick={copyApproxSsDnaOnClick}
+        >
+          content_copy
+        </span>
       </p>
       <p className="countItem">
-        ssDNA:  {Number(calcApproxDsDnaMw / 1000).toFixed(2)}  kD
+        ssDNA: {Number(calcApproxDsDnaMw / 1000).toFixed(2)} kD
         <span
-  className="material-symbols-outlined"
-  onClick={copyApproxDsDnaOnClick}
-  >
-  content_copy
-</span>
+          className="material-symbols-outlined"
+          onClick={copyApproxDsDnaOnClick}
+        >
+          content_copy
+        </span>
       </p>
-
     </div>
   );
 }

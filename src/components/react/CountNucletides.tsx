@@ -20,6 +20,7 @@ export default function CountNucleotides({
   return (
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">Nucleotide Counts</p>
+      <hr />
       {Object.entries(ntCounts).map(([key, value]) => {
         return (
           <p className="countItem" key={key}>
