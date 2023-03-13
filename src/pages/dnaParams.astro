@@ -4,7 +4,9 @@ import '../styles/toggle.css';
 import PageLayout from '../layouts/PageLayout.astro';
 import Input from '../components/react/Input';
 import CountNucleotides from '../components/react/CountNucletides';
-import DnaWeight from '../components/react/DnaWeight';
+import DnaWeightFromLength from '../components/react/DnaWeightFromLength';
+import ExactDnaWeightFromSequence from '../components/react/ExactDnaWeightFromSequence';
+import ApproxDnaWeightFromSequence from '../components/react/ApproxDnaWeightFromSequence';
 import { Molecule } from '../types';
 
 const pageTitle = 'DNA parameters';
@@ -12,21 +14,29 @@ const pageTitle = 'DNA parameters';
 
 <PageLayout pageTitle={pageTitle}>
   <section class="reactArea">
-    <Input
-      client:load
-      ariaLabelContent={'DNA input form for DNA parameters'}
-      placeholderText={'Enter DNA sequence here...'}
-      inputType={Molecule.Dna}
-    />
     <div class="outputBox">
       <CountNucleotides
-        client:load
-        ariaLabelContent={'Nucleotide counts'} />
-      <DnaWeight
       client:load
-        ariaLabelContent={'DNA weight'} />
+      ariaLabelContent={'Nucleotide counts'} />
+
+      <ExactDnaWeightFromSequence
+      client:load
+      ariaLabelContent={'Exact DNA weight from sequence'} />
+      <ApproxDnaWeightFromSequence
+      client:load
+      ariaLabelContent={'Exact DNA weight from sequence'} />
+      
+      <DnaWeightFromLength
+      client:load
+      ariaLabelContent={'DNA weight from length'} />
     </div>
     
+    <Input
+    client:load
+    ariaLabelContent={'DNA input form for DNA parameters'}
+    placeholderText={'Enter DNA sequence here...'}
+      inputType={Molecule.Dna}
+    />
 
     
   </section>
