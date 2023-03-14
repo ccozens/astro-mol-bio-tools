@@ -26,6 +26,24 @@ describe('test DNA translation', () => {
     );
   });
 
+  test('test error message', async () => {
+    // define input
+    const dna = 'AAQTRTLGUGVCGC'
+
+     // enter DNA into input box
+     await user.type(inputBox, dna);
+     expect(inputBox).toHaveValue(dna);
+     // render output
+     render(
+       <TranslateDna />
+     );
+
+    // expected output
+    const expected = 'Non-DNA character entered, please enter ATCG only. Non-DNA characters at positions: 3, 4, 5, 6, 7, 11.'
+    // test
+    expect(screen.getByText(expected));
+  });
+
   test('oneLetter, no spacer', async () => {
     //define input
     const dna = 'AGCAATCTATCAGGGAACGGCGGTGGCCGGTGCGGCGTGTTCGGTGGCGGCTCTGGCCGCTCAGGCGCCTGCGGCTGGGTGAGCGCACGCGAGGCGGCGAGGCGGCAGCGTGTTTCTAGGTCGTGGCGTCGGGCTTCCGGAGCTTTGGCGGCAGCTAGGGGAGGA';
