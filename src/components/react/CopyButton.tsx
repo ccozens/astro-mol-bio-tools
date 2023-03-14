@@ -17,7 +17,9 @@ export default function CopyButton({
   };
 
   return (
-    <div className="copyButton componentButton" onClick={handleClick}>
+    <div 
+    className="copyButton componentButton" 
+    onClick={handleClick}>
       {copyButtonText}
     </div>
   );

@@ -11,12 +11,12 @@ const pageTitle = 'Reverse complement DNA';
 
 <PageLayout pageTitle={pageTitle}>
   <section class="reactArea">
+    <ReverseComplement client:load />
     <Input
       client:load
       ariaLabelContent={'DNA input form for reverse complement'}
       placeholderText={'Enter DNA sequence here...'}
       inputType={Molecule.Dna}
     />
-    <ReverseComplement client:load />
   </section>
 </PageLayout>
