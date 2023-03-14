@@ -7,6 +7,7 @@ import CountNucleotides from '../components/react/CountNucletides';
 import RnaWeightFromLength from '../components/react/RnaWeightFromLength';
 import ExactRnaWeightFromSequence from '../components/react/ExactRnaWeightFromSequence';
 import ApproxRnaWeightFromSequence from '../components/react/ApproxRnaWeightFromSequence';
+import { Molecule } from '../types';
 
 const pageTitle = 'RNA parameters';
 ---
@@ -15,28 +16,28 @@ const pageTitle = 'RNA parameters';
   <section class="reactArea">
     <div class="outputBox">
       <CountNucleotides
-      client:load
-      ariaLabelContent={'Nucleotide counts'}
+        client:load
+        ariaLabelContent={'Nucleotide counts'}
       />
-
       <ExactRnaWeightFromSequence
-      client:load
-      ariaLabelContent={'Exact RNA weight from sequence'} />
+        client:load
+        ariaLabelContent={'Exact RNA weight from sequence'}
+      />
       <ApproxRnaWeightFromSequence
-      client:load
-      ariaLabelContent={'Exact RNA weight from sequence'} />
-      
+        client:load
+        ariaLabelContent={'Exact RNA weight from sequence'}
+      />
       <RnaWeightFromLength
-      client:load
-      ariaLabelContent={'RNA weight from length'} />
+        client:load
+        ariaLabelContent={'RNA weight from length'}
+      />
     </div>
-    
-    <Input
-    client:load
-    ariaLabelContent={'RNA input form for RNA parameters'}
-    placeholderText={'Enter RNA sequence here...'}
-    />
 
-    
+    <Input
+      client:load
+      ariaLabelContent={'RNA input form for RNA parameters'}
+      placeholderText={'Enter RNA sequence here...'}
+      inputType={Molecule.Rna}
+    />
   </section>
 </PageLayout>

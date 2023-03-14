@@ -9,8 +9,8 @@ export default function CountNucleotides({
 }: InputLabelProps) {
 
   const sanitisedInputFromStore = useStore(inputStore);
+  console.log(sanitisedInputFromStore);
   const ntCounts = countNucleotides(sanitisedInputFromStore);
-
   // type RnaNtCounts = Omit<NtCounts, "T"> & { U: NtCounts["T"] };
 
   const gridRows = Object.keys(ntCounts);

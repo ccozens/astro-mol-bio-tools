@@ -20,16 +20,19 @@ export default function Input({
 
   useEffect(() => {
     // logic if DNA entered
-    if (inputType === 1) {
-      // is an enum, so this = Molecule.Dna
-      const checkedDnaInput = checkDnaInput(input, 1);
+    if (inputType === 1 || inputType === 2) {
+      // is an enum, so this = Molecule.Dna or Molecule.Rna
+      const checkedDnaInput = checkDnaInput(input, inputType);
       if (checkedDnaInput === input) {
         inputStore.set(checkedDnaInput);
         setIsError(false);
       }
       if (checkedDnaInput !== input) {
         setErrorMessage(
-          `Non-DNA character entered, please enter ATCG only.  Non-DNA characters at positions: ${checkedDnaInput}`
+          inputType === 1 ?
+          `Non-DNA character entered, please enter ATCG only.  Non-DNA characters at positions: ${checkedDnaInput}.`
+          : 
+          `Non-RNA character entered, please enter AUCG only.  Non-RNA characters at positions: ${checkedDnaInput}.`
         );
         setIsError(true)
       }

@@ -16,29 +16,29 @@ const pageTitle = 'DNA parameters';
   <section class="reactArea">
     <div class="outputBox">
       <CountNucleotides
-      client:load
-      ariaLabelContent={'Nucleotide counts'}
-      inputType={Molecule.Dna} />
+        client:load
+        ariaLabelContent={'Nucleotide counts'}
 
+      />
       <ExactDnaWeightFromSequence
-      client:load
-      ariaLabelContent={'Exact DNA weight from sequence'} />
+        client:load
+        ariaLabelContent={'Exact DNA weight from sequence'}
+      />
       <ApproxDnaWeightFromSequence
-      client:load
-      ariaLabelContent={'Exact DNA weight from sequence'} />
-      
+        client:load
+        ariaLabelContent={'Exact DNA weight from sequence'}
+      />
       <DnaWeightFromLength
-      client:load
-      ariaLabelContent={'DNA weight from length'} />
+        client:load
+        ariaLabelContent={'DNA weight from length'}
+      />
     </div>
-    
+
     <Input
-    client:load
-    ariaLabelContent={'DNA input form for DNA parameters'}
-    placeholderText={'Enter DNA sequence here...'}
+      client:load
+      ariaLabelContent={'DNA input form for DNA parameters'}
+      placeholderText={'Enter DNA sequence here...'}
       inputType={Molecule.Dna}
     />
-
-    
   </section>
 </PageLayout>

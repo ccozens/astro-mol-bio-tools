@@ -14,6 +14,7 @@ export const approxDsDnaFromLength = (len: number) => {
   return len * (ntMW.dN * 2) + (ntMW.monophosphate*2);
 }
 
+
 // approx MW
 export const approxRnaMw = (dna: string) => {
   const rna = transcribe(dna);
