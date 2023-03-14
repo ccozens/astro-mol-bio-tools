@@ -163,7 +163,7 @@ span {
 
 .outputGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 2fr;
   grid-template-rows: repeat(7, 1fr);
   place-items: center;
 }
@@ -172,7 +172,25 @@ span {
   grid-column: 3;
   grid-row: 6 / 8;
 }
+/* copy icon */
+.material-symbols-outlined {
+  font-size: 16px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 16
+}
+.gridCopyButton > .material-symbols-outlined {
+  font-size: 24px;
+}
 
+.material-symbols-outlined:hover {
+  cursor: pointer;
+  font-variation-settings:
+  'wght' 600
+}
+/* tooltip styling */
 .copyTip {
   position: absolute;
   z-index: 1;
@@ -184,9 +202,7 @@ span {
   border-radius: 0.5em;
   opacity: 0;
   font-size: 0.875rem;
-
 }
-
 
 .material-symbols-outlined:hover .copyTip,
 .material-symbols-outlined:focus .copyTip {
@@ -314,18 +330,4 @@ span {
   border: 3px solid var(--scrollbarTrack);
 }
 
-/* copy icon */
-.material-symbols-outlined {
-  
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 20
-}
 
-.material-symbols-outlined:hover {
-  cursor: pointer;
-  font-variation-settings:
-  'wght' 600
-}

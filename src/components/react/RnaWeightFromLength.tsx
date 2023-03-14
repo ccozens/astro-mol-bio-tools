@@ -40,7 +40,7 @@ export default function DnaWeight({
       <p className="countHeading">MW from length</p>
       <hr />
       <label className="innerInputLabel">
-        DNA length:
+        RNA length:
         <input
           id="dnaLengthInput"
           className="innerInputBox"
@@ -50,7 +50,7 @@ export default function DnaWeight({
         />
       </label>
       <p className="countItem">
-        dsDNA:{' '}
+        dsRNA:{' '}
         {Number(calcApproxSsDnaFromLength / 1000).toFixed(2) +
           ' kD  '}{' '}
         <span
@@ -62,7 +62,7 @@ export default function DnaWeight({
         </span>
       </p>
       <p className="countItem">
-        ssDNA:{' '}
+        ssRNA:{' '}
         {Number(calcApproxDsDnaFromLength / 1000).toFixed(2) + ' kD'}{' '}
         <span
           className="material-symbols-outlined"

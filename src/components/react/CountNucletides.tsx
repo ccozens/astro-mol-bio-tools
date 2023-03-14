@@ -1,25 +1,22 @@
 import { useStore } from '@nanostores/react';
 import { countNucleotides } from '../../functions/utilFunctions/countNucleotides';
 import { inputStore } from '../../stores/input';
-import { dnaRnaStore } from '../../stores/dnaRnaStore';
-import type { AriaLabelProps } from '../../types';
+import type { InputLabelProps } from '../../types';
 import type { MouseEvent } from 'react';
 
 export default function CountNucleotides({
-  ariaLabelContent,
-}: AriaLabelProps) {
-  const isDna = useStore(dnaRnaStore);
+  ariaLabelContent
+}: InputLabelProps) {
 
   const sanitisedInputFromStore = useStore(inputStore);
   const ntCounts = countNucleotides(sanitisedInputFromStore);
 
-  if (!isDna) {
-    ({});
-  }
+  // type RnaNtCounts = Omit<NtCounts, "T"> & { U: NtCounts["T"] };
 
   const gridRows = Object.keys(ntCounts);
+  gridRows.splice(3, 1, "U"); // replace "T" with "U"
   const counts = Object.values(ntCounts);
-
+  
   function copyNtCounts(e: MouseEvent) {
     e.preventDefault();
     navigator.clipboard.writeText(JSON.stringify(ntCounts));

@@ -1,5 +1,6 @@
 import type { NtCounts } from '../../types';
 
+
 export const countNucleotides = (dna: string) => {
   // create empty object
   const ntCounts: NtCounts = {

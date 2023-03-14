@@ -4,12 +4,12 @@ import {
   exactSsDnaMw,
   exactDsDnaMw,
 } from '../../functions/dnaWeight';
-import type { AriaLabelProps } from '../../types';
+import type { InputLabelProps } from '../../types';
 import type { MouseEvent } from 'react';
 
 export default function ExactDnaWeightFromSequence({
   ariaLabelContent,
-}: AriaLabelProps) {
+}: InputLabelProps) {
   // data from input
   const sanitisedInputFromStore = useStore(inputStore);
 
@@ -41,7 +41,7 @@ export default function ExactDnaWeightFromSequence({
   return (
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">
-        Exact weights MW from DNA sequence
+        Exact sequence MW
       </p>
       <hr />
       <p className="countItem">

@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import '../styles/toggle.css';
+import PageLayout from '../layouts/PageLayout.astro';
+import Input from '../components/react/Input';
+import CountNucleotides from '../components/react/CountNucletides';
+import RnaWeightFromLength from '../components/react/RnaWeightFromLength';
+import ExactRnaWeightFromSequence from '../components/react/ExactRnaWeightFromSequence';
+import ApproxRnaWeightFromSequence from '../components/react/ApproxRnaWeightFromSequence';
+
+const pageTitle = 'RNA parameters';
+---
+
+<PageLayout pageTitle={pageTitle}>
+  <section class="reactArea">
+    <div class="outputBox">
+      <CountNucleotides
+      client:load
+      ariaLabelContent={'Nucleotide counts'}
+      />
+
+      <ExactRnaWeightFromSequence
+      client:load
+      ariaLabelContent={'Exact RNA weight from sequence'} />
+      <ApproxRnaWeightFromSequence
+      client:load
+      ariaLabelContent={'Exact RNA weight from sequence'} />
+      
+      <RnaWeightFromLength
+      client:load
+      ariaLabelContent={'RNA weight from length'} />
+    </div>
+    
+    <Input
+    client:load
+    ariaLabelContent={'RNA input form for RNA parameters'}
+    placeholderText={'Enter RNA sequence here...'}
+    />
+
+    
+  </section>
+</PageLayout>

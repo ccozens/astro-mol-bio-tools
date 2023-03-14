@@ -1,12 +1,9 @@
 export interface InputLabelProps {
   ariaLabelContent: string;
-  placeholderText: string;
-  inputType: Molecule;
+  placeholderText?: string;
+  inputType?: Molecule;
 }
 
-export interface AriaLabelProps {
-  ariaLabelContent: string;
-}
 
 export interface ErrorMessageProps {
   errorMessage: string;
