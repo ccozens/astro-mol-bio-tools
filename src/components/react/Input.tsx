@@ -2,6 +2,7 @@ import { useState, ChangeEvent, useEffect } from 'react';
 import { inputStore } from '../../stores/input';
 import { sanitiseInput } from '../../functions/utilFunctions/sanitiseInput';
 import { checkDnaInput } from '../../functions/checkDnaInput';
+import { checkProteinOneLetterInput } from '../../functions/checkProteinOneLetterInput';
 import type { InputLabelProps, ErrorMessageProps } from '../../types';
 
 export default function Input({
@@ -39,7 +40,17 @@ export default function Input({
     }
     if (inputType === 0) {
       // is an enum, so this = Molecule.Protein
-      // need to rewrite checkOneLetterProteinInput and/or threeLetter and decide what to do about choosing between them (an additional helper function?) as per checkDnaInput
+      const checkedProteinInput = checkProteinOneLetterInput(input, inputType);
+      if (checkedProteinInput === input) {
+        inputStore.set(checkedProteinInput);
+        setIsError(false);
+      }
+      if (checkedProteinInput !== input) {
+        setErrorMessage(
+          `Non-amino acid character entered, please enter natural AAs only.  Non-natural AA at positions: ${checkedProteinInput}.`);
+        setIsError(true)
+      }
+      console.log(checkedProteinInput);
     }
   }, [input]);
 

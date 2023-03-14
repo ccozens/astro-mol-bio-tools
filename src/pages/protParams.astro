@@ -1,18 +1,29 @@
 ---
 import '../styles/global.css';
 import PageLayout from '../layouts/PageLayout.astro';
-
 import Input from '../components/react/Input';
+import { Molecule } from '../types';
+import ComputeProteinMw from '../components/react/ComputeProteinMw';
+
 
 const pageTitle = 'Protein parameters';
 ---
 
 <PageLayout pageTitle={pageTitle}>
   <section class="reactArea">
+    <div class="outerOutputBox">
+
+      <ComputeProteinMw 
+      client:load
+      ariaLabelContent={'Protein MW'}/>
+      
+    </div>
+    
     <Input
       client:load
       ariaLabelContent={'DNA input form for protein parameters'}
-      placeholderText={'Enter protein sequence here...'}
+      placeholderText={'Enter protein sequence as single amino acid (eg MILD...) here...'}
+      inputType={Molecule.Protein}
     />
   </section>
 </PageLayout>

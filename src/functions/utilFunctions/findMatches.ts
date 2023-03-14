@@ -1,7 +1,7 @@
 import { Molecule } from '../../types';
 
 export const findMatches = (input: string, molecule: Molecule) => {
-  let searchRegex: RegExp ;
+  let searchRegex: RegExp;
   switch (molecule) {
     case Molecule.Protein:
       searchRegex = new RegExp(/[^ARNDCEQGHILKMFPSTWYV]/gi);

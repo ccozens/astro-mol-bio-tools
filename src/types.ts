@@ -50,4 +50,5 @@ export interface AminoAcidCounts {
   W: {count: number, ratio: number};
   Y: {count: number, ratio: number};
   V: {count: number, ratio: number};
+  Total: number;
 }
