@@ -17,7 +17,7 @@ describe('test nucleotide counting', () => {
       <Input
         ariaLabelContent={'DNA input form for DNA parameters'}
         placeholderText={'Enter DNA sequence here...'}
-        inputType={Molecule.Dna}
+        inputType={Molecule.Rna}
       />
     );
     inputBox = screen.getByLabelText(

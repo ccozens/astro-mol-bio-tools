@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import Input from '../../src/components/react/Input';
 import TranslateDna from '../../src/components/react/TranslateDna';
 import { formatChooserStore } from '../../src/stores/formatChooserStore';
+import { Molecule } from '../../src/types';
 
 // tbj-tab for test block
 
@@ -17,6 +18,7 @@ describe('test DNA translation', () => {
       <Input
         ariaLabelContent={'DNA input form for translate protein'}
         placeholderText={'Enter DNA sequence here...'}
+        inputType={Molecule.Dna}
       />
     );
     inputBox = screen.getByLabelText(

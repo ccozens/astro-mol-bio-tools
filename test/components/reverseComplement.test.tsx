@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 // import modules to test
 import Input from '../../src/components/react/Input';
 import ReverseComplement from '../../src/components/react/ReverseComplement';
+import { Molecule } from '../../src/types';
 
 // tbj-tab for test block
 
@@ -16,6 +17,7 @@ describe('test DNA reverse complement', () => {
     <Input
       ariaLabelContent={'DNA input form for reverse complement'}
       placeholderText={'Enter DNA sequence here...'}
+      inputType={Molecule.Dna}
     />
   );
   inputBox = screen.getByLabelText('DNA input form for reverse complement');
@@ -23,7 +25,6 @@ describe('test DNA reverse complement', () => {
 
   test('first test sequence', async() => {
   
-
     //define input
     const dna = 'AATTGGCC';
     // define expected output
