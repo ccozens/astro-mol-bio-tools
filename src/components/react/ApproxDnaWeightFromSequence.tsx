@@ -42,8 +42,8 @@ export default function ApproxDnaWeightFromSequence({
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">Approx sequence MW</p>
       <hr />
-      <p className="countItem">
-        dsDNA: {Number(calcApproxSsDnaMw / 1000).toFixed(2)} kD
+      <p className="countItem" aria-label="approxDsMw">
+        dsDNA: {Number(calcApproxDsDnaMw / 1000).toFixed(2)} kD
         <span
           className="material-symbols-outlined"
           onClick={copyApproxSsDnaOnClick}
@@ -52,8 +52,8 @@ export default function ApproxDnaWeightFromSequence({
           <span className="copyTip">Copy data</span>
         </span>
       </p>
-      <p className="countItem">
-        ssDNA: {Number(calcApproxDsDnaMw / 1000).toFixed(2)} kD
+      <p className="countItem" aria-label="approxSsMw">
+        ssDNA: {Number(calcApproxSsDnaMw / 1000).toFixed(2)} kD
         <span
           className="material-symbols-outlined"
           onClick={copyApproxDsDnaOnClick}

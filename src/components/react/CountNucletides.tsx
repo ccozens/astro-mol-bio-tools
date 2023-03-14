@@ -11,7 +11,7 @@ export default function CountNucleotides({
   const sanitisedInputFromStore = useStore(inputStore);
   const ntCounts = countNucleotides(sanitisedInputFromStore);
   // type RnaNtCounts = Omit<NtCounts, "T"> & { U: NtCounts["T"] };
-console.log(ntCounts);
+
   const gridRows = Object.keys(ntCounts);
   gridRows.splice(3, 1, "U"); // replace "T" with "U"
   const counts = Object.values(ntCounts);

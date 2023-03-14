@@ -37,7 +37,7 @@ describe('test nucleotide counting', () => {
      render(
        <CountNucleotides ariaLabelContent={'Nucleotide counts'} />
      );
-     
+
     // expected output
     const expected = 'Non-DNA character entered, please enter ATCG only. Non-DNA characters at positions: 3, 4, 5, 6, 7, 11.'
     // test
@@ -110,9 +110,10 @@ describe('test nucleotide counting', () => {
     expect(screen.getByLabelText('Totalcount')).toHaveTextContent(String(ntCounts.Total));
     expect(screen.getByLabelText('GCcount')).toHaveTextContent(String(ntCounts.GC));
 });
+});
 
-/* 
-describe('test DNA MW calculations', () => {
+
+describe('test exact DNA MW calculations', () => {
   const user = userEvent.setup();
   let inputBox: HTMLElement;
   // reset input after each test
@@ -121,23 +122,19 @@ describe('test DNA MW calculations', () => {
       <Input
         ariaLabelContent={'DNA input form for DNA parameters'}
         placeholderText={'Enter DNA sequence here...'}
+        inputType={Molecule.Dna}
       />
     );
     inputBox = screen.getByLabelText(
       'DNA input form for DNA parameters'
     );
   });
-
   test('first test sequence', async () => {
     //define input
     const dna = 'AATTGGCC';
     // define expected output
-    // const calcApproxSsDnaFromLength = 0.00;
-    // const calcApproxDsDnaFromLength = 0.00;
-    // const calcApproxDsDnaMw = 2508.6;
-    // const calcApproxSsDnaMw = 5017.2;
-    const calcExactSsDnaMw = 'ssDNA';
-    const calcExactDsDnaMw = 'dsDNA';
+    const calcExactDsDnaMw = 5.10;
+    const calcExactSsDnaMw = 2.55;
 
     // enter DNA into input box
     await user.type(inputBox, dna);
@@ -150,36 +147,99 @@ describe('test DNA MW calculations', () => {
     );
 
     //test
-    const outputBox = screen.getByLabelText('Exact DNA weight from sequence');
-    // expect(screen.getByText(calcApproxDsDnaFromLength));
-    // expect(screen.getByText(calcApproxSsDnaFromLength));
-    // expect(screen.getByText(calcApproxDsDnaMw));
-    // expect(screen.getByText(calcApproxSsDnaMw));
-    expect(outputBox).toHaveValue(calcExactDsDnaMw);
-    expect(screen.getByText(calcExactSsDnaMw));
+    expect(screen.getByLabelText('exactDsMw')).toHaveTextContent(String(calcExactDsDnaMw));
+    expect(screen.getByLabelText('exactSsMw')).toHaveTextContent(String(calcExactSsDnaMw));
     
-  }); */
+  });
 
- /*  test('second test sequence', async () => {
+  test('first second sequence', async () => {
     //define input
     const dna = 'ATGATCCTCGATACAGACTACATAACTGAGGATGGAAAGCCCGTCATCAGGATCTTCAAGAAGGAGAACGGCGAGTTCAAAATAGACTACGACAGAAACTTTGAGCCATACATCTACGCGCTCTTGAAGGACGACTCTGCGATTGAGGACGTCAAGAAGATAACTGCCGAGAGGCACGGCACTACCGTTAGGGTTGTCAGGGCCGAGAAAGTGAAGAAGAAGTTCCTAGGCAGGCCGATAGAGGTCTG';
     // define expected output
-    const ntCounts = { A: 79, C: 53, G: 70, T: 46, Total: 248, GC: 0.496};
+
+    const calcExactDsDnaMw = 154.37;
+    const calcExactSsDnaMw = 77.19;
 
     // enter DNA into input box
     await user.type(inputBox, dna);
     expect(inputBox).toHaveValue(dna);
     // render output
     render(
-      <DnaWeight ariaLabelContent={'DNA weight'} />
+        <ExactDnaWeightFromSequence
+        ariaLabelContent={'Exact DNA weight from sequence'}
+        />
     );
 
     //test
-    expect(screen.getByText(`A: ${ntCounts.A}`));
-    expect(screen.getByText(`C: ${ntCounts.C}`));
-    expect(screen.getByText(`G: ${ntCounts.G}`));
-    expect(screen.getByText(`T: ${ntCounts.T}`));
-    expect(screen.getByText(`Total: ${ntCounts.Total}`));
-    expect(screen.getByText(`GC: ${ntCounts.GC}`));
-  }); */
+    expect(screen.getByLabelText('exactDsMw')).toHaveTextContent(String(calcExactDsDnaMw));
+    expect(screen.getByLabelText('exactSsMw')).toHaveTextContent(String(calcExactSsDnaMw));
+    
+  });
+  });
+
+
+  describe('test approx DNA MW calculations', () => {
+    const user = userEvent.setup();
+    let inputBox: HTMLElement;
+    // reset input after each test
+    beforeEach(() => {
+      render(
+        <Input
+          ariaLabelContent={'DNA input form for DNA parameters'}
+          placeholderText={'Enter DNA sequence here...'}
+          inputType={Molecule.Dna}
+        />
+      );
+      inputBox = screen.getByLabelText(
+        'DNA input form for DNA parameters'
+      );
+    });
+
+    test('first test sequence', async () => {
+      //define input
+      const dna = 'AATTGGCC';
+      // define expected output
+      const calcApproxDsDnaMw = 5.02;
+      const calcApproxSsDnaMw = 2.51;
+  
+      // enter DNA into input box
+      await user.type(inputBox, dna);
+      expect(inputBox).toHaveValue(dna);
+      // render output
+      render(
+          <ApproxDnaWeightFromSequence
+          ariaLabelContent={'Approx DNA weight from sequence'}
+          />
+      );
+  
+      //test
+      expect(screen.getByLabelText('approxDsMw')).toHaveTextContent(String(calcApproxDsDnaMw));
+      expect(screen.getByLabelText('approxSsMw')).toHaveTextContent(String(calcApproxSsDnaMw));
+      
+    });
+  
+    test('first second sequence', async () => {
+      //define input
+      const dna = 'ATGATCCTCGATACAGACTACATAACTGAGGATGGAAAGCCCGTCATCAGGATCTTCAAGAAGGAGAACGGCGAGTTCAAAATAGACTACGACAGAAACTTTGAGCCATACATCTACGCGCTCTTGAAGGACGACTCTGCGATTGAGGACGTCAAGAAGATAACTGCCGAGAGGCACGGCACTACCGTTAGGGTTGTCAGGGCCGAGAAAGTGAAGAAGAAGTTCCTAGGCAGGCCGATAGAGGTCTG';
+      // define expected output
+  
+      const calcApproxDsDnaMw = 150.79;
+      const calcApproxSsDnaMw = 75.40;
+  
+      // enter DNA into input box
+      await user.type(inputBox, dna);
+      expect(inputBox).toHaveValue(dna);
+      // render output
+      render(
+          <ApproxDnaWeightFromSequence
+          ariaLabelContent={'Exact DNA weight from sequence'}
+          />
+      );
+  
+      //test
+      expect(screen.getByLabelText('approxDsMw')).toHaveTextContent(String(calcApproxDsDnaMw));
+      expect(screen.getByLabelText('approxSsMw')).toHaveTextContent(String(calcApproxSsDnaMw));
+      
+    });
+
 });

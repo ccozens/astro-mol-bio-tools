@@ -44,7 +44,7 @@ export default function ExactDnaWeightFromSequence({
         Exact sequence MW
       </p>
       <hr />
-      <p className="countItem">
+      <p className="countItem" aria-label="exactDsMw">
         dsDNA: {Number(calcExactDsDnaMw / 1000).toFixed(2)} kD
         <span
           className="material-symbols-outlined"
@@ -54,7 +54,7 @@ export default function ExactDnaWeightFromSequence({
           <span className="copyTip">Copy data</span>
         </span>
       </p>
-      <p className="countItem">
+      <p className="countItem" aria-label="exactSsMw">
         ssDNA: {Number(calcExactSsDnaMw / 1000).toFixed(2)} kD
         <span
           className="material-symbols-outlined"
