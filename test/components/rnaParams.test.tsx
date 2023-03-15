@@ -293,3 +293,41 @@ describe('test approx RNA MW calculations', () => {
     );
   });
 });
+
+describe('test RNA MW from length calculations', () => {
+  const user = userEvent.setup();
+  let inputBox: HTMLElement;
+  // reset input after each test
+  beforeEach(() => {
+    render(
+      <RnaWeightFromLength
+        ariaLabelContent={'DNA input form for RNA parameters'}
+        placeholderText={'Enter RNA sequence here...'}
+        inputType={Molecule.Rna}
+      />
+    );
+    inputBox = screen.getByLabelText(
+      'rnaLengthInput'
+    );
+  });
+
+  test('first test sequence', async () => {
+    //define input
+    const len = String(100);
+    // define expected output
+    const ssRnaMwFromLength = 32.21;
+    const dsRnaMwFromLength = 64.26;
+
+    // enter DNA into input box
+    await user.type(inputBox, len);
+    expect(inputBox).toHaveValue(len);
+    
+    //test
+    expect(screen.getByLabelText('approxSsRnaMw')).toHaveTextContent(
+      String(ssRnaMwFromLength)
+    );
+    expect(screen.getByLabelText('approxDsRnaMw')).toHaveTextContent(
+      String(dsRnaMwFromLength)
+    );
+  });
+  });

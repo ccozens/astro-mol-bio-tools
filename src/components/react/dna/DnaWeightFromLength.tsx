@@ -44,12 +44,13 @@ export default function DnaWeight({
         <input
           id="dnaLengthInput"
           className="innerInputBox"
+          aria-label="dnaLengthInput"
           value={lengthInput}
           onChange={handleInput}
           type="text"
         />
       </label>
-      <p className="countItem">
+      <p className="countItem" aria-label="approxSsDnaMw">
         dsDNA:{' '}
         {Number(calcApproxSsDnaFromLength / 1000).toFixed(2) +
           ' kD  '}{' '}
@@ -61,7 +62,7 @@ export default function DnaWeight({
           <span className="copyTip">Copy data</span>
         </span>
       </p>
-      <p className="countItem">
+      <p className="countItem" aria-label="approxDsDnaMw">
         ssDNA:{' '}
         {Number(calcApproxDsDnaFromLength / 1000).toFixed(2) + ' kD'}{' '}
         <span

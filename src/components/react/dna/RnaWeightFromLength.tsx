@@ -42,14 +42,15 @@ export default function DnaWeight({
       <label className="innerInputLabel">
         RNA length:
         <input
-          id="dnaLengthInput"
+          id="rnaLengthInput"
           className="innerInputBox"
+          aria-label="rnaLengthInput"
           value={lengthInput}
           onChange={handleInput}
           type="text"
         />
       </label>
-      <p className="countItem">
+      <p className="countItem" aria-label="approxSsRnaMw">
         ssRNA:{' '}
         {Number(calcApproxSsRnaFromLength / 1000).toFixed(2) +
           ' kD  '}{' '}
@@ -61,7 +62,7 @@ export default function DnaWeight({
           <span className="copyTip">Copy data</span>
         </span>
       </p>
-      <p className="countItem">
+      <p className="countItem" aria-label="approxDsRnaMw">
         dsRNA:{' '}
         {Number(calcApproxDsRnaFromLength / 1000).toFixed(2) + ' kD'}{' '}
         <span
