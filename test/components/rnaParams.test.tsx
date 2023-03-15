@@ -3,10 +3,10 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 // import modules to test
 import Input from '../../src/components/react/Input';
-import CountNucleotides from '../../src/components/react/CountNucletides';
-import RnaWeightFromLength from '../../src/components/react/RnaWeightFromLength';
-import ExactRnaWeightFromSequence from '../../src/components/react/ExactRnaWeightFromSequence';
-import ApproxRnaWeightFromSequence from '../../src/components/react/ApproxRnaWeightFromSequence';
+import CountNucleotides from '../../src/components/react/dna/CountNucletides';
+import RnaWeightFromLength from '../../src/components/react/dna/RnaWeightFromLength';
+import ExactRnaWeightFromSequence from '../../src/components/react/dna/ExactRnaWeightFromSequence';
+import ApproxRnaWeightFromSequence from '../../src/components/react/dna/ApproxRnaWeightFromSequence';
 import { Molecule } from '../../src/types';
 
 describe('test RNA params', () => {

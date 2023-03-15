@@ -1,4 +1,4 @@
-import { dnaRnaStore } from '../../stores/dnaRnaStore';
+import { dnaRnaStore } from '../../../stores/dnaRnaStore';
 import type { ChangeEvent } from 'react';
 
 

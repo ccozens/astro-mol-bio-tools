@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 // import modules to test
 import Input from '../../src/components/react/Input';
-import TranslateDna from '../../src/components/react/TranslateDna';
+import TranslateDna from '../../src/components/react/dna/TranslateDna';
 import { formatChooserStore } from '../../src/stores/formatChooserStore';
 import { Molecule } from '../../src/types';
 

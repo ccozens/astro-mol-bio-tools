@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react';
-import { reverseComplementDNA } from '../../functions/reverseComplementFunction';
-import { inputStore } from '../../stores/input';
-import CopyButton from './CopyButton';
+import { reverseComplementDNA } from '../../../functions/reverseComplementFunction';
+import { inputStore } from '../../../stores/input';
+import CopyButton from '../CopyButton';
 
 export default function ReverseComplement() {
   const sanitisedInputFromStore = useStore(inputStore);

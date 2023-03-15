@@ -1,10 +1,10 @@
 import { useStore } from '@nanostores/react';
-import { inputStore } from '../../stores/input';
+import { inputStore } from '../../../stores/input';
 import {
-  approxSsDnaMw,
-  approxDsDnaMw,
-} from '../../functions/dnaWeight';
-import type { InputLabelProps } from '../../types';
+  approxSsRnaMw,
+  approxDsRnaMw,
+} from '../../../functions/dnaWeight';
+import type { InputLabelProps } from '../../../types';
 import type { MouseEvent } from 'react';
 
 export default function ApproxDnaWeightFromSequence({
@@ -17,46 +17,46 @@ export default function ApproxDnaWeightFromSequence({
     return <div className="outputBox">{sanitisedInputFromStore}</div>;
   }
 
-  let calcApproxSsDnaMw: number = 0;
-  let calcApproxDsDnaMw: number = 0;
+  let calcApproxSsRnaMw: number = 0;
+  let calcApproxDsRnaMw: number = 0;
 
-  calcApproxSsDnaMw =
+  calcApproxSsRnaMw =
     sanitisedInputFromStore === ''
       ? 0
-      : approxSsDnaMw(sanitisedInputFromStore);
-  calcApproxDsDnaMw =
+      : approxSsRnaMw(sanitisedInputFromStore);
+  calcApproxDsRnaMw =
     sanitisedInputFromStore === ''
       ? 0
-      : approxDsDnaMw(sanitisedInputFromStore);
+      : approxDsRnaMw(sanitisedInputFromStore);
 
-  function copyApproxDsDnaOnClick(e: MouseEvent) {
+  function copyApproxDsRnaOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcApproxDsDnaMw));
+    navigator.clipboard.writeText(String(calcApproxDsRnaMw));
   }
-  function copyApproxSsDnaOnClick(e: MouseEvent) {
+  function copyApproxSsRnaOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcApproxSsDnaMw));
+    navigator.clipboard.writeText(String(calcApproxSsRnaMw));
   }
 
   return (
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">Approx sequence MW</p>
       <hr />
-      <p className="countItem" aria-label="approxDsMw">
-        dsDNA: {Number(calcApproxDsDnaMw / 1000).toFixed(2)} kD
+      <p className="countItem" aria-label="approxSsRnaMw">
+        ssRNA: {Number(calcApproxSsRnaMw / 1000).toFixed(2)} kD
         <span
           className="material-symbols-outlined"
-          onClick={copyApproxSsDnaOnClick}
+          onClick={copyApproxSsRnaOnClick}
         >
           content_copy
           <span className="copyTip">Copy data</span>
         </span>
       </p>
-      <p className="countItem" aria-label="approxSsMw">
-        ssDNA: {Number(calcApproxSsDnaMw / 1000).toFixed(2)} kD
+      <p className="countItem" aria-label="approxDsRnaMw">
+        dsRNA: {Number(calcApproxDsRnaMw / 1000).toFixed(2)} kD
         <span
           className="material-symbols-outlined"
-          onClick={copyApproxDsDnaOnClick}
+          onClick={copyApproxDsRnaOnClick}
         >
           content_copy
           <span className="copyTip">Copy data</span>

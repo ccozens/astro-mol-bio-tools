@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react';
-import { countNucleotides } from '../../functions/utilFunctions/countNucleotides';
-import { inputStore } from '../../stores/input';
-import type { InputLabelProps } from '../../types';
+import { countNucleotides } from '../../../functions/utilFunctions/countNucleotides';
+import { inputStore } from '../../../stores/input';
+import type { InputLabelProps } from '../../../types';
 import type { MouseEvent } from 'react';
 
 export default function CountNucleotides({

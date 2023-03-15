@@ -1,10 +1,10 @@
 import { useStore } from '@nanostores/react';
-import { inputStore } from '../../stores/input';
+import { inputStore } from '../../../stores/input';
 import {
   exactSsDnaMw,
   exactDsDnaMw,
-} from '../../functions/dnaWeight';
-import type { InputLabelProps } from '../../types';
+} from '../../../functions/dnaWeight';
+import type { InputLabelProps } from '../../../types';
 import type { MouseEvent } from 'react';
 
 export default function ExactDnaWeightFromSequence({

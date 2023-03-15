@@ -1,4 +1,4 @@
-import { formatChooserStore } from '../../stores/formatChooserStore';
+import { formatChooserStore } from '../../../stores/formatChooserStore';
 import { useEffect, useState } from 'react';
 export default function FormatChooser() {
   const [outFormat, setOutFormat] = useState('oneLetter');

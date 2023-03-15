@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 // import modules to test
 import Input from '../../src/components/react/Input';
-import TranscribeDna from '../../src/components/react/TranscribeDna';
+import TranscribeDna from '../../src/components/react/dna/TranscribeDna';
 import { Molecule } from '../../src/types';
 
 // tbj-tab for test block

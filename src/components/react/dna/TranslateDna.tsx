@@ -1,9 +1,9 @@
 import { useStore } from '@nanostores/react';
-import { translateDna } from '../../functions/translateFunction';
-import { inputStore } from '../../stores/input';
-import { formatChooserStore } from '../../stores/formatChooserStore';
+import { translateDna } from '../../../functions/translateFunction';
+import { inputStore } from '../../../stores/input';
+import { formatChooserStore } from '../../../stores/formatChooserStore';
 import { useState, useEffect } from 'react';
-import CopyButton from './CopyButton';
+import CopyButton from '../CopyButton';
 
 export default function TranslateDna() {
   const sanitisedInputFromStore = useStore(inputStore);

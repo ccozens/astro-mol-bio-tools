@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react';
-import { transcribe } from '../../functions/transcribeFunction';
-import { inputStore } from '../../stores/input';
-import CopyButton from './CopyButton';
+import { transcribe } from '../../../functions/transcribeFunction';
+import { inputStore } from '../../../stores/input';
+import CopyButton from '../CopyButton';
 
 export default function TranscribeDna() {
   const sanitisedInputFromStore = useStore(inputStore);

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 // import modules to test
 import Input from '../../src/components/react/Input';
-import ReverseComplement from '../../src/components/react/ReverseComplement';
+import ReverseComplement from '../../src/components/react/dna/ReverseComplement';
 import { Molecule } from '../../src/types';
 
 // tbj-tab for test block

@@ -28,14 +28,14 @@ export const computeExtinctionCoefficients = (
   const aminoAcidCounts = countAminoAcids(protein);
 
   const extinctionCoefficientCysPaired =
-    aminoAcidCounts.W * extTrp + // number tryptophans
-    aminoAcidCounts.Y * extTyr + // number tyrosines
-    (aminoAcidCounts.C + extCys_paired); // number cysteines
+    aminoAcidCounts.W.count * extTrp + // number tryptophans
+    aminoAcidCounts.Y.count * extTyr + // number tyrosines
+    (aminoAcidCounts.C.count + extCys_paired); // number cysteines
 
   const extinctionCoefficientCysReduced =
-    aminoAcidCounts.W * extTrp +
-    aminoAcidCounts.Y * extTyr +
-    (aminoAcidCounts.C + extCys_reduced);
+    aminoAcidCounts.W.count * extTrp +
+    aminoAcidCounts.Y.count * extTyr +
+    (aminoAcidCounts.C.count + extCys_reduced);
 
   const absCysPaired = extinctionCoefficientCysPaired / proteinMW;
   const absCysReduced = extinctionCoefficientCysReduced / proteinMW;

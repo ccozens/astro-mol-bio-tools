@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react';
-import { inputStore } from '../../stores/input';
-import { computeProteinMW } from '../../functions/computeProteinMW';
-import type { InputLabelProps } from '../../types';
+import { inputStore } from '../../../stores/input';
+import { computeProteinMW } from '../../../functions/computeProteinMW';
+import type { InputLabelProps } from '../../../types';
 import type { MouseEvent } from 'react';
 
 export default function ComputeProteinMw({

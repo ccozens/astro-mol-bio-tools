@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
-import { transcribe } from '../../functions/transcribeFunction';
-import { inputStore } from '../../stores/input';
+import { transcribe } from '../../../functions/transcribeFunction';
+import { inputStore } from '../../../stores/input';
 
 
 export default function TranscribeDna() {

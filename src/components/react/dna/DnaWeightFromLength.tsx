@@ -1,9 +1,9 @@
 import {
   approxSsDnaFromLength,
   approxDsDnaFromLength,
-} from '../../functions/dnaWeight';
+} from '../../../functions/dnaWeight';
 import { useState, ChangeEvent } from 'react';
-import type { InputLabelProps } from '../../types';
+import type { InputLabelProps } from '../../../types';
 import type { MouseEvent } from 'react';
 
 export default function DnaWeight({
