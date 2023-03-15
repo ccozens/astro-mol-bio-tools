@@ -2,8 +2,11 @@ import { transcribe } from './transcribeFunction';
 import { ntMW } from './lookupTables';
 
 // approx MW from length
-export const approxRnaFromLength = (len: number) => {
+export const approxSsRnaFromLength = (len: number) => {
   return len * ntMW.N + ntMW.triphosphate;
+}
+export const approxDsRnaFromLength = (len: number) => {
+  return len * (ntMW.N*2) + ntMW.triphosphate;
 }
 
 export const approxSsDnaFromLength = (len: number) => {
@@ -16,9 +19,13 @@ export const approxDsDnaFromLength = (len: number) => {
 
 
 // approx MW
-export const approxRnaMw = (dna: string) => {
+export const approxSsRnaMw = (dna: string) => {
   const rna = transcribe(dna);
   return rna.length * ntMW.N + ntMW.triphosphate;
+};
+export const approxDsRnaMw = (dna: string) => {
+  const rna = transcribe(dna);
+  return rna.length * (ntMW.N *2) + ntMW.triphosphate;
 };
 
 export const approxSsDnaMw = (dna: string) => {
@@ -31,7 +38,7 @@ export const approxDsDnaMw = (dna: string) => {
 
 // exact MW
 
-export const exactRnaMw = (dna: string) => {
+export const exactSsRnaMw = (dna: string) => {
   const rna = transcribe(dna);
   let rnaArray = Array.from(rna);
   // calc MW
@@ -41,6 +48,19 @@ export const exactRnaMw = (dna: string) => {
   });
   const phosphate = ntMW.monophosphate;
   let finalRnaMW = rnaMW + phosphate;
+
+  return finalRnaMW;
+};
+export const exactDsRnaMw = (dna: string) => {
+  const rna = transcribe(dna);
+  let rnaArray = Array.from(rna);
+  // calc MW
+  let rnaMW = 0;
+  rnaArray.forEach((pos) => {
+    rnaMW += ntMW[pos];
+  });
+  const phosphate = ntMW.monophosphate;
+  let finalRnaMW = (rnaMW + phosphate)*2;
 
   return finalRnaMW;
 };

@@ -1,8 +1,8 @@
 import { useStore } from '@nanostores/react';
 import { inputStore } from '../../stores/input';
 import {
-  approxRnaMw,
-  exactRnaMw,
+  exactSsRnaMw,
+  exactDsRnaMw,
 } from '../../functions/dnaWeight';
 import type { InputLabelProps } from '../../types';
 import type { MouseEvent } from 'react';
@@ -17,25 +17,25 @@ export default function ExactRnaWeightFromSequence({
     return <div className="outputBox">{sanitisedInputFromStore}</div>;
   }
 
-  let calcExactRnaMw: number = 0;
-  let calcApproxRnaMw: number = 0;
+  let calcExactSsRnaMw: number = 0;
+  let calcExactDsRnaMw: number = 0;
 
-  calcExactRnaMw =
+  calcExactSsRnaMw =
     sanitisedInputFromStore === ''
       ? 0
-      : approxRnaMw(sanitisedInputFromStore);
-  calcApproxRnaMw =
+      : exactSsRnaMw(sanitisedInputFromStore);
+  calcExactDsRnaMw =
     sanitisedInputFromStore === ''
       ? 0
-      : exactRnaMw(sanitisedInputFromStore);
+      : exactDsRnaMw(sanitisedInputFromStore);
 
-  function copyExactRnaMwOnClick(e: MouseEvent) {
+  function copyExactSsRnaMwOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcApproxRnaMw));
+    navigator.clipboard.writeText(String(calcExactSsRnaMw));
   }
-  function copyApproxRnaMwOnClick(e: MouseEvent) {
+  function copyExactDsRnaMwOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcExactRnaMw));
+    navigator.clipboard.writeText(String(calcExactDsRnaMw));
   }
 
   return (
@@ -44,21 +44,21 @@ export default function ExactRnaWeightFromSequence({
         Exact sequence MW
       </p>
       <hr />
-      <p className="countItem">
-        dsRNA: {Number(calcApproxRnaMw / 1000).toFixed(2)} kD
+      <p className="countItem" aria-label="exactSsRnaMw">
+        ssRNA: {Number(calcExactSsRnaMw / 1000).toFixed(2)} kD
         <span
           className="material-symbols-outlined"
-          onClick={copyApproxRnaMwOnClick}
+          onClick={copyExactSsRnaMwOnClick}
         >
           content_copy
           <span className="copyTip">Copy data</span>
         </span>
       </p>
-      <p className="countItem">
-        ssRNA: {Number(calcExactRnaMw / 1000).toFixed(2)} kD
+      <p className="countItem" aria-label="exactDsRnaMw">
+        dsRNA: {Number(calcExactDsRnaMw / 1000).toFixed(2)} kD
         <span
           className="material-symbols-outlined"
-          onClick={copyExactRnaMwOnClick}
+          onClick={copyExactDsRnaMwOnClick}
         >
           content_copy
           <span className="copyTip">Copy data</span>

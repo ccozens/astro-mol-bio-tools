@@ -1,6 +1,6 @@
 import {
-  approxSsDnaFromLength,
-  approxDsDnaFromLength,
+  approxSsRnaFromLength,
+  approxDsRnaFromLength,
 } from '../../functions/dnaWeight';
 import { useState, ChangeEvent } from 'react';
 import type { InputLabelProps } from '../../types';
@@ -17,22 +17,22 @@ export default function DnaWeight({
     setLengthInput(Number(onlyNums));
   }
 
-  let calcApproxSsDnaFromLength: number = 0;
-  let calcApproxDsDnaFromLength: number = 0;
+  let calcApproxSsRnaFromLength: number = 0;
+  let calcApproxDsRnaFromLength: number = 0;
 
   //DNA
-  calcApproxSsDnaFromLength =
-    lengthInput === 0 ? 0 : approxSsDnaFromLength(lengthInput);
-  calcApproxDsDnaFromLength =
-    lengthInput === 0 ? 0 : approxDsDnaFromLength(lengthInput);
+  calcApproxSsRnaFromLength =
+    lengthInput === 0 ? 0 : approxSsRnaFromLength(lengthInput);
+  calcApproxDsRnaFromLength =
+    lengthInput === 0 ? 0 : approxDsRnaFromLength(lengthInput);
 
-  function copyDsDnaOnClick(e: MouseEvent) {
+  function copyDsRnaOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcApproxDsDnaFromLength));
+    navigator.clipboard.writeText(String(calcApproxDsRnaFromLength));
   }
-  function copySsDnaOnClick(e: MouseEvent) {
+  function copySsRnaOnClick(e: MouseEvent) {
     e.preventDefault();
-    navigator.clipboard.writeText(String(calcApproxSsDnaFromLength));
+    navigator.clipboard.writeText(String(calcApproxSsRnaFromLength));
   }
 
   return (
@@ -50,23 +50,23 @@ export default function DnaWeight({
         />
       </label>
       <p className="countItem">
-        dsRNA:{' '}
-        {Number(calcApproxSsDnaFromLength / 1000).toFixed(2) +
+        ssRNA:{' '}
+        {Number(calcApproxSsRnaFromLength / 1000).toFixed(2) +
           ' kD  '}{' '}
         <span
           className="material-symbols-outlined"
-          onClick={copyDsDnaOnClick}
+          onClick={copyDsRnaOnClick}
         >
           content_copy
           <span className="copyTip">Copy data</span>
         </span>
       </p>
       <p className="countItem">
-        ssRNA:{' '}
-        {Number(calcApproxDsDnaFromLength / 1000).toFixed(2) + ' kD'}{' '}
+        dsRNA:{' '}
+        {Number(calcApproxDsRnaFromLength / 1000).toFixed(2) + ' kD'}{' '}
         <span
           className="material-symbols-outlined"
-          onClick={copySsDnaOnClick}
+          onClick={copySsRnaOnClick}
         >
           content_copy
           <span className="copyTip">Copy data</span>
