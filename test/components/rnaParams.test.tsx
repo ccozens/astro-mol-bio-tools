@@ -28,11 +28,11 @@ describe('test nucleotide counting', () => {
   });
   test('test error message', async () => {
     // define input
-    const dna = 'AAQTRTLGUGVCGC'
+    const rna = 'AAQTRTLGUGVCGC'
 
      // enter DNA into input box
-     await user.type(inputBox, dna);
-     expect(inputBox).toHaveValue(dna);
+     await user.type(inputBox, rna);
+     expect(inputBox).toHaveValue(rna);
      // render output
      render(
        <CountNucleotides ariaLabelContent={'Nucleotide counts'} />
@@ -46,7 +46,7 @@ describe('test nucleotide counting', () => {
   
   test('test nucleotide counting', async () => {
     //define input
-    const dna = 'AAUUGGCC';
+    const rna = 'AAUUGGCC';
     // define expected output
     const ntCounts = {
       A: {count: 2, ratio: 0.25},
@@ -58,8 +58,8 @@ describe('test nucleotide counting', () => {
     };
 
     // enter DNA into input box
-    await user.type(inputBox, dna);
-    expect(inputBox).toHaveValue(dna);
+    await user.type(inputBox, rna);
+    expect(inputBox).toHaveValue(rna);
     // render output
     render(
       <CountNucleotides ariaLabelContent={'Nucleotide counts'} />
@@ -81,7 +81,7 @@ describe('test nucleotide counting', () => {
 
   test('second test sequence', async () => {
     //define input
-    const dna = 'AUGAUCCUCGAUACAGACUACAUAACUGAGGAUGGAAAGCCCGUCAUCAGGAUCUUCAAGAAGGAGAACGGCGAGUUCAAAAUAGACUACGACAGAAACUUUGAGCCAUACAUCUACGCGCUCUUGAAGGACGACUCUGCGAUUGAGGACGUCAAGAAGAUAACUGCCGAGAGGCACGGCACUACCGUUAGGGUUGUCAGGGCCGAGAAAGUGAAGAAGAAGUUCCUAGGCAGGCCGAUAGAGGUCUG';
+    const rna = 'AUGAUCCUCGAUACAGACUACAUAACUGAGGAUGGAAAGCCCGUCAUCAGGAUCUUCAAGAAGGAGAACGGCGAGUUCAAAAUAGACUACGACAGAAACUUUGAGCCAUACAUCUACGCGCUCUUGAAGGACGACUCUGCGAUUGAGGACGUCAAGAAGAUAACUGCCGAGAGGCACGGCACUACCGUUAGGGUUGUCAGGGCCGAGAAAGUGAAGAAGAAGUUCCUAGGCAGGCCGAUAGAGGUCUG';
     // define expected output
     const ntCounts = {
       A: {count: 79, ratio: 0.32},
@@ -92,8 +92,8 @@ describe('test nucleotide counting', () => {
       GC: 0.50,
     };
     // enter DNA into input box
-    await user.type(inputBox, dna);
-    expect(inputBox).toHaveValue(dna);
+    await user.type(inputBox, rna);
+    expect(inputBox).toHaveValue(rna);
     // render output
     render(
       <CountNucleotides ariaLabelContent={'Nucleotide counts'} />

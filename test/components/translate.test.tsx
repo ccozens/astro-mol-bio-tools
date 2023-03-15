@@ -28,7 +28,7 @@ describe('test DNA translation', () => {
 
   test('test error message', async () => {
     // define input
-    const dna = 'AAQTRTLGUGVCGC'
+    const dna = 'CCGGTT;ACGTACGT5'
 
      // enter DNA into input box
      await user.type(inputBox, dna);
@@ -39,7 +39,7 @@ describe('test DNA translation', () => {
      );
 
     // expected output
-    const expected = 'Non-DNA character entered, please enter ATCG only. Non-DNA characters at positions: 3, 4, 5, 6, 7, 11.'
+    const expected = 'Non-DNA character entered, please enter ATCG only. Non-DNA characters at positions: 7, 16.'
     // test
     expect(screen.getByText(expected));
   });

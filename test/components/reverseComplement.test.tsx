@@ -36,7 +36,7 @@ describe('test DNA reverse complement', () => {
      );
 
     // expected output
-    const expected = 'Non-DNA character entered, please enter ATCG only. Non-DNA characters at positions: 3, 4, 5, 6, 7, 11.'
+    const expected = 'Non-DNA character entered, please enter ATCG only. Non-DNA characters at positions: 3, 5, 7, 9, 11.'
     // test
     expect(screen.getByText(expected));
   });

@@ -8,7 +8,7 @@ import { Molecule } from '../../src/types';
 
 // tbj-tab for test block
 
-describe('test DNA reverse complement', () => {
+describe('test transcribe DNA', () => {
   const user = userEvent.setup();
   let inputBox:HTMLElement ;
 // reset input after each test
@@ -25,7 +25,7 @@ describe('test DNA reverse complement', () => {
 
   test('test error message', async () => {
     // define input
-    const dna = 'AAQTRTLGUGVCGC'
+    const dna = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
 
      // enter DNA into input box
      await user.type(inputBox, dna);
@@ -36,7 +36,7 @@ describe('test DNA reverse complement', () => {
      );
 
     // expected output
-    const expected = 'Non-DNA character entered, please enter ATCG only. Non-DNA characters at positions: 3, 4, 5, 6, 7, 11.'
+    const expected = 'Non-DNA character entered, please enter ATCG only. Non-DNA characters at positions: 38.'
     // test
     expect(screen.getByText(expected));
   });
