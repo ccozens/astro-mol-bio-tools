@@ -1,4 +1,3 @@
-import { convertThreeToOneLetter } from './convertThreeToOneLetter';
 import { computeProteinMW } from './computeProteinMW';
 import { absCoefficients } from './lookupTables';
 import { countAminoAcids } from './utilFunctions/countAminoAcids';

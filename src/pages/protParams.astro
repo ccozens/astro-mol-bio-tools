@@ -1,10 +1,12 @@
 ---
 import '../styles/global.css';
+import '../styles/chartStyles.css'
 import PageLayout from '../layouts/PageLayout.astro';
 import Input from '../components/react/Input';
 import { Molecule } from '../types';
 import ComputeProteinMw from '../components/react/protein/ComputeProteinMw';
 import ComputeExtinctionCoefficients from '../components/react/protein/ComputeExtinctionCoefficients';
+import CountAminoAcids from '../components/react/protein/CountAminoAcids';
 
 const pageTitle = 'Protein parameters';
 ---
@@ -21,6 +23,9 @@ const pageTitle = 'Protein parameters';
       client:load
       ariaLabelContent={'Protein Extinction Coefficients'}/>
       
+      <CountAminoAcids
+      client:load
+      ariaLabelContent={'Amino acid count'}/>
     </div>
     
     <Input

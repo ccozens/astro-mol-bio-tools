@@ -1,0 +1,13 @@
+.countAminoAcidsTooltip {
+    /* padding: 0.25rem; */
+    background: var(--box-opaque);
+    border: solid 0.2px var(--box-highlight);
+    border-radius: 0.5em;
+    padding: 0.25em;
+}
+
+.countAminoAcidsTooltipLabel {
+    font-size: 0.875rem;
+      font-family: 'Open Sans', sans-serif;
+    color: var(--accent);
+  }
