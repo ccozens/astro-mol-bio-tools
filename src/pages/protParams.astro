@@ -4,7 +4,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import Input from '../components/react/Input';
 import { Molecule } from '../types';
 import ComputeProteinMw from '../components/react/protein/ComputeProteinMw';
-
+import ComputeExtinctionCoefficients from '../components/react/protein/ComputeExtinctionCoefficients';
 
 const pageTitle = 'Protein parameters';
 ---
@@ -16,6 +16,10 @@ const pageTitle = 'Protein parameters';
       <ComputeProteinMw 
       client:load
       ariaLabelContent={'Protein MW'}/>
+      
+      <ComputeExtinctionCoefficients 
+      client:load
+      ariaLabelContent={'Protein Extinction Coefficients'}/>
       
     </div>
     

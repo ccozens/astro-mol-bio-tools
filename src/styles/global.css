@@ -214,8 +214,12 @@ span {
   margin: 0.3em 0;
   padding: 0 0.2em;
   font-weight: 500;
-  text-align: center;
-}
+ }
+
+.countSubHeading {
+  margin: 0.3em 0;
+  padding: 0 0.2em;
+ }
 
 .countItem {
   margin: 0.1em;

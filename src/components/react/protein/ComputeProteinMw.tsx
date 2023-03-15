@@ -23,9 +23,10 @@ export default function ComputeProteinMw({
 
   return (
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
+      <p className="countHeading">Protein MW</p>
       <p className="countItem" aria-label="proteinMw">
         {' '}
-        Protein MW: {Number(proteinMw / 1000).toFixed(2)} kD
+        {Number(proteinMw / 1000).toFixed(2)} kD
         <span
           className="material-symbols-outlined"
           onClick={copyProteinMwOnClick}

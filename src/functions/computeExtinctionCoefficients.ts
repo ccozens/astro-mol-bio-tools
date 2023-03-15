@@ -14,12 +14,8 @@ const [extTyr, extTrp, extCys_paired, extCys_reduced] = [
 // coefficients for proteins in water measured at 280 nm
 
 export const computeExtinctionCoefficients = (
-  protein: string,
-  outFormat: string
+  protein: string
 ) => {
-  if (outFormat === 'threeLetter') {
-    protein = convertThreeToOneLetter(protein);
-  }
 
   // call proteinMW
   const proteinMW = computeProteinMW(Array.from(protein));
@@ -37,8 +33,9 @@ export const computeExtinctionCoefficients = (
     aminoAcidCounts.Y.count * extTyr +
     (aminoAcidCounts.C.count + extCys_reduced);
 
+  
   const absCysPaired = extinctionCoefficientCysPaired / proteinMW;
   const absCysReduced = extinctionCoefficientCysReduced / proteinMW;
 
-  return { absCysPaired, absCysReduced };
+  return { extinctionCoefficientCysPaired, extinctionCoefficientCysReduced, absCysPaired, absCysReduced };
 };
