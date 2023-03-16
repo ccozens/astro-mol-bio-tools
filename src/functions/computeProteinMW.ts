@@ -1,17 +1,14 @@
-import { aaMW } from './lookupTables'
-  
-  export const computeProteinMW = (proteinArray: string[]) => {
-    let proteinMW = 0;
-    
-    proteinArray.forEach((pos) => {
-      proteinMW += aaMW[pos];
-    });
-    const waterMW = 18.0107946;
-    let protMW = proteinMW+waterMW;
+import { aaMW } from './lookupTables';
 
-    return (
-      protMW
-    );
-  };
+export function computeProteinMW(protein: string) {
+  let proteinMW = 0;
+  const proteinArray = Array.from(protein);
 
-  
+  proteinArray.forEach((pos) => {
+    proteinMW += aaMW[pos];
+  });
+  const waterMW = 18.0107946;
+  let protMW = proteinMW + waterMW;
+
+  return protMW;
+}

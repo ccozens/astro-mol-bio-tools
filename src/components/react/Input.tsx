@@ -50,7 +50,6 @@ export default function Input({
           `Non-amino acid character entered, please enter natural AAs only.  Non-natural AA at positions: ${checkedProteinInput}.`);
         setIsError(true)
       }
-      console.log(checkedProteinInput);
     }
   }, [input]);
 

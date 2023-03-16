@@ -1,4 +1,3 @@
-import { computeProteinMW } from './computeProteinMW';
 import { absCoefficients } from './lookupTables';
 import { countAminoAcids } from './utilFunctions/countAminoAcids';
 
@@ -12,13 +11,10 @@ const [extTyr, extTrp, extCys_paired, extCys_reduced] = [
 
 // coefficients for proteins in water measured at 280 nm
 
-export const computeExtinctionCoefficients = (
-  protein: string
-) => {
-
-  // call proteinMW
-  const proteinMW = computeProteinMW(Array.from(protein));
-
+export function computeExtinctionCoefficients(
+  protein: string,
+  proteinMW: number
+) {
   // count amino acids
   const aminoAcidCounts = countAminoAcids(protein);
 
@@ -32,9 +28,12 @@ export const computeExtinctionCoefficients = (
     aminoAcidCounts.Y.count * extTyr +
     (aminoAcidCounts.C.count + extCys_reduced);
 
-  
   const absCysPaired = extinctionCoefficientCysPaired / proteinMW;
   const absCysReduced = extinctionCoefficientCysReduced / proteinMW;
-
-  return { extinctionCoefficientCysPaired, extinctionCoefficientCysReduced, absCysPaired, absCysReduced };
-};
+  return {
+    extinctionCoefficientCysPaired,
+    extinctionCoefficientCysReduced,
+    absCysPaired,
+    absCysReduced,
+  };
+}

@@ -5,7 +5,8 @@ import PageLayout from '../layouts/PageLayout.astro';
 import Input from '../components/react/Input';
 import { Molecule } from '../types';
 import ComputeProteinMw from '../components/react/protein/ComputeProteinMw';
-import ComputeExtinctionCoefficients from '../components/react/protein/ComputeExtinctionCoefficients';
+// import ComputeExtinctionCoefficients from '../components/react/protein/ComputeExtinctionCoefficients';
+import ProteinParameters from '../components/react/protein/ProteinParameters';
 import CountAminoAcids from '../components/react/protein/CountAminoAcids';
 
 const pageTitle = 'Protein parameters';
@@ -13,15 +14,11 @@ const pageTitle = 'Protein parameters';
 
 <PageLayout pageTitle={pageTitle}>
   <section class="reactArea">
-    <div class="outerOutputBox">
-
-      <ComputeProteinMw 
-      client:load
-      ariaLabelContent={'Protein MW'}/>
+    <div class="outerOutputBox chartBox">
       
-      <ComputeExtinctionCoefficients 
+      <ProteinParameters
       client:load
-      ariaLabelContent={'Protein Extinction Coefficients'}/>
+      ariaLabelContent={'Protein parameters'}/>
       
       <CountAminoAcids
       client:load

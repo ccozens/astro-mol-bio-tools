@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
-import { countNucleotides } from '../../../functions/utilFunctions/countNucleotides';
 import { inputStore } from '../../../stores/input';
+import { countNucleotides } from '../../../functions/utilFunctions/countNucleotides';
 import type { InputLabelProps } from '../../../types';
 import type { MouseEvent } from 'react';
 
@@ -25,7 +25,7 @@ export default function CountNucleotides({
     <div className="innerOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">Nucleotide Counts</p>
       <hr />
-      <div className="outputGrid">
+      <div className="countNucleotideOutputGrid">
         <div className="gridItem"></div>
         <div className="gridItem">Counts</div>
         <div className="gridItem">Ratios</div>
@@ -51,7 +51,7 @@ export default function CountNucleotides({
         </div>
         <div className="gridItem" aria-label="Totallabel">{gridRows[4]}</div>
         <div className="gridItem" aria-label="Totalcount">{counts[4]}</div>
-        <div className="gridCopyButton">
+        <div className="countNucleotideGridCopyButton">
           <span
             className="material-symbols-outlined"
             aria-label="copyNtCounts"

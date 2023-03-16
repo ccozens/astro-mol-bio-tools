@@ -26,16 +26,10 @@ export default function CountAminoAcids({
     }
   );
 
-  function copyResiCounts(e: MouseEvent) {
-    e.preventDefault();
-    navigator.clipboard.writeText(JSON.stringify(resiCounts));
-  }
-
   // remove total from resiCountsArray
   const individualResiCountsArray = resiCountsArray.slice(0, -1);
-
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer aria-label={ariaLabelContent}>
       <BarChart
         className="proteinBar"
         data={individualResiCountsArray}

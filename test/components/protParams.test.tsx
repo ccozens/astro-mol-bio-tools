@@ -10,8 +10,8 @@ import userEvent from '@testing-library/user-event';
 import { Molecule } from '../../src/types';
 import Input from '../../src/components/react/Input';
 import { CountAminoAcids } from '../../src/components/react/protein/CountAminoAcids';
-import { ComputeProteinMW } from '../../src/components/react/protein/ComputeProteinMw';
-import { ComputeExtinctionCoefficients } from '../../src/components/react/protein/ComputeExtinctionCoefficients';
+import { ComputeProteinMW } from '../../src/components/react/retired/ComputeProteinMw';
+import { ComputeExtinctionCoefficients } from '../../src/components/react/retired/ComputeExtinctionCoefficients';
 
 describe('test nucleotide counting', () => {
   const user = userEvent.setup();
