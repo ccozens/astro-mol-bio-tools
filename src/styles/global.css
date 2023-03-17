@@ -108,13 +108,21 @@ span {
   background: var(--box-fill);
   border-radius: 0.5em;
   font-size: 1em;
-  width: 60vw;
-  height: 30vh;
+  width: 65vw;
   margin: 10px 0;
   padding: 0.5em;
   cursor: text;
   overflow-wrap: break-word;
   overflow-y: auto;
+}
+
+.outputBox,
+.outerOutputBox {
+  height: 40vh;
+}
+
+.textArea {
+  height: 20vh;
 }
 
 .chartBox {
@@ -374,4 +382,29 @@ span {
   background-color: var(--bg-blue);
   border-radius: 10px;
   border: 3px solid var(--scrollbarTrack);
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

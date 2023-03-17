@@ -71,7 +71,7 @@ describe('test DNA reverse complement', () => {
     await user.type(inputBox, dna);
     expect(inputBox).toHaveValue(dna);
     // render output
-    await render(<ReverseComplement />);
+    render(<ReverseComplement />);
     
 
     //test
@@ -91,7 +91,7 @@ describe('test DNA reverse complement', () => {
     await user.type(inputBox, dna);
     expect(inputBox).toHaveValue(dna);
     // render output
-    await render(<ReverseComplement />);
+    render(<ReverseComplement />);
  
 
     //test
