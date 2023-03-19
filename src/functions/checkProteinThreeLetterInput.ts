@@ -1,5 +1,5 @@
 import { aaThreeOneLetterNames } from './lookupTables';
-import { sanitiseInput } from './utilFunctions/sanitiseInput';
+import { sanitiseThreeLetterInput } from './utilFunctions/sanitiseThreeLetterInput';
 
 export const checkProteinThreeLetterInput = (
   proteinInput: string
@@ -7,35 +7,27 @@ export const checkProteinThreeLetterInput = (
   if (proteinInput === '') {
     return '';
   } else {
-    const protein = sanitiseInput(proteinInput);
-
+    const sanitisedInput = sanitiseThreeLetterInput(proteinInput);
     // convert to three letter array
     const proteinArray = [];
-    for (let i = 0; i < protein.length; i += 3) {
-      proteinArray.push(protein.substring(i, i + 3));
+    for (let i = 0; i < sanitisedInput.length; i += 3) {
+      proteinArray.push(sanitisedInput.substring(i, i + 3));
     }
-
-    // sanitiseInput capitalises whole string, so return chars 1+2 of each triplet to lower case
-    const titleCase = proteinArray.map(
-      (aa) => aa[0] + aa[1].toLowerCase() + aa[2].toLowerCase()
-    );
 
     // check for non-AA content
     const allThreeLetter = Object.keys(aaThreeOneLetterNames);
 
-    const wrongInput = titleCase.filter(
+    const wrongInput = proteinArray.filter(
       (resi) => !allThreeLetter.includes(resi)
     );
+    console.log(wrongInput);
     let wrongInputPositions = [];
-    for (let i in wrongInput) {
-      wrongInputPositions.push(titleCase.indexOf(wrongInput[i]) + 1);
+    for (let resi in wrongInput) {
+      wrongInputPositions.push(proteinArray.indexOf(wrongInput[resi]) + 1);
+      return wrongInputPositions.join(', ');
     }
 
-    const errorMessage = `Non-amino acid character entered, please enter only 20 natural residues in three letter format.  Non-protein characters at positions: ${wrongInputPositions.join(
-      ', '
-    )}`;
-
     // return unchanged proteinInput if for loop exits successfully
-    return wrongInput.length > 0 ? errorMessage : titleCase.join('');
+    return proteinInput;
   }
 };

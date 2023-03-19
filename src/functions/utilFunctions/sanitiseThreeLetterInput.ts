@@ -1,16 +1,14 @@
-export const sanitiseInput = (input: string) => {
-  // ensure uppercase
-  const inputUpper = input.toUpperCase();
+export const sanitiseThreeLetterInput = (input: string) => {
   // if FASTA, remove first line by splicing at first new line
-  const fastaHeadRemoved = inputUpper.startsWith('>')
-    ? inputUpper.slice(inputUpper.indexOf('\n'))
-    : inputUpper;
+  const fastaHeadRemoved = input.startsWith('>')
+    ? input.slice(input.indexOf('\n'))
+    : input;
   // remove star at end (if present), any spacers (dash, space, period or comma), line breaks and carriage returns
-  const sanitisedInput =
+  const sanitisedThreeLetterInput =
     fastaHeadRemoved.at(-1) === '*'
       ? fastaHeadRemoved.replace(/[- .,\r\n]/g, '').slice(0, -1)
       : fastaHeadRemoved.replace(/[- .,\r\n]/g, '');
 
-  return sanitisedInput;
+  return sanitisedThreeLetterInput;
 };
 

@@ -1,19 +1,15 @@
 ---
 import '../styles/global.css';
 import PageLayout from '../layouts/PageLayout.astro';
-import Input from '../components/react/Input';
-import { Molecule } from '../types';
+import FormatProtein from '../components/react/protein/FormatProtein';
 
 const pageTitle = 'Format protein';
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <section class="reactArea">
-    <Input
-      client:load
-      ariaLabelContent={'DNA input form for protein parameters'}
-      placeholderText={'Enter protein sequence here...'}
-      inputType={Molecule.Protein}
-    />
-  </section>
+
+    <FormatProtein 
+    client:load 
+    ariaLabelContent={'Format protein'}/>
+
 </PageLayout>

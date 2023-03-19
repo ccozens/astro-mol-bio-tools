@@ -9,8 +9,7 @@ import { computeExtinctionCoefficients } from '../../../functions/computeExtinct
 export default function ProteinParameters({
   ariaLabelContent,
 }: InputLabelProps) {
-  // destructure import
-
+// get input from store
 const sanitisedInputFromStore = useStore(inputStore);
 
 // set all to zero as default

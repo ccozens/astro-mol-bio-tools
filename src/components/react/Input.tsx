@@ -19,10 +19,12 @@ export default function Input({
     setInput(sanitiseInput(e.target.value));
   }
 
+ 
+
   useEffect(() => {
     // logic if DNA entered
     if (inputType === 1 || inputType === 2) {
-      // is an enum, so this = Molecule.Dna or Molecule.Rna
+      // inputType is an enum, so this = Molecule.Dna or Molecule.Rna
       const checkedDnaInput = checkDnaInput(input, inputType);
       if (checkedDnaInput === input) {
         inputStore.set(checkedDnaInput);

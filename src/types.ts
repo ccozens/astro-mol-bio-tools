@@ -2,9 +2,13 @@ export interface InputLabelProps {
   ariaLabelContent: string;
   placeholderText?: string;
   inputType?: Molecule;
+  proteinFormat?: ProteinFormat
 }
 
-
+export enum ProteinFormat {
+    oneLetter,
+    threeLetter,
+}
 export interface ErrorMessageProps {
   errorMessage: string;
 }
