@@ -13,6 +13,7 @@ export default function ProteinParameters({
 const sanitisedInputFromStore = useStore(inputStore);
 
 // set all to zero as default
+const proteinLength = sanitisedInputFromStore === '' ? 0 : sanitisedInputFromStore.length;
 // proteinMW
 const proteinMW = sanitisedInputFromStore === '' ? 0 : computeProteinMW(sanitisedInputFromStore);
 // extinction coefficients
@@ -35,6 +36,10 @@ const {
 
 
   // event handlers for copy buttons
+  function copyProteinLengthOnClick(e: MouseEvent) {
+    e.preventDefault();
+    navigator.clipboard.writeText(String(proteinLength));
+  }
   function copyProteinMwOnClick(e: MouseEvent) {
     e.preventDefault();
     navigator.clipboard.writeText(String(proteinMW));
@@ -59,6 +64,20 @@ const {
   return (
     <div className="innerOutputBox innerOutputBoxProtParams" aria-label={ariaLabelContent}>
       <div className="proteinParamsOutputGrid">
+
+      <div className="protParamsGridItem">Length</div>
+        <div className="protParamsCountItem" aria-label="proteinLength">
+          {' '}
+          {proteinLength}
+        </div>
+        <div
+          className="protParamsGridItem material-symbols-outlined"
+          onClick={copyProteinLengthOnClick}
+        >
+          content_copy
+          <span className="copyTip">Copy data</span>
+        </div>
+
         <div className="protParamsGridItem">Molecular Weight</div>
         <div className="protParamsCountItem" aria-label="proteinMw">
           {' '}

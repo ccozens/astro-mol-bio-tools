@@ -125,7 +125,9 @@ span {
   overflow-y: auto;
 }
 
-.fetchInput {
+
+
+.fetchAccessionInput {
   color: var(--accent);
   background: var(--box-fill);
   border-radius: 0.5em;

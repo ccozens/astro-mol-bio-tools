@@ -36,8 +36,6 @@ export default function GetFromUniprot({
     }
   }, [search]);
 
-  // const demo = 'https://cors-anywhere.herokuapp.com/';
-
   // fetch protein sequence from Uniprot
   async function fetchProtein(search: string) {
     const response = await fetch(
@@ -57,16 +55,6 @@ export default function GetFromUniprot({
       setFetchedOrganismName(data.organism.names[0].value);
     }
   }
-/* 
-    function updateFetchedInputStore() {
-      if (fetchedAccession.includes(search.toUpperCase())) {
-        fetchedInputStore.set(fetchedSequence);
-      }
-      // if no sequence found, set inputStore to empty string
-      else if (!fetchedAccession.includes(search.toUpperCase())) {
-        fetchedInputStore.set('');
-      }
-    } */
 
     // set inputStore to fetched protein sequence
     if (fetchedAccession.includes(search.toUpperCase())) {
@@ -92,7 +80,7 @@ export default function GetFromUniprot({
         Get a sequence by Uniprot accession:
       </label>
       <input
-        className="fetchInput"
+        className="fetchAccessionInput"
         type="text"
         id="uniprotId"
         name="uniprotId"
