@@ -125,6 +125,23 @@ span {
   overflow-y: auto;
 }
 
+.fetchInput {
+  color: var(--accent);
+  background: var(--box-fill);
+  border-radius: 0.5em;
+  font-size: 1em;
+  margin: 10px 0;
+  padding: 0.2em 0.5em;
+  cursor: text;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+}
+
+.fetchInput::placeholder {
+  font-size: 0.85em;
+}
+
+
 .outputBox,
 .outerOutputBox {
   height: 40vh;

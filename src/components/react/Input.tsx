@@ -1,9 +1,11 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 import { inputStore } from '../../stores/input';
+import { fetchedInputStore } from '../../stores/fetchedInputStore';
 import { sanitiseInput } from '../../functions/utilFunctions/sanitiseInput';
 import { checkDnaInput } from '../../functions/checkDnaInput';
 import { checkProteinOneLetterInput } from '../../functions/checkProteinOneLetterInput';
 import type { InputLabelProps, ErrorMessageProps } from '../../types';
+import { useStore } from '@nanostores/react';
 
 export default function Input({
   ariaLabelContent,
@@ -19,7 +21,12 @@ export default function Input({
     setInput(sanitiseInput(e.target.value));
   }
 
- 
+  // subscribe to inputStore, so that protein sequence is shown when sequence fetched from Uniprot
+  const fetchedInput = useStore(fetchedInputStore);
+  useEffect(() => {
+  if (fetchedInput !== '') {
+    setInput(sanitiseInput(fetchedInput));
+  }}, [fetchedInput]);
 
   useEffect(() => {
     // logic if DNA entered

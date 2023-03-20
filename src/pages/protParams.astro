@@ -4,10 +4,10 @@ import '../styles/chartStyles.css'
 import PageLayout from '../layouts/PageLayout.astro';
 import Input from '../components/react/Input';
 import { Molecule } from '../types';
-import ComputeProteinMw from '../components/react/protein/ComputeProteinMw';
 // import ComputeExtinctionCoefficients from '../components/react/protein/ComputeExtinctionCoefficients';
 import ProteinParameters from '../components/react/protein/ProteinParameters';
 import CountAminoAcids from '../components/react/protein/CountAminoAcids';
+import GetFromUniprot from '../components/react/protein/GetFromUniprot';
 
 const pageTitle = 'Protein parameters';
 ---
@@ -32,5 +32,12 @@ const pageTitle = 'Protein parameters';
       placeholderText={'Enter protein sequence as single amino acid (eg MILD...) here...'}
       inputType={Molecule.Protein}
     />
+
+    <GetFromUniprot
+    client:load
+    ariaLabelContent="Get protein sequence from Uniprot"
+    placeholderText={'DPOL_THEGO or P56689'}
+    />
+
   </section>
 </PageLayout>
