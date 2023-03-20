@@ -5,35 +5,43 @@ import type { MouseEvent } from 'react';
 import { computeProteinMW } from '../../../functions/computeProteinMW';
 import { computeExtinctionCoefficients } from '../../../functions/computeExtinctionCoefficients';
 
-
 export default function ProteinParameters({
   ariaLabelContent,
 }: InputLabelProps) {
-// get input from store
-const sanitisedInputFromStore = useStore(inputStore);
+  // get input from store
+  const sanitisedInputFromStore = useStore(inputStore);
 
-// set all to zero as default
-const proteinLength = sanitisedInputFromStore === '' ? 0 : sanitisedInputFromStore.length;
-// proteinMW
-const proteinMW = sanitisedInputFromStore === '' ? 0 : computeProteinMW(sanitisedInputFromStore);
-// extinction coefficients
-const extinctionCoefficients = sanitisedInputFromStore === '' ? {
-    extinctionCoefficientCysPaired: 0,
-    extinctionCoefficientCysReduced: 0,
-    absCysPaired: 0,
-    absCysReduced: 0,
-} : computeExtinctionCoefficients(sanitisedInputFromStore, proteinMW);
+  // set all to zero as default
+  const proteinLength =
+    sanitisedInputFromStore === ''
+      ? 0
+      : sanitisedInputFromStore.length;
+  // proteinMW
+  const proteinMW =
+    sanitisedInputFromStore === ''
+      ? 0
+      : computeProteinMW(sanitisedInputFromStore);
+  // extinction coefficients
+  const extinctionCoefficients =
+    sanitisedInputFromStore === ''
+      ? {
+          extinctionCoefficientCysPaired: 0,
+          extinctionCoefficientCysReduced: 0,
+          absCysPaired: 0,
+          absCysReduced: 0,
+        }
+      : computeExtinctionCoefficients(
+          sanitisedInputFromStore,
+          proteinMW
+        );
 
-
-// destructure extinctionCoefficients
-const {
+  // destructure extinctionCoefficients
+  const {
     extinctionCoefficientCysPaired,
     extinctionCoefficientCysReduced,
     absCysPaired,
     absCysReduced,
-} = extinctionCoefficients;
-
-
+  } = extinctionCoefficients;
 
   // event handlers for copy buttons
   function copyProteinLengthOnClick(e: MouseEvent) {
@@ -62,11 +70,16 @@ const {
   }
 
   return (
-    <div className="innerOutputBox innerOutputBoxProtParams" aria-label={ariaLabelContent}>
+    <div
+      className="innerOutputBox innerOutputBoxProtParams"
+      aria-label={ariaLabelContent}
+    >
       <div className="proteinParamsOutputGrid">
-
-      <div className="protParamsGridItem">Length</div>
-        <div className="protParamsCountItem" aria-label="proteinLength">
+        <div className="protParamsGridItem">Length</div>
+        <div
+          className="protParamsCountItem"
+          aria-label="proteinLength"
+        >
           {' '}
           {proteinLength}
         </div>
@@ -90,7 +103,7 @@ const {
           content_copy
           <span className="copyTip">Copy data</span>
         </div>
-        
+
         <div className="protParamsGridItem">EC (Cys paired)</div>
         <div
           className="protParamsCountItem"
@@ -124,7 +137,10 @@ const {
         </div>
 
         <div className="protParamsGridItem">A280 (Cys paired)</div>
-        <div className="protParamsCountItem" aria-label="A280 cys Paired">
+        <div
+          className="protParamsCountItem"
+          aria-label="A280 cys Paired"
+        >
           {' '}
           {Number(absCysPaired).toFixed(2)}
         </div>
@@ -137,7 +153,10 @@ const {
         </div>
 
         <div className="protParamsGridItem">A280 (Cys reduced)</div>
-        <div className="protParamsCountItem" aria-label="A280 Cys Reduced">
+        <div
+          className="protParamsCountItem"
+          aria-label="A280 Cys Reduced"
+        >
           {' '}
           {Number(absCysReduced).toFixed(2)}
         </div>
@@ -148,20 +167,19 @@ const {
           content_copy
           <span className="copyTip">Copy data</span>
         </div>
-        <div className="protParamsGridUnits1">
-        MW is in kD.
-        </div>
-        <div className="protParamsGridUnits2">
 
-        Extinction coefficients are M<sup>-1</sup> cm<sup>-1</sup>{' '}
+        <div className="protParamsGridUnits1">MW is in kD.</div>
+        <div className="protParamsGridUnits2">
+          Extinction coefficients are M<sup>-1</sup> cm<sup>-1</sup>{' '}
           at 280 nm in water.
         </div>
         <div className="protParamsGridUnits3">
           A<sub>280</sub> = Abs 0.1% (1 g/l)
         </div>
-            
         
       </div>
+
+      
     </div>
   );
 }

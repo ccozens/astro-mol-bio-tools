@@ -229,7 +229,7 @@ span {
 .proteinParamsOutputGrid {
   display: grid;
   grid-template-columns: 10fr 4fr 1fr;
-  grid-template-rows: repeat(5, 1fr) repeat(3, 0.7fr);
+  grid-template-rows: repeat(6, 1fr) repeat(3, 0.7fr);
   place-items: center;
 }
 
@@ -246,17 +246,17 @@ span {
 }
 
 .protParamsGridUnits1 {
-  grid-row: 6 ;
-  grid-column: 1 / -1;
-  font-size: 0.6em;
-}
-.protParamsGridUnits2 {
   grid-row: 7 ;
   grid-column: 1 / -1;
   font-size: 0.6em;
 }
-.protParamsGridUnits3 {
+.protParamsGridUnits2 {
   grid-row: 8 ;
+  grid-column: 1 / -1;
+  font-size: 0.6em;
+}
+.protParamsGridUnits3 {
+  grid-row: 9 ;
   grid-column: 1 / -1;
   font-size: 0.6em;
 }
