@@ -1,5 +1,4 @@
 import { useState, ChangeEvent, MouseEvent, useEffect } from 'react';
-// import { inputStore } from '../../../stores/input';
 import { fetchedInputStore } from '../../../stores/fetchedInputStore';
 
 import type { InputLabelProps } from '../../../types';
@@ -10,6 +9,11 @@ export default function GetFromUniprot({
 }: InputLabelProps) {
   // store input as state, linked to input box value={search}
   const [search, setSearch] = useState('');
+  const [fetchedAccession, setFetchedAccession] = useState('');
+  const [fetchedSequence, setFetchedSequence] = useState('');
+  const [fetchedProteinName, setFetchedProteinName] = useState('');
+  const [fetchedOrganismName, setFetchedOrganismName] = useState('');
+
   function handleInput(e: ChangeEvent<HTMLInputElement>): void {
     setSearch(e.target.value);
   }
@@ -17,41 +21,76 @@ export default function GetFromUniprot({
   // re-run search when box reselected
   function handleClick(e: MouseEvent<HTMLInputElement>): void {
     setSearch(e.currentTarget.value);
-    // fetchProtein(search);
+    if (search !== '') {
+      fetchProtein(search);
+    }
   }
 
   // send fetch request when user finished typing
   useEffect(() => {
-    if (search !== ''){
-    const timer = setTimeout(() => {
-      fetchProtein(search);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }}, [search]);
+    if (search !== '') {
+      const timer = setTimeout(() => {
+        fetchProtein(search);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [search]);
 
+  // const demo = 'https://cors-anywhere.herokuapp.com/';
 
   // fetch protein sequence from Uniprot
   async function fetchProtein(search: string) {
     const response = await fetch(
-      `https://www.uniprot.org/uniprot/${search}.fasta`
+      `https://www.ebi.ac.uk/proteins/api/proteins/${search}`
     );
-    const data = await response.text();
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    if (response.ok) {
+      const data = await response.json();
+      // set variables from parsed json
+      setFetchedAccession(data.accession);
+      setFetchedSequence(data.sequence['sequence']);
+      setFetchedProteinName(
+        data.protein.recommendedName.fullName.value
+      );
+      setFetchedOrganismName(data.organism.names[0].value);
+    }
+  }
+/* 
+    function updateFetchedInputStore() {
+      if (fetchedAccession.includes(search.toUpperCase())) {
+        fetchedInputStore.set(fetchedSequence);
+      }
+      // if no sequence found, set inputStore to empty string
+      else if (!fetchedAccession.includes(search.toUpperCase())) {
+        fetchedInputStore.set('');
+      }
+    } */
+
     // set inputStore to fetched protein sequence
-    if (data.includes(search.toUpperCase())) {
-      fetchedInputStore.set(data);
-    //   inputStore.set(data);
+    if (fetchedAccession.includes(search.toUpperCase())) {
+      fetchedInputStore.set(fetchedSequence);
     }
     // if no sequence found, set inputStore to empty string
-    else if (!data.includes(search.toUpperCase())) {
-    //   inputStore.set('');
+    else if (!fetchedAccession.includes(search.toUpperCase())) {
       fetchedInputStore.set('');
     }
-    return data;
-  }
+  
+
+  const fetchBlurb = 
+  <div className="fetchOutputBox">
+  <p>
+    Fetched accession {fetchedAccession} : {fetchedProteinName}{' '}
+    from <em>{fetchedOrganismName}</em>
+  </p>
+</div>
 
   return (
     <div>
-      <label htmlFor="uniprotId">Get a sequence from Uniprot:</label>
+      <label htmlFor="uniprotId">
+        Get a sequence by Uniprot accession:
+      </label>
       <input
         className="fetchInput"
         type="text"
@@ -65,6 +104,7 @@ export default function GetFromUniprot({
         placeholder={placeholderText}
         maxLength={20}
       />
+      {fetchedAccession !== '' ? fetchBlurb : null}
     </div>
   );
 }

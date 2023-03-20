@@ -141,6 +141,18 @@ span {
   font-size: 0.85em;
 }
 
+.fetchOutputBox {
+  color: var(--accent);
+  background: var(--box-fill);
+  border-radius: 0.5em;
+  font-size: 1em;
+  width: 65vw;
+  margin: 0.3em 0;
+  padding: 0em 0.5em;
+  cursor: text;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+}
 
 .outputBox,
 .outerOutputBox {
