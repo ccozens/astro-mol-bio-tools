@@ -83,7 +83,7 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70vw;
+  width: 80vw;
   height: 80vh;
   margin: auto;
   justify-content: center;
@@ -117,7 +117,7 @@ span {
   background: var(--box-fill);
   border-radius: 0.5em;
   font-size: 1em;
-  width: 65vw;
+  width: 75vw;
   margin: 10px 0;
   padding: 0.5em;
   cursor: text;
@@ -196,7 +196,7 @@ span {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start; 
-  max-width: 14vw;
+  max-width: 20vw;
 }
 
 .innerInputLabel {
@@ -226,40 +226,7 @@ span {
   grid-row: 6 / 8;
 }
 
-.proteinParamsOutputGrid {
-  display: grid;
-  grid-template-columns: 10fr 4fr 1fr;
-  grid-template-rows: repeat(6, 1fr) repeat(3, 0.7fr);
-  place-items: center;
-}
 
-.protParamsGridRowBand {
-  background-color: var(--box-border);
-}
-
-.protParamsGridItem, .protParamsGridUnits1, .protParamsGridUnits2, .protParamsGridUnits3 {
-  justify-self: start;
-}
-
-.protParamsGridItem, .protParamsCountItem {
-  font-size: 0.8em;
-}
-
-.protParamsGridUnits1 {
-  grid-row: 7 ;
-  grid-column: 1 / -1;
-  font-size: 0.6em;
-}
-.protParamsGridUnits2 {
-  grid-row: 8 ;
-  grid-column: 1 / -1;
-  font-size: 0.6em;
-}
-.protParamsGridUnits3 {
-  grid-row: 9 ;
-  grid-column: 1 / -1;
-  font-size: 0.6em;
-}
 
 /* copy icon */
 .material-symbols-outlined {
@@ -346,7 +313,7 @@ span {
 /* container styles */
 .nav-links {
   margin: auto;
-  width: 20vw;
+  width: 15vw;
   max-height: 80vh;
   box-shadow: 0em 0em 0.3em white;
   border-radius: 0.5em;

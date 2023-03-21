@@ -1,0 +1,30 @@
+.proteinParamsOutputGrid {
+    display: grid;
+    grid-template-columns: 10fr 4fr 1fr;
+    grid-template-rows: repeat(6, 1fr) repeat(3, 0.7fr);
+    place-items: center;
+  }
+  
+  .protParamsGridItem, .protParamsGridUnits1, .protParamsGridUnits2, .protParamsGridUnits3 {
+    justify-self: start;
+  }
+  
+  .protParamsGridItem, .protParamsCountItem {
+    font-size: 0.8em;
+  }
+  
+  .protParamsGridUnits1 {
+    grid-row: 8 ;
+    grid-column: 1 / -1;
+    font-size: 0.6em;
+  }
+  .protParamsGridUnits2 {
+    grid-row: 9 ;
+    grid-column: 1 / -1;
+    font-size: 0.6em;
+  }
+  .protParamsGridUnits3 {
+    grid-row: 10 ;
+    grid-column: 1 / -1;
+    font-size: 0.6em;
+  }

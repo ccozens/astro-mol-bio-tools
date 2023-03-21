@@ -174,10 +174,7 @@ export default function ProteinParameters({
         <div className="protParamsGridUnits3">
           A<sub>280</sub> = Abs 0.1% (1 g/l)
         </div>
-        
       </div>
-
-      
     </div>
   );
 }
