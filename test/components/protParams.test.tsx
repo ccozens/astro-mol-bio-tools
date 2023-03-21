@@ -149,7 +149,7 @@ describe('test CountAminoAcids', () => {
     // expect(screen.getByText(/tooltip text/i)).toBeInTheDocument()
 
     const bars = document.querySelectorAll('.recharts-rectangle');
-    console.log('here' +bars[0])
+    
     // expected output
     await userEvent.hover(bars[0]);
 

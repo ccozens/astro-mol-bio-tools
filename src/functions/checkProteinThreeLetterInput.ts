@@ -20,7 +20,6 @@ export const checkProteinThreeLetterInput = (
     const wrongInput = proteinArray.filter(
       (resi) => !allThreeLetter.includes(resi)
     );
-    console.log(wrongInput);
     let wrongInputPositions = [];
     for (let resi in wrongInput) {
       wrongInputPositions.push(proteinArray.indexOf(wrongInput[resi]) + 1);

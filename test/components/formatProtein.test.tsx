@@ -1,10 +1,9 @@
 // MPKCPKCNKEVYFAERVTSLGKDWHRPCLKCEKCGKTLTSGGHAEHEGKPYCNHPCYAAMFGPKGFGRGGAESHTFK
 
-import { describe, test, expect, vi } from 'vitest';
+import { describe, test, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 // import modules to test
-import { Molecule } from '../../src/types';
 import FormatProtein from '../../src/components/react/protein/FormatProtein';
 
 describe('test FormatProtein one to three letter', () => {
