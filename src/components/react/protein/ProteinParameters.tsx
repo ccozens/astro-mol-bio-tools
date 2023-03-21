@@ -139,9 +139,8 @@ export default function ProteinParameters({
         <div className="protParamsGridItem">A280 (Cys paired)</div>
         <div
           className="protParamsCountItem"
-          aria-label="A280 cys Paired"
+          aria-label="A280 Cys Paired"
         >
-          {' '}
           {Number(absCysPaired).toFixed(2)}
         </div>
         <div
@@ -157,7 +156,6 @@ export default function ProteinParameters({
           className="protParamsCountItem"
           aria-label="A280 Cys Reduced"
         >
-          {' '}
           {Number(absCysReduced).toFixed(2)}
         </div>
         <div

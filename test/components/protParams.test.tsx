@@ -187,14 +187,15 @@ describe('test ProteinParameters', () => {
     expect(inputBox).toHaveValue(protein);
     // render output
     render(<ProteinParameters ariaLabelContent={'Protein parameters'} />);
-    screen.logTestingPlaygroundURL();
     //expected
+    const length = 77;
     const mw = 8.53;
     const extinctionCoefficientCysPaired = /10102\.00/i;
     const extinctionCoefficientCysReduced = /9977\.00/i;
     const absCysPaired = 1.18;
     const absCysReduced = 1.17;
     //test
+    screen.getByText(length);
     screen.getByText(mw);
     screen.getByText(extinctionCoefficientCysPaired);
     screen.getByText(extinctionCoefficientCysReduced);
@@ -203,20 +204,22 @@ describe('test ProteinParameters', () => {
   })
 
   test('test protein2', async () => {
-    const protein = 'RPIEVWKLYFTHPQDVPAIRDKIKEHPAVVDIYEYDIPFAKRYLIDKGLIPMEGDEELKMLAFDIETLYHEGEEFAEGPILMISYADEEGARVITWKNIDLPYVDVVSTEKEMIKRFLKVVKEKDPDVLITYNGDNFDFAYLKKRSEKLGVKFILGREGSEPKIQRMGDRFAVEVKGRIHFDLYPVIRRTINLPTYTLEAVYEAIFGQPKEKVYAEEIAQAWETGEGLERVARYSMEDAKVTYELGKEFFPMEAQLSRLVGQSLWDVSRSSTGNLVEWFLLRKAYERNELAPNKPDERELARRRESYAGGYVKEPERGLWENI';
+    const protein = 'MSVIGRFLYYLRSVLVVLALAGCGFYGVIASILCTLIGKQHLAQWITARCFYHVMKLMLGLDVKVVGEENLAKKPYIMIANHQSTLDIFMLGRIFPPGCTVTAKKSLKYVPFLGWFMALSGTYFLDRSKRQEAIDTLNKGLENVKKNKRALWVFPEGTRSYTSELTMLPFKKGAFHLAQQGKIPIVPVVVSNTSTLVSPKYGVFNRGCMIVRILKPISTENLTKDKIGEFAEKVRDQMVDTLKEIGYSPAINDTTLPPQAIEYAALQHDKKVNKKIKNEPVPSVSISNDVNTHNEGSSVKKMH';
     // const protein = 'MILD';    // enter DNA into input box
     await user.type(inputBox, protein);
     expect(inputBox).toHaveValue(protein);
     // render output
     render(<ProteinParameters ariaLabelContent={'Protein parameters'} />);
-    screen.logTestingPlaygroundURL();
+  
     //expected
-    const mw = 37.71;
-    const extinctionCoefficientCysPaired = /59945\.00/i;
-    const extinctionCoefficientCysReduced = /59820\.00/i;
-    const absCysPaired = 1.59;
-    const absCysReduced = 1.59;
+    const length = 303;
+    const mw = 33.87;
+    const extinctionCoefficientCysPaired = /33020\.00/i;
+    const extinctionCoefficientCysReduced = /32895\.00/i;
+    const absCysPaired = 0.98;
+    const absCysReduced = 0.97;
     //test
+    screen.getByText(length);
     screen.getByText(mw);
     screen.getByText(extinctionCoefficientCysPaired);
     screen.getByText(extinctionCoefficientCysReduced);
