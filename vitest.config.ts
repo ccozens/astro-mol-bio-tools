@@ -21,7 +21,7 @@ export default defineConfig({
       // include all files (meaning: including those without any tests written yet) in coverage calcs
       all: true,
       // exclude config files and tests from coverage calcs
-      exclude: ['*.config.ts', '*/*.d.ts', 'test/**', 'redundant/**'],
+      exclude: ['*.config.ts', '*/*.d.ts', 'test/**', 'redundant/**', 'src/types.ts'],
     },
   },
 });

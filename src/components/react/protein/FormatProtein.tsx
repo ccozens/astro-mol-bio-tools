@@ -91,6 +91,7 @@ export default function FormatProtein({
         <div
           className="formatChooser__outFormat componentButton copyButton"
           onClick={updateOutFormat}
+          aria-label='Toggle output format'
         >
           {outFormat === 'oneLetter'
             ? ' One -> three letter   (MILD -> MetIleLeuAsp)'
@@ -101,9 +102,8 @@ export default function FormatProtein({
       <textarea
         id="textArea"
         className="textArea"
-        // value={input}
         onInput={handleInput}
-        aria-label={ariaLabelContent}
+        aria-label='Protein input'
         autoFocus
         autoCorrect="new-password" // prevents autocorrection
         spellCheck="false" // removes red squiggles below input
