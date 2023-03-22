@@ -14,7 +14,8 @@
 
 .resource {
     display: grid;
-    grid-template-rows: 4em 3em 1fr;
+    /* grid-template-rows: 4em 3em 1fr; */
+    grid-template-rows: minmax(2em, 6em) minmax(2em, 3em) 1fr;
     align-items: start;
 }
 
@@ -32,3 +33,12 @@ h2, td {
     background-color: var(--box-border);
 }
 
+/* 950px: reduce heading size, change text */
+@media screen and (max-width: 950px) {
+    h2 {
+        font-size: 1.5em;
+    }
+    .resource {
+        font-size: 0.8rem;
+    }
+}
