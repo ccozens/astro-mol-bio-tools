@@ -29,7 +29,6 @@ import email from '../../icons/email.svg';
   }
 
   .footerItem {
-    background: ;
     color: var(--accent);
     text-decoration: none;
     border-radius: 0.5em;
@@ -41,6 +40,15 @@ import email from '../../icons/email.svg';
     background-color: hsla(42, 100%, 80%, 0.5);
     color: black;
   }
+
+  /* hide text in link elements below 900px */
+  @media only screen and (max-width: 900px) {
+    .footerText   {
+      display: none;
+    }
+    img {
+      height: 15px;}
+  }
 </style>
 
 <footer>
@@ -50,7 +58,7 @@ import email from '../../icons/email.svg';
     href="https://astro.build/"
     aria-label="Link to astro.build"
     >
-    <img src={astro} alt="astro logo" /> astro</a
+    <img src={astro} alt="astro logo" /> <span class="footerText">astro</span></a
     >
     <a
     class="footerItem"
@@ -59,7 +67,7 @@ import email from '../../icons/email.svg';
     ><img
     src={typescript}
     alt="typescript logo"
-    /> TypeScript</a
+    /> <span class="footerText">TypeScript</span></a
     >
     <a
     class="footerItem"
@@ -68,19 +76,19 @@ import email from '../../icons/email.svg';
     ><img
     src={react}
     alt="react logo"
-    /> React</a
+    /> <span class="footerText">React</span></a
     >
     <a
     class="footerItem"
     href="https://netlify.com/"
     aria-label="link to netlify.com"
-    ><img src={netlify} alt="netlify logo" /> Netlify</a
+    ><img src={netlify} alt="netlify logo" /> <span class="footerText">Netlify</span></a
     >
     <a
     class="footerItem"
     href="https://github.com/ccozens/astro-mol-bio-tools"
     aria-label="link to github.com/ccozens/astro-mol-bio-tools"
-    ><img class="invert" src={github} alt="github logo" /> Code</a
+    ><img class="invert" src={github} alt="github logo" /> <span class="footerText">Code</span></a
   >
   <a
     class="footerItem"
@@ -90,12 +98,12 @@ import email from '../../icons/email.svg';
       class="invert"
       src={profile}
       alt="profile logo"
-    /> About me</a
+    /> <span class="footerText">About me</span></a
   >
   <a
     class="footerItem"
     href="mailto: officechrisgarden@gmail.com"
     aria-label="email link to officechrisgarden@gmail.com"
-    ><img class="invert" src={email} alt="email logo" /> Email</a
+    ><img class="invert" src={email} alt="email logo" /> <span class="footerText">Email</span></a
   >
 </footer>
