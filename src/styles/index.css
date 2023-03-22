@@ -49,3 +49,29 @@ hr, .homeLink {
   background-color: var(--box-highlight);
   color: var(--bg-blue);
 }
+
+/* hide menu button */
+.nav-button {
+  display: none;
+}
+
+/* change menu layout below 800px */
+@media screen and (max-width: 800px) {
+  .nav-button {
+    display: none;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 90;
+  }
+  .navItem {
+    margin: 0.5em auto;
+    /* width: 100%; */
+  }
+  .toolSection {
+    width: 100%;
+  }
+  .nav-button {
+    visibility: visible;
+  }
+}

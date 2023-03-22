@@ -14,6 +14,9 @@ export default function CopyButton({
     e.preventDefault();
     navigator.clipboard.writeText(copyButtonContent);
     setCopyButtonText('Copied!');
+    setTimeout(() => {
+      setCopyButtonText('Copy to Clipboard');
+    }, 1000);
   };
 
   return (

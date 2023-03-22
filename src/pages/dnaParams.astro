@@ -12,6 +12,25 @@ import { Molecule } from '../types';
 const pageTitle = 'DNA parameters';
 ---
 
+<style>
+  @media screen and (max-width: 1150px) {
+    .outerOutputBox {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    }
+    @media screen and (max-width: 950px) {
+      .outerOutputBox {
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+      .innerOutputBox {
+       margin: 0.5em 0;
+       width: 90%;
+      };
+    }
+</style>
+
 <PageLayout pageTitle={pageTitle}>
   <section class="reactArea">
     <div class="outerOutputBox">

@@ -53,6 +53,7 @@ header > h1 {
 header,
 footer {
   flex-grow: 0;
+  width: 100%;
 }
 
 h1,
@@ -62,6 +63,7 @@ span,
 table {
   color: var(--accent);
 }
+
 
 .nav-links > hr, .innerOutputBox > hr {
   width: 80%;
@@ -77,8 +79,6 @@ table {
 
 .componentButton {
   text-align: center;
-  width: 40%;
-  margin: 0 auto;
 }
 
 .reactArea {
@@ -289,8 +289,6 @@ table {
 .formatChooser {
   margin-top: 0.5em;
   display: flex;
-  justify-content: space-evenly;
-  max-width: 60vw;
 }
 
 .formatChooser__outFormat, .formatChooser__spacer {
@@ -298,7 +296,7 @@ table {
   background: var(--box-fill);
   border-radius: 0.5em;
   padding: 0.5em 2em;
-  margin: 0 2em;
+  margin: 0 1em;
 }
 
 .formatChooser__outFormat > select, .formatChooser__spacer > select {
@@ -424,16 +422,13 @@ table {
 
 /* media queries */
 
-/* 900: 
+/* 900px: 
 remove text from footer
-collapse navbar */
-
-
+collapse navbar
+show menu button
+ */
 
 @media screen and (max-width: 900px) {
-  .footer {
-    display: none;
-  }
   .nav-links {
     display: none;
   }
@@ -452,7 +447,6 @@ collapse navbar */
   .resource {
     display: none;
   }
-
   .nav-button {
     display: block;
     margin: 0.2em auto;
@@ -462,7 +456,6 @@ collapse navbar */
     background: var(--box-fill);
     border-radius: 0.5em;
   }
-
   .nav-button > .material-symbols-outlined,
   .nav-button > p {
     margin: 0 auto;
@@ -470,16 +463,33 @@ collapse navbar */
     font-size: 1.5em;
     vertical-align: middle;
   }
-
   .nav-button:hover {
     box-shadow: 0em 0em 0.3em white;
     background-color: var(--box-border);
     cursor: pointer;
   }
-
-
- 
- 
-  /* 600:
-  anything with buttons needs them to change */
-}
+    .componentButton, .formatChooser__outFormat, .formatChooser__spacer {
+    padding: auto;
+    }
+    
+    /* 800: change flex direction .buttons */
+    @media screen and (max-width: 800px) {
+      .buttons, .formatChooser {
+        flex-direction: column;
+        justify-content: center;
+      }
+      .componentButton, .formatChooser__outFormat, .formatChooser__spacer {
+    margin: 0.5em auto;
+    width: 70vw;
+  }
+  .outputBox, .inputBox {
+    min-height: 20vh;
+    height: auto;
+  }
+  @media screen and (max-width: 500px) {
+    .formatChooser__outFormat > label, .formatChooser__spacer > label {
+      display: none;
+    }
+  }
+};
+};

@@ -33,12 +33,22 @@ h2, td {
     background-color: var(--box-border);
 }
 
-/* 950px: reduce heading size, change text */
+/* 950px: reduce heading size, change text, hide copytip text */
 @media screen and (max-width: 950px) {
     h2 {
         font-size: 1.5em;
     }
     .resource {
         font-size: 0.8rem;
+    }
+    .copybuttonText {
+        display: none;
+    }
+}
+
+/* 900px change to one column */
+@media screen and (max-width: 900px) {
+    .resourceArea {
+        grid-template-columns: 1fr;
     }
 }
