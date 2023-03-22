@@ -1,8 +1,168 @@
 ---
 import '../styles/global.css';
+import '../styles/resources.css';
 import PageLayout from '../layouts/PageLayout.astro';
+import {
+  aaMW,
+  ntMW,
+  codonToAATableThreeLetter,
+} from '../functions/lookupTables';
+
+const aaMWToCopy = JSON.stringify(aaMW);
+const ntMWToCopy = JSON.stringify(ntMW);
+const codonToAATableThreeLetterToCopy = JSON.stringify(
+  codonToAATableThreeLetter
+);
 
 const pageTitle = 'Resources';
 ---
 
-<PageLayout pageTitle={pageTitle} />
+<PageLayout pageTitle={pageTitle}>
+    <div class="resourceArea">
+  <div class="aaMW resource">
+    <h2>Amino acid weights</h2>
+      <button id="copyButtonAaMW" class="copyButton">
+        Copy amino acid weights
+        <span class="material-symbols-outlined">
+          content_copy
+          <span class="copyTip">Copy amino acid weights</span>
+        </span>
+      </button>
+    <table>
+      <thead>
+        <tr>
+          <th>Amino acid</th>
+          <th>Weight (g/mol)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          Object.keys(aaMW).map((aa) => (
+            <tr>
+              <td>{aa}</td>
+              <td>{aaMW[aa].toFixed(2)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ntMw resource">
+    <h2>Nucleotide weights</h2>
+    <button id="copyButtonNtMW" class="copyButton">
+      Copy nucleotide weights
+      <span class="material-symbols-outlined">
+        content_copy
+        <span class="copyTip">Copy nucleotide weights</span>
+      </span>
+    </button>
+    <table>
+      <thead>
+        <tr>
+          <th>Nucleotide</th>
+          <th>Weight (g/mol)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          Object.keys(ntMW).map((nt) => (
+            <tr>
+              <td>{nt}</td>
+              <td>{ntMW[nt]}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+    <p class="footnote"><span class="footnoteSymbol">*</span>  'A' represents nucleobase only.</p>
+    <p class="footnote"><span class="footnoteSymbol">*</span>  'AMP' represents nucleobase + phosphate.</p>
+    <p class="footnote">
+      'ATP' represents nucleobase + triphosphate.
+    </p>
+    <p class="footnote"><span class="footnoteSymbol">*</span>  'd' denotes deoxy form, as in DNA.</p>
+    <p class="footnote"><span class="footnoteSymbol">*</span>
+        'N' is used to represent any nucleotide, and is an average of
+      all 4 weights.
+    </p>
+  </div>
+
+  <div class="codonToAATableOneLetter resource">
+    <h2>Codons for each amino acid</h2>
+    <button id="copyButtonCodons" class="copyButton">
+      Copy codon table
+      <span class="material-symbols-outlined">
+        content_copy
+        <span class="copyTip">Copy codon table</span>
+      </span>
+    </button>
+    <table>
+      <thead>
+        <tr>
+          <th>Codon</th>
+          <th>Amino acid</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          Object.keys(codonToAATableThreeLetter).map((codon) => (
+            <tr>
+              <td>{codon}</td>
+              <td>{codonToAATableThreeLetter[codon] !== '*' ? codonToAATableThreeLetter[codon] : 'STOP'}
+            
+            </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+</PageLayout>
+
+<script
+  define:vars={{
+    aaMWToCopy,
+    ntMWToCopy,
+    codonToAATableThreeLetterToCopy,
+  }}
+>
+  const copyButtonAaMW = document.getElementById('copyButtonAaMW');
+  const copyButtonNtMW = document.getElementById('copyButtonNtMW');
+  const copyButtonCodons = document.getElementById(
+    'copyButtonCodons'
+  );
+
+  if (copyButtonAaMW) {
+    copyButtonAaMW.addEventListener('click', () => {
+      navigator.clipboard.writeText(aaMWToCopy).then(() => {
+        copyButtonAaMW.classList.add('copied');
+        setTimeout(() => {
+          copyButtonAaMW.classList.remove('copied');
+        }, 1000);
+      });
+    });
+  }
+  if (copyButtonNtMW) {
+    copyButtonNtMW.addEventListener('click', () => {
+      navigator.clipboard.writeText(ntMWToCopy).then(() => {
+        copyButtonNtMW.classList.add('copied');
+        setTimeout(() => {
+          copyButtonNtMW.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  }
+  if (copyButtonCodons) {
+    copyButtonCodons.addEventListener('click', () => {
+      navigator.clipboard
+        .writeText(codonToAATableThreeLetterToCopy)
+        .then(() => {
+          copyButtonCodons.classList.add('copied');
+          setTimeout(() => {
+            copyButtonCodons.classList.remove('copied');
+          }, 2000);
+        });
+    });
+  }
+</script>
