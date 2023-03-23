@@ -1,6 +1,6 @@
 import { convertOneToThreeLetter } from '../../../functions/convertOneToThreeLetter';
 import { convertThreeToOneLetter } from '../../../functions/convertThreeToOneLetter';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CopyButton from '../CopyButton';
 import type {
   InputLabelProps,
@@ -18,8 +18,6 @@ export default function FormatProtein({
   const [outFormat, setOutFormat] = useState('threeLetter');
   let errorMessage = '';
   let isError = false;
-  //   let threeLetterProtein = '';
-  //   let oneLetterProtein = '';
 
   // store input
   function handleInput(e: ChangeEvent<HTMLTextAreaElement>): void {

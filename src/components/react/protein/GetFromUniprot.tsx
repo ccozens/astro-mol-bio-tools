@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, MouseEvent, useEffect } from 'react';
 import { fetchedInputStore } from '../../../stores/fetchedInputStore';
 
-import type { InputLabelProps } from '../../../types';
+import type { InputLabelProps, ErrorMessageProps } from '../../../types';
 
 export default function GetFromUniprot({
   ariaLabelContent,
@@ -13,6 +13,10 @@ export default function GetFromUniprot({
   const [fetchedSequence, setFetchedSequence] = useState('');
   const [fetchedProteinName, setFetchedProteinName] = useState('');
   const [fetchedOrganismName, setFetchedOrganismName] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isError, setIsError] = useState(false);
+  // let errorMessage = '';
+  // let isError = false;
 
   function handleInput(e: ChangeEvent<HTMLInputElement>): void {
     setSearch(e.target.value);
@@ -42,7 +46,8 @@ export default function GetFromUniprot({
       `https://www.ebi.ac.uk/proteins/api/proteins/${search}`
     );
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      setIsError(true);
+      setErrorMessage(`Protein accession ${search} not found. Respose status: ${response.status}.`);
     }
     if (response.ok) {
       const data = await response.json();
@@ -65,6 +70,15 @@ export default function GetFromUniprot({
       fetchedInputStore.set('');
     }
   
+    function ShowErrorMessage({ errorMessage }: ErrorMessageProps) {
+      if (!isError) {
+        return null;
+      }
+      return <p className="textArea_message">{errorMessage}</p>;
+    }
+
+    console.log('errorMessage', errorMessage);
+    console.log('isError', isError);
 
   const fetchBlurb = 
   <div className="fetchOutputBox">
@@ -93,6 +107,7 @@ export default function GetFromUniprot({
         maxLength={20}
       />
       {fetchedAccession !== '' ? fetchBlurb : null}
+      <ShowErrorMessage errorMessage={errorMessage} />
     </div>
   );
 }
