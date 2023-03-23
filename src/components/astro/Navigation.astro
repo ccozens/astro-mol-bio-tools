@@ -6,21 +6,22 @@ const proteinTools = [
     'One -> three / three -> one letter amino acid format',
     'formatProtein',
   ],
-  ['Protein parameters', 'protParams'],
+  ['Protein parameters', '/protParams'],
 ];
 const dnaTools = [
-  ['Translate DNA to protein', 'translate'],
-  ['Transcribe DNA to RNA', 'transcribe'],
-  ['Reverse complement DNA', 'reverseComplement'],
-  ['DNA parameters', 'dnaParams'],
-  ['RNA parameters', 'rnaParams'],
+  ['Translate DNA to protein', '/translate'],
+  ['Transcribe DNA to RNA', '/transcribe'],
+  ['Reverse complement DNA', '/reverseComplement'],
+  ['DNA parameters', '/dnaParams'],
+  ['RNA parameters', '/rnaParams'],
 ];
 const resources = [
-  ['Amino acid weights', 'resources'],
-  ['Nucleotide weights', 'resources'],
-  ['Codon tables', 'resources'],
+  ['Amino acid weights', '/resources'],
+  ['Nucleotide weights', '/resources'],
+  ['Codon tables', '/resources'],
 ];
-const baseUrl = process.env.NODE.ENV === 'development' ? 'http://localhost:3000' : 'https://courageous-otter.netlify.app/';
+
+const prodUrl = 'https://courageous-otter.netlify.app/';
 ---
 <button class="nav-button">
   <span class="material-symbols-outlined">menu</span>
