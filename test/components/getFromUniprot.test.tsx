@@ -66,6 +66,17 @@ describe('My API tests', () => {
     expect(data.length).toEqual(length);
   });
 
+  test('should return error message when API call fails', async () => {
+    // set input
+    const input = 'P54321';
+    // enter input
+    await user.type(searchInputBox, input);
+    expect(searchInputBox).toHaveValue(input);
+    // expected response
+    const message = `Protein accession ${input} not found. Respose status: 404.`;
+    expect(screen.findAllByText(message)).toBeTruthy();
+  }
+  );
 
 });
 

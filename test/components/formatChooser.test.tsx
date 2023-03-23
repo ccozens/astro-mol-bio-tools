@@ -21,7 +21,6 @@ describe('test nucleotide counting', () => {
 
   test('check it renders', async () => {
     // define input
-    screen.logTestingPlaygroundURL();
 
     // test
     expect(screen.getByText(/format:/i));

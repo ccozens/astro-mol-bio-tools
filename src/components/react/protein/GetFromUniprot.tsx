@@ -77,9 +77,6 @@ export default function GetFromUniprot({
       return <p className="textArea_message">{errorMessage}</p>;
     }
 
-    console.log('errorMessage', errorMessage);
-    console.log('isError', isError);
-
   const fetchBlurb = 
   <div className="fetchOutputBox">
   <p>
