@@ -11,6 +11,23 @@ import { Molecule } from '../types';
 
 const pageTitle = 'RNA parameters';
 ---
+<style>
+  @media screen and (max-width: 1200px) {
+    .outerOutputBox {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      height: auto;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .outerOutputBox {
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+</style>
 
 <PageLayout pageTitle={pageTitle}>
   <section class="reactArea">

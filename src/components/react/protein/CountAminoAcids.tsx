@@ -29,7 +29,7 @@ export default function CountAminoAcids({
   const individualResiCountsArray = resiCountsArray.slice(0, -1);
   
   return (
-    <ResponsiveContainer aria-label={ariaLabelContent}>
+    <ResponsiveContainer aria-label={ariaLabelContent} width={"90%"} height={350}>
       <BarChart
         className="proteinBar"
         data={individualResiCountsArray}

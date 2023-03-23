@@ -22,7 +22,7 @@ export default function CountNucleotides({
   }
 
   return (
-    <div className="innerOutputBox" aria-label={ariaLabelContent}>
+    <div className="innerOutputBox ntCountsOutputBox" aria-label={ariaLabelContent}>
       <p className="countHeading">Nucleotide Counts</p>
       <hr />
       <div className="countNucleotideOutputGrid">

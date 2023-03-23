@@ -11,6 +11,30 @@ import GetFromUniprot from '../components/react/protein/GetFromUniprot';
 
 const pageTitle = 'Protein parameters';
 ---
+<style>
+
+.outerOutputBox {
+  overflow-x: hidden;
+}
+  /* @media sceen and (max-width: 1400px) { */
+
+  /* } */
+
+  @media screen and (max-width: 1400px) {
+    .outerOutputBox {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 80vh;
+      height: auto;
+    }
+    .reactArea {
+      height: auto;
+    }
+  }
+  
+</style>
 
 <PageLayout pageTitle={pageTitle}>
   <section class="reactArea">
@@ -25,6 +49,11 @@ const pageTitle = 'Protein parameters';
       ariaLabelContent={'Amino acid count'}/>
     </div>
 
+    <GetFromUniprot
+    client:load
+    ariaLabelContent="Get protein sequence from Uniprot"
+    placeholderText={'P56689'}
+    />
 
     <Input
       client:load
@@ -33,11 +62,6 @@ const pageTitle = 'Protein parameters';
       inputType={Molecule.Protein}
     />
 
-    <GetFromUniprot
-    client:load
-    ariaLabelContent="Get protein sequence from Uniprot"
-    placeholderText={'P56689'}
-    />
 
   </section>
 </PageLayout>

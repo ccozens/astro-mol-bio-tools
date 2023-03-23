@@ -151,7 +151,7 @@ table {
   border-radius: 0.5em;
   font-size: 1em;
   width: 65vw;
-  margin: 0.3em 0;
+  margin: 0.3em auto;
   padding: 0em 0.5em;
   cursor: text;
   overflow-wrap: break-word;
@@ -199,6 +199,22 @@ table {
   align-items: center;
   justify-content: flex-start; 
   max-width: 20vw;
+  min-width: 220px;
+  margin: 1em auto;
+  min-height: 126px;
+}
+
+.protParamsChart {
+  width: 100%;
+  height: 100%;
+}
+.ntCountsOutputBox {
+  min-height: 220px;
+}
+
+.innerOutputBoxProtParams {
+  min-height: 270px;
+  min-width: 200px;
 }
 
 .innerInputLabel {
@@ -422,6 +438,16 @@ table {
 
 /* media queries */
 
+/* above 2880 px, constrain max sizes */
+@media screen and (min-width: 2880px) {
+  .resourceArea {
+    max-width: 2880px;
+  }
+  .reactArea {
+    max-width: 2880px;
+  }
+}
+
 /* 900px: 
 remove text from footer
 collapse navbar
@@ -472,8 +498,14 @@ show menu button
     padding: auto;
     }
     
-    /* 800: change flex direction .buttons */
+    /* 800: change flex direction .buttons and reduce heading font */
     @media screen and (max-width: 800px) {
+      header > h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
       .buttons, .formatChooser {
         flex-direction: column;
         justify-content: center;
@@ -483,12 +515,15 @@ show menu button
     width: 70vw;
   }
   .outputBox, .inputBox {
-    min-height: 20vh;
+    min-height: 40vh;
     height: auto;
   }
   @media screen and (max-width: 500px) {
     .formatChooser__outFormat > label, .formatChooser__spacer > label {
       display: none;
+    }
+    header > h1 {
+      font-size: 1.7em;
     }
   }
 };
