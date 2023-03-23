@@ -20,6 +20,7 @@ const resources = [
   ['Nucleotide weights', 'resources'],
   ['Codon tables', 'resources'],
 ];
+const baseUrl = process.env.NODE.ENV === 'development' ? 'http://localhost:3000' : 'https://courageous-otter.netlify.app/';
 ---
 <button class="nav-button">
   <span class="material-symbols-outlined">menu</span>
