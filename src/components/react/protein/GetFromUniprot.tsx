@@ -58,6 +58,7 @@ export default function GetFromUniprot({
         data.protein.recommendedName.fullName.value
       );
       setFetchedOrganismName(data.organism.names[0].value);
+      setIsError(false);
     }
   }
 
