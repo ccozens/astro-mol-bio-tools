@@ -32,7 +32,10 @@ export default function CountAminoAcids({
 		<ResponsiveContainer
 			aria-label={ariaLabelContent}
 			width={'90%'}
-			height={350}>
+			height={'100%'}
+      minWidth={250}
+      minHeight={300}
+      >
 			<BarChart
 				className="proteinBar"
 				data={individualResiCountsArray}>
